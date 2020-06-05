@@ -1,0 +1,108 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.clearfix::after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+a:link {
+	color: #000000;
+}
+
+a:visited {
+	color: #000000;
+}
+
+header {
+	border-bottom: 10px solid #FCE0DE;
+}
+
+header ul {
+	padding: 20px 30px 0 0;
+}
+
+.nav-menu {
+	margin-left: 30px;
+}
+
+
+main {
+	margin: 100px 0 50px 0;
+}
+
+.top-box {
+	margin-top: 80px;
+	margin-bottom: 130px;
+}
+
+.box1 {
+	padding: 40px;
+	margin-right: 125px;
+	background-color: rgba(252, 224, 222, 0.5);
+	border-radius: 20px;
+	float: left;
+}
+
+.box2 {
+	padding: 40px;
+	margin-left: 125px;
+	background-color: rgba(252, 224, 222, 0.5);
+	border-radius: 20px;
+	float: left;
+}
+
+.hairmo-box {
+	padding: 50px 30px;
+	background-color: rgba(255, 253, 245, 1);
+	border-radius: 20px;
+}
+
+.hairdresser-box {
+	padding: 50px 30px;
+	background-color: rgba(255, 253, 245, 1);
+	border-radius: 20px;
+}
+
+.word {
+	font-size: 30px;
+	margin-bottom: 20px;
+}
+
+.link {
+	font-size: 20px;
+	margin-left: 20px;
+}
+
+footer {
+	height: 50px;
+	background-color: rgba(252, 224, 222, 1);
+	text-align: center;
+}
+
+footer p {
+	line-height: 50px;
+}
+
