@@ -1,25 +1,25 @@
-# README
+# Hairmo Search
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## サイト概要
+カリキュラムやテストに協力してくれるモデルさんを探したい美容師アシスタントと無料でカットやカラーをしてもらいたい人をつなぐマッチングサイトです
 
-Things you may want to cover:
+### サイトテーマ
+美容師とモデルをつなぐ空間（ばしょ）
 
-* Ruby version
+### テーマを選んだ理由
+元美容師である私が、美容師時代に苦労したことの1つがヘアモデルを探すことでした
+休みの日は1日中渋谷や表参道に立ち、多くの人に声を掛けては断られ、ということを繰り返していました
+「美容師がもっと効率よくモデルさんを探すことは出来ないか？」、「無料でカットやカラーをしたいと思っている人たちが美容師を探す手伝いが出来ないか？」と考え、自分の知識や経験を生かすことが出来ると思い、このテーマを選びました
 
-* System dependencies
+### ターゲットユーザ
+・カリキュラムやテストに協力してくれるモデルさんを探している美容師アシスタント</br>
+・無料でカットやカラーをしてくれる美容師を探している人(モデルさん)
 
-* Configuration
+### 主な利用シーン
+・美容師アシスタント：カリキュラムやテストに協力してくれるモデルさんを探したいとき</br>
+・モデルさん：無料でカットやカラーをしてくれる美容師を探したいとき
 
-* Database creation
+## 設計書
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-＃Hairmo-Search
+### 機能一覧
+https://docs.google.com/spreadsheets/d/1RTN3xSTjpRuC73SL8lVS-5wQUqAVMzosXD0OlxIHeeg/edit#gid=0
