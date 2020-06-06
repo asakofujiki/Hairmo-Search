@@ -1,0 +1,87 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-offset-2 col-md-8">
+      <div class="shadow">
+        <div class="sign-up-title">
+          <h3>美容師 新規登録</h3>
+        </div>
+        <div class="sign-up-box">
+
+          <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+            <%= render "devise/shared/error_messages", resource: resource %>
+
+            <div class="sign-up-field">
+              <%= f.label :名前 %><br />
+              <%= f.text_field :hairdresser_name, autofocus: true, autocomplete: "hairdresser_name", class: "field" %>
+            </div>
+
+            <div class="sign-up-field">
+              <%= f.label :性別 %><br />
+              <%= f.select :hairdresser_gender,[["女性","女性"],["男性","男性"]], autofocus: true, autocomplete: "hairdresser_gender", class: "sign-up-select" %>
+            </div>
+
+            <div class="sign-up-field">
+              <%= f.label :サロン名 %><br />
+              <%= f.text_field :salon_name, autofocus: true, autocomplete: "salon_name", class: "sign-up-field" %>
+            </div>
+
+            <div class="sign-up-field">
+              <%= f.label :サロン郵便番号（ハイフンなし） %><br />
+              <%= f.text_field :postal_code, autofocus: true, autocomplete: "postal_code" %>
+            </div>
+
+            <div class="sign-up-field">
+              <%= f.label :サロン住所 %><br />
+              <%= f.text_field :salon_address, autofocus: true, autocomplete: "salon_name", class: "field" %>
+            </div>
+
+            <div class="sign-up-field">
+              <%= f.label :サロンエリア %><br />
+              <%= f.select :area,[["渋谷","渋谷"],["表参道","表参道"],["青山","青山"],["原宿","原宿"],["銀座","銀座"],["その他","その他"]], autofocus: true, autocomplete: "area", class: "sign-up-select" %>
+            </div>
+
+            <div class="sign-up-field">
+              <div><strong>募集モデル</strong></div>
+              <div class="menu">
+                <srrong>カット</srrong>
+                <ul class="clearfix">
+                  <%= f.collection_check_boxes :cut_type_ids, @cut_types, :id, :cut_name  do |cut| %>
+                  <%= cut.label { cut.check_box + cut.text} %>
+                  <% end %>
+                </ul>
+              </div>
+            </div>
+
+            <div class="sign-up-field">
+              <%= f.label :メールアドレス %><br />
+              <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "field" %>
+            </div>
+
+            <div class="sign-up-field">
+              <%= f.label :パスワード（6文字以上） %>
+              <!--
+              <% if @minimum_password_length %>
+              <em>(<%= @minimum_password_length %> 文字以上)</em>
+              <% end %><br />
+              -->
+              <%= f.password_field :password, autocomplete: "new-password", class: "field" %>
+            </div>
+
+            <div class="sign-up-field">
+              <%= f.label :パスワード（確認用） %><br />
+              <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "field" %>
+            </div>
+          </div>
+
+          <div class="sign-up-btn">
+            <div class="actions">
+              <%= f.submit "新規登録", class: "action-btn"%>
+            </div>
+          </div>
+        <% end %>
+
+        <%= render "hairdressers/shared/links" %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -38,6 +38,7 @@ a:visited {
 
 header {
 	border-bottom: 10px solid #FCE0DE;
+	background-color: #FFFFFF;
 }
 
 header ul {
@@ -106,3 +107,64 @@ footer p {
 	line-height: 50px;
 }
 
+// 美容師新規登録ページ //
+.shadow {
+	background-color: rgba(230, 230, 230, 0.2);
+	border-radius: 50px;
+	box-shadow: 2px 2px 6px #a9a9a9;
+	padding: 30px;
+}
+
+.sign-up-title {
+	margin-bottom: 20px;
+	text-align: center;
+	h3 {
+		display: inline-block;
+		color: #EBC3C1;
+		font-weight: bold;
+	}
+}
+
+.sign-up-box {
+	width: 500px;
+	margin: 0 auto;
+}
+
+.sign-up-field {
+	margin-bottom: 15px;
+	.field {
+	width: 500px;
+	}
+}
+
+
+.sign-up-select {
+	width: 300px;
+}
+
+.menu {
+	ul {
+		list-style-type: none
+	}
+	li {
+		float: left;
+		margin:  0  30px 0 20px;
+	}
+}
+
+.sign-up-btn {
+	margin-top: 50px;
+	text-align: center;
+	.actions {
+		display: inline-block;
+		.action-btn {
+			padding: 10px;
+			background-color: rgba(252, 224, 222, 1);
+			border-radius: 8px;
+			border-style: none;
+			color: #FFFFFF;
+			font-weight: bold;
+			font-size: 20px;
+		}
+	}
+}
