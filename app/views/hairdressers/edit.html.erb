@@ -1,2 +1,101 @@
-<h1>Hairdressers#exit</h1>
-<p>Find me in app/views/hairdressers/exit.html.erb</p>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-offset-2 col-md-8">
+      <div class="shadow">
+        <div class="sign-up-title">
+          <h3>プロフィール編集</h3>
+        </div>
+        <div class="sign-up-box">
+
+          <%= form_for(@hairdresser) do |f| %>
+
+            <div class="sign-up-image" onclick="$('#hairdresser_hairdresser_image').click()">
+              <div class="image-field">
+                <%= attachment_image_tag @hairdresser, :hairdresser_image, class: "img-prev", :size => '150x150', fallback:"no images.png" %>
+                <%= f.attachment_field :hairdresser_image, autofocus: true, autocomplete: "hairdresser_image" %>
+              </div>
+            </div>
+
+            <div class="sign-up-field">
+              <%= f.label :名前 %><br />
+              <%= f.text_field :hairdresser_name, autofocus: true, autocomplete: "hairdresser_name", class: "field" %>
+            </div>
+
+            <div class="sign-up-field">
+              <%= f.label :性別 %><br />
+              <%= f.select :hairdresser_gender,[["女性","女性"],["男性","男性"]], autofocus: true, autocomplete: "hairdresser_gender", class: "sign-up-select" %>
+            </div>
+
+            <div class="sign-up-field">
+              <%= f.label :サロン名 %><br />
+              <%= f.text_field :salon_name, autofocus: true, autocomplete: "salon_name", class: "sign-up-field" %>
+            </div>
+
+            <div class="sign-up-field">
+              <%= f.label :サロン郵便番号（ハイフンなし） %><br />
+              <%= f.text_field :postal_code, autofocus: true, autocomplete: "postal_code" %>
+            </div>
+
+            <div class="sign-up-field">
+              <%= f.label :サロン住所 %><br />
+              <%= f.text_field :salon_address, autofocus: true, autocomplete: "salon_name", class: "field" %>
+            </div>
+
+            <div class="sign-up-field">
+              <%= f.label :サロンエリア %><br />
+              <%= f.select :area,[["渋谷","渋谷"],["表参道","表参道"],["青山","青山"],["原宿","原宿"],["銀座","銀座"],["その他","その他"]], autofocus: true, autocomplete: "area", class: "sign-up-select" %>
+            </div>
+
+            <div class="sign-up-field">
+              <div><strong>募集モデル</strong></div>
+              <div class="menu">
+                <srrong>カット</srrong>
+                <ul class="clearfix">
+                  <%= f.collection_check_boxes :cut_type_ids, @cut_types, :id, :cut_name  do |cut| %>
+                  <%= cut.label { cut.check_box + cut.text} %>
+                  <% end %>
+                </ul>
+              </div>
+              <div class="menu">
+                <srrong>カラー</srrong>
+                <ul class="clearfix">
+                  <%= f.collection_check_boxes :color_type_ids, @color_types, :id, :color_name  do |color| %>
+                  <%= color.label { color.check_box + color.text} %>
+                  <% end %>
+                </ul>
+              </div>
+              <div class="menu">
+                <srrong>パーマ</srrong>
+                <ul class="clearfix">
+                  <%= f.collection_check_boxes :perm_type_ids, @perm_types, :id, :perm_name  do |perm| %>
+                  <%= perm.label { perm.check_box + perm.text} %>
+                  <% end %>
+                </ul>
+              </div>
+              <div class="menu">
+                <srrong>セット</srrong>
+                <ul class="clearfix">
+                  <%= f.collection_check_boxes :set_type_ids, @set_types, :id, :set_name  do |set| %>
+                  <%= set.label { set.check_box + set.text} %>
+                  <% end %>
+                </ul>
+              </div>
+            </div>
+
+            <div class="sign-up-field">
+              <%= f.label :ひとこと %><br />
+              <%= f.text_area :hairdresser_comment, placeholder: "200字以内でお願いします", autofocus: true, autocomplete: "hairdresser_comment", class: "comment" %>
+            </div>
+
+          </div>
+
+          <div class="sign-up-btn">
+            <div class="actions">
+              <%= f.submit "変更を保存", class: "action-btn"%>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -5,7 +5,7 @@
 				<div class="img-box">
 					<div class="img"><%= attachment_image_tag(@hairdresser, :hairdresser_image, fallback: 'no images.png', size: '200x200', class: "img") %></div>
 					<% if @hairdresser == current_hairdresser %>
-					<%= link_to edit_hairdresser_path(@hairdresser) do %>
+					<%= link_to edit_hairdresser_path(@hairdresser), data: {"turbolinks" => false} do %>
 					<div class="pro-btn">
 						<p>プロフィール編集</p>
 					</div>
@@ -83,7 +83,10 @@
 						<% end %>
 						</ul>
 					</div>
-					<div class="word"></div>
+					<div class="comment-box">
+						<p>ひとこと</p>
+						<p class="comment"><%= @hairdresser.hairdresser_comment %></p>
+					</div>
 				</div>
 			</div>
 		</div>

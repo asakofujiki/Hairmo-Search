@@ -148,7 +148,11 @@ footer p {
 .sign-up-field {
 	margin-bottom: 15px;
 	.field {
-	width: 500px;
+		width: 500px;
+	}
+	.comment {
+		width: 500px;
+		height: 100px;
 	}
 }
 
@@ -180,6 +184,23 @@ footer p {
 			font-weight: bold;
 			font-size: 20px;
 		}
+	}
+}
+
+.signin {
+	margin-top: 30px;
+	text-align: center;
+	.sign-btn {
+		color: #EB9996;
+		font-weight: bold;
+	}
+}
+
+.signup {
+	text-align: center;
+	.sign-btn {
+		color: #EB9996;
+		font-weight: bold;
 	}
 }
 
@@ -230,12 +251,16 @@ footer p {
 
 // 美容師詳細ページ //
 .contents-box {
+	margin-left: 50px;
 	padding: 30px;
+	position: relative;
 	.img-box {
 		display: inline-block;
 		width: 200px;
-		height: 400px;
 		text-align: center;
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
 		.img {
 			display: inline-block;
 			width: 200px;
@@ -260,7 +285,7 @@ footer p {
 	}
 	.pro-box {
 		display: inline-block;
-		margin-left: 100px;
+		margin-left: 300px;
 		.pro-list {
 			.pro-item {
 				padding-right: 20px;
@@ -268,7 +293,6 @@ footer p {
 		}
 		.colle {
 			margin-top: 5px;
-			display: inline-block;
 			.type-box {
 				list-style-type: none;
 				.type {
@@ -280,9 +304,10 @@ footer p {
 				}
 			}
 		}
-		.word {
-			display: inline-block;
-			
+		.comment-box {
+			.comment {
+				margin-left: 10px;
+			}
 		}
 	}
 
