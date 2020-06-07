@@ -16,9 +16,16 @@
           <h2>Hairmo Search</h2>
         </nav>
         <ul class="nav navbar-nav navbar-right">
+          <% if hairdresser_signed_in? %>
+          <li class="nav-menu"><%= current_hairdresser.hairdresser_name %></li>
+          <li class="nav-menu">マイページ</li>
+          <li class="nav-menu">ヘアモ一覧</li>
+          <li class="nav-menu"><%= link_to "ログアウト",destroy_hairdresser_session_path, method: :delete %></li>
+          <% else %>
           <li class="nav-menu">About</li>
-          <li class="nav-menu">美容師登録</li>
+          <li class="nav-menu"><%= link_to "美容師登録", new_hairdresser_registration_path %></li>
           <li class="nav-menu">ヘアモ登録</li>
+          <% end %>
         </ul>
       </div>
     </header>

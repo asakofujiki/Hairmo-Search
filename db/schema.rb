@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_05_114848) do
+ActiveRecord::Schema.define(version: 2020_06_07_032428) do
 
   create_table "color_types", force: :cascade do |t|
     t.string "color_name"
@@ -45,7 +45,7 @@ ActiveRecord::Schema.define(version: 2020_06_05_114848) do
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.string "hairdresser_name"
-    t.string "hairdresser_image"
+    t.string "hairdresser_image_id"
     t.integer "hairdresser_gender"
     t.string "salon_name"
     t.string "postal_code"

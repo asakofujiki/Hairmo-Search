@@ -15,6 +15,6 @@ class ApplicationController < ActionController::Base
 
 	protected
 	def configure_permitted_paramerters
-		devise_parameter_sanitizer.permit(:sign_up, keys:[:hairdresser_name, :hairdresser_image, :hairdresser_gender, :salon_name, :postal_code, :salon_address, :area, :email, cut_type_ids: []])
+		devise_parameter_sanitizer.permit(:sign_up, keys:[:hairdresser_name, :hairdresser_image, :hairdresser_gender, :salon_name, :postal_code, :salon_address, :area, :email, cut_type_ids: [], color_type_ids: [], perm_type_ids: [], set_type_ids: []])
 	end
 end

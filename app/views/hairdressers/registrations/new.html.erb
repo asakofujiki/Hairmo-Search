@@ -10,6 +10,13 @@
           <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
             <%= render "devise/shared/error_messages", resource: resource %>
 
+            <div class="sign-up-image" onclick="$('#hairdresser_hairdresser_image').click()">
+              <div class="image-field">
+                <%= image_tag "no images.png", class: "img-prev", :size => '150x150' %>
+                <%= f.attachment_field :hairdresser_image, autofocus: true, autocomplete: "hairdresser_image" %>
+              </div>
+            </div>
+
             <div class="sign-up-field">
               <%= f.label :名前 %><br />
               <%= f.text_field :hairdresser_name, autofocus: true, autocomplete: "hairdresser_name", class: "field" %>
@@ -47,6 +54,30 @@
                 <ul class="clearfix">
                   <%= f.collection_check_boxes :cut_type_ids, @cut_types, :id, :cut_name  do |cut| %>
                   <%= cut.label { cut.check_box + cut.text} %>
+                  <% end %>
+                </ul>
+              </div>
+              <div class="menu">
+                <srrong>カラー</srrong>
+                <ul class="clearfix">
+                  <%= f.collection_check_boxes :color_type_ids, @color_types, :id, :color_name  do |color| %>
+                  <%= color.label { color.check_box + color.text} %>
+                  <% end %>
+                </ul>
+              </div>
+              <div class="menu">
+                <srrong>パーマ</srrong>
+                <ul class="clearfix">
+                  <%= f.collection_check_boxes :perm_type_ids, @perm_types, :id, :perm_name  do |perm| %>
+                  <%= perm.label { perm.check_box + perm.text} %>
+                  <% end %>
+                </ul>
+              </div>
+              <div class="menu">
+                <srrong>セット</srrong>
+                <ul class="clearfix">
+                  <%= f.collection_check_boxes :set_type_ids, @set_types, :id, :set_name  do |set| %>
+                  <%= set.label { set.check_box + set.text} %>
                   <% end %>
                 </ul>
               </div>

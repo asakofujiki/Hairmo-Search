@@ -22,6 +22,10 @@
 	box-sizing: border-box;
 }
 
+p {
+	margin: 0
+}
+
 .clearfix::after {
 	content: "";
 	display: block;
@@ -130,13 +134,23 @@ footer p {
 	margin: 0 auto;
 }
 
+.sign-up-image {
+	margin-bottom: 15px;
+	text-align: center;
+	.image-field {
+		display: inline-block;
+		.img-prev {
+			border-radius: 50%;
+		}
+	}
+}
+
 .sign-up-field {
 	margin-bottom: 15px;
 	.field {
 	width: 500px;
 	}
 }
-
 
 .sign-up-select {
 	width: 300px;
@@ -167,4 +181,109 @@ footer p {
 			font-size: 20px;
 		}
 	}
+}
+
+// 美容師一覧ページ //
+.index-box {
+	width: 620px;
+	display: inline-block;
+	background-color: rgba(252, 224, 222, 0.3);
+	border: 3px solid rgb(252, 224, 222);
+	border-radius: 30px;
+	padding: 20px;
+	margin: 0 30px 30px 30px;
+	float: left;
+	list-style-type: none;
+	.image-box {
+		width: 100px;
+		height: 100px;
+		border-radius: 50%;
+		float: left;
+		position: relative;
+		top: 50%;
+	}
+	.profile-box {
+		display: inline-block;
+		.profile-list {
+		margin-left: 30px;
+		list-style-type: none;
+			.profile-item {
+				padding-right: 10px;
+			}
+		}
+		.collect {
+			display: inline-block;
+			margin-top: 5px;
+			margin-left: 30px;
+			list-style-type: none;
+			.type {
+				margin-left: 5px;
+			}
+			li {
+				float: left;
+				list-style-type: none;
+				margin-left: 10px;
+			}
+		}
+	}
+}
+
+// 美容師詳細ページ //
+.contents-box {
+	padding: 30px;
+	.img-box {
+		display: inline-block;
+		width: 200px;
+		height: 400px;
+		text-align: center;
+		.img {
+			display: inline-block;
+			width: 200px;
+			height: 200px;
+			border-radius: 50%;
+			float: left;
+		}
+		.pro-btn {
+			display: inline-block;
+			width: 180px;
+			height: 50px;
+			background-color: rgb(252, 224, 222);
+			border-radius: 20px;
+			margin-top: 30px;
+			p {
+				color: #FFFFFF;
+				font-weight: bold;
+				font-size: 16px;
+				line-height: 50px;
+			}
+		}
+	}
+	.pro-box {
+		display: inline-block;
+		margin-left: 100px;
+		.pro-list {
+			.pro-item {
+				padding-right: 20px;
+			}
+		}
+		.colle {
+			margin-top: 5px;
+			display: inline-block;
+			.type-box {
+				list-style-type: none;
+				.type {
+				margin-left: 5px;
+				}
+				li {
+					float: left;
+					margin-left: 20px;
+				}
+			}
+		}
+		.word {
+			display: inline-block;
+			
+		}
+	}
+
 }

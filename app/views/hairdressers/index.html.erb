@@ -1,0 +1,84 @@
+<div class="container-fluid">
+  <div class="row">
+  	<div class="col-md-12">
+  		<% @hairdressers.each do |hairdresser| %>
+  		<%= link_to hairdresser_path(hairdresser.id) do %>
+  		<div class="index-box clearfix">
+  			<span class="image-box"><%= attachment_image_tag(hairdresser, :hairdresser_image, fallback: 'no images.png', size: '100x100', class: "image-box") %></span>
+  			<div class="profile-box">
+  			<table class="profile-list">
+  				<tr>
+  					<td class="profile-item">名前</td>
+  					<td><%= hairdresser.hairdresser_name %></td>
+  				</tr>
+  				<tr>
+  					<td class="profile-item">性別</td>
+  					<td><%= hairdresser.hairdresser_gender %></td>
+  				</tr>
+  				<tr>
+  					<td class="profile-item">サロン名</td>
+  					<td><%= hairdresser.salon_name %></td>
+  				</tr>
+  				<tr>
+  					<td class="profile-item">サロン住所</td>
+  					<td><%= hairdresser.salon_address %></td>
+  				</tr>
+  				<tr>
+  					<td class="profile-item">サロンエリア</td>
+  					<td><%= hairdresser.area %></td>
+  				</tr>
+  			</table>
+  			<div class="collect">
+  				<p>＜募集モデル＞</p>
+  				<ul class="clearfix">
+  				<% if hairdresser.cuts.count == 0 %>
+  				<p class="type">カット</p>
+  				<li>なし</li>
+  				<% else %>
+  				<p class="type">カット</p>
+  				<% hairdresser.cuts.each do |cut| %>
+  					<li><%= cut.cut_type_id %></li>
+  				<% end %>
+  				<% end %>
+  				</ul>
+  				<ul class="clearfix">
+  				<% if hairdresser.colors.count == 0 %>
+  				<p class="type">カラー</p>
+  				<li>なし</li>
+  				<% else %>
+  				<p class="type">カラー</p>
+  				<% hairdresser.colors.each do |color| %>
+  					<li><%= color.color_type_id %></li>
+  				<% end %>
+  				<% end %>
+  				</ul>
+  				<ul class="clearfix">
+  				<% if hairdresser.perms.count == 0 %>
+  				<p class="type">パーマ</p>
+  				<li>なし</li>
+  				<% else %>
+  				<p class="type">パーマ</p>
+  				<% hairdresser.perms.each do |perm| %>
+  					<li><%= perm.perm_type_id %></li>
+  				<% end %>
+  				<% end %>
+  				</ul>
+  				<ul class="clearfix">
+  				<% if hairdresser.set_hairs.count == 0 %>
+  				<p class="type">セット</p>
+  				<li>なし</li>
+  				<% else %>
+  				<p class="type">セット</p>
+  				<% hairdresser.set_hairs.each do |set| %>
+  					<li><%= set.set_type_id %></li>
+  				<% end %>
+  				<% end %>
+  				</ul>
+  			</div>
+  			</div>
+  		</div>
+  		<% end %>
+  		<% end %>
+  	</div>
+  </div>
+</div>

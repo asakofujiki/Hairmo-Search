@@ -7,15 +7,19 @@ class Hairdressers::RegistrationsController < Devise::RegistrationsController
   # GET /resource/sign_up
    def new
      @cut_types = CutType.all
+     @color_types = ColorType.all
+     @perm_types = PermType.all
+     @set_types = SetType.all
      super
-
    end
 
   # POST /resource
    def create
-    @cut_types = CutType.all
+     @cut_types = CutType.all
+     @color_types = ColorType.all
+     @perm_types = PermType.all
+     @set_types = SetType.all
      super
-
    end
 
   # GET /resource/edit

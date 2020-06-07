@@ -11,13 +11,17 @@ class Hairdresser < ApplicationRecord
   validates :salon_address, presence: true
   enum area: {渋谷: 0, 表参道: 1, 青山: 2, 原宿: 3, 銀座: 4, その他: 5}
   validates :hairdresser_comment, length: {maximum: 200}
+  attachment :hairdresser_image
 
   has_many :cuts, dependent: :destroy
   has_many :cut_types, :through => :cuts
+
   has_many :colors, dependent: :destroy
-  accepts_nested_attributes_for :colors
+  has_many :color_types, :through => :colors
+
   has_many :perms, dependent: :destroy
-  accepts_nested_attributes_for :perms
+  has_many :perm_types, :through => :perms
+
   has_many :set_hairs, dependent: :destroy
-  accepts_nested_attributes_for :set_hairs
+  has_many :set_types, :through => :set_hairs
 end
