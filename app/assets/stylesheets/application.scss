@@ -250,23 +250,15 @@ footer p {
 }
 
 // 美容師詳細ページ //
-.contents-box {
-	margin-left: 50px;
-	padding: 30px;
-	position: relative;
-	.img-box {
-		display: inline-block;
-		width: 200px;
-		text-align: center;
-		position: absolute;
-		top: 50%;
-		transform: translateY(-50%);
-		.img {
+.img-box {
+	display: inline-block;
+	text-align: center;
+	margin-top: 20px;
+	.img {
 			display: inline-block;
 			width: 200px;
 			height: 200px;
 			border-radius: 50%;
-			float: left;
 		}
 		.pro-btn {
 			display: inline-block;
@@ -282,35 +274,48 @@ footer p {
 				line-height: 50px;
 			}
 		}
-	}
-	.pro-box {
-		display: inline-block;
-		margin-left: 300px;
-		.pro-list {
+}
+
+.pro-box {
+	font-size: 18px;
+	margin-top: 30px;
+	.pro-list {
+			margin-bottom: 15px;
 			.pro-item {
 				padding-right: 20px;
 			}
-		}
-		.colle {
-			margin-top: 5px;
-			.type-box {
-				list-style-type: none;
-				.type {
-				margin-left: 5px;
-				}
-				li {
-					float: left;
-					margin-left: 20px;
-				}
-			}
-		}
-		.comment-box {
-			.comment {
-				margin-left: 10px;
-			}
+	}
+	.comment-box {
+		margin-top: 30px;
+		.comment {
+			margin-left: 20px;
+			font-size: 14px;
 		}
 	}
+}
 
+.colle-box {
+	font-size: 14px;
+	margin-top: 30px;
+	.type-box {
+		list-style-type: none;
+		.type {
+			width: 45px;
+			text-align: center;
+			border-radius: 8px;
+			margin-left: 5px;
+			background-color: #EB9996;
+			color: #FFFFFF;
+		}
+		li {
+			float: left;
+			margin-left: 20px;
+		}
+	}
+}
+
+.mymanu {
+	height: 50px;
 }
 
 // ヘアカタログ投稿・編集ページ //

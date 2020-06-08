@@ -1,8 +1,7 @@
 <div class="container-fluid">
 	<div class="row">
-		<div class="col-md-offset-2 col-md-8">
-			<div class="contents-box clearfix">
-				<div class="img-box">
+		<div class="col-md-offset-1 col-md-2">
+			<div class="img-box">
 					<div class="img"><%= attachment_image_tag(@hairdresser, :hairdresser_image, fallback: 'no images.png', size: '200x200', class: "img") %></div>
 					<% if @hairdresser == current_hairdresser %>
 					<%= link_to edit_hairdresser_path(@hairdresser), data: {"turbolinks" => false} do %>
@@ -12,10 +11,12 @@
 					<% else %>
 					<% end %>
 					<% end %>
-				</div>
-				<div class="pro-box">
-					<table class="pro-list">
-						<tr>
+			</div>
+		</div>
+		<div class="col-md-5">
+			<div class="pro-box">
+				<table class="pro-list">
+						<tr class="list">
 							<td class="pro-item">名前</td>
 							<td><%= @hairdresser.hairdresser_name %></td>
 						</tr>
@@ -24,26 +25,29 @@
 							<td><%= @hairdresser.hairdresser_gender %></td>
 						</tr>
 						<tr>
-							<td class="pro-item">サロン名</td>
+							<td class="pro-item">サロン</td>
 							<td><%= @hairdresser.salon_name %></td>
 						</tr>
 						<tr>
-							<td class="pro-item">サロン住所</td>
+							<td class="pro-item"></td>
 							<td><%= @hairdresser.salon_address %></td>
 						</tr>
-						<tr>
-							<td class="pro-item">サロンエリア</td>
-							<td><%= @hairdresser.area %></td>
-						</tr>
 					</table>
-					<div class="colle">
-						<p>＜募集モデル＞</p>
+					<div class="comment-box">
+						<p><strong>ひとこと</strong></p>
+						<p class="comment"><%= @hairdresser.hairdresser_comment %></p>
+					</div>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<div class="colle-box">
+				<p><strong>＜募集モデル＞</strong></p>
 						<ul class="type-box clearfix">
 						<% if @cut.count == 0 %>
-						<p class="type">カット</p>
+						<p class="type">Cut</p>
 						<li>なし</li>
 						<% else %>
-						<p class="type">カット</p>
+						<p class="type">Cut</p>
 						<% @cut.each do |cut| %>
 							<li><%= cut.cut_type_id %></li>
 						<% end %>
@@ -51,10 +55,10 @@
 						</ul>
 						<ul class="type-box clearfix">
 						<% if @color.count == 0 %>
-						<p class="type">カラー</p>
+						<p class="type">Color</p>
 						<li>なし</li>
 						<% else %>
-						<p class="type">カラー</p>
+						<p class="type">Color</p>
 						<% @color.each do |color| %>
 							<li><%= color.color_type_id %></li>
 						<% end %>
@@ -62,10 +66,10 @@
 						</ul>
 						<ul class="type-box clearfix">
 						<% if @perm.count == 0 %>
-						<p class="type">パーマ</p>
+						<p class="type">Perm</p>
 						<li>なし</li>
 						<% else %>
-						<p class="type">パーマ</p>
+						<p class="type">Perm</p>
 						<% @perm.each do |perm| %>
 							<li><%= perm.perm_type_id %></li>
 						<% end %>
@@ -73,24 +77,24 @@
 						</ul>
 						<ul class="type-box clearfix">
 						<% if @set.count == 0 %>
-						<p class="type">セット</p>
+						<p class="type">Set</p>
 						<li>なし</li>
 						<% else %>
-						<p class="type">セット</p>
+						<p class="type">Set</p>
 						<% @set.each do |set| %>
 							<li><%= set.set_type_id %></li>
 						<% end %>
 						<% end %>
 						</ul>
-					</div>
-					<div class="comment-box">
-						<p>ひとこと</p>
-						<p class="comment"><%= @hairdresser.hairdresser_comment %></p>
-					</div>
-				</div>
 			</div>
 		</div>
 	</div>
+	<div class="row">
+		<div class="col-md-offset-2 col-md-8">
+			<div class="mymanu"></div>
+		</div>
+	</div>
+
 	<div class="row">
 		<% @haircatalogs.each do |haircatalog| %>
 		<div class="col-md-3">
