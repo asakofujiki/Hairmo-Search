@@ -1,0 +1,32 @@
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-offset-2 col-md-8">
+			<div class="shadow">
+				<div class="catalog">
+				<div class="catalog-header">
+					<% @haircatalog.catalog_tags.each do |tag| %>
+					<span><%= tag.tag_id %></span>
+					<% end %>
+				</div>
+				<div class="catalog-image">
+					<%= attachment_image_tag(@haircatalog, :catalog_image, size: '400x400') %>
+				</div>
+				<div class="catalog-footer">
+					<span><%= @haircatalog.created_at.strftime('%Y/%m/%d') %></span>
+					<span>♡1</span>
+				</div>
+				<div class="treatment-contents">
+					<div class="explan">＜施術内容＞</div>
+					<div class="explan-text"><%= @haircatalog.treatment_contents %></div>
+				</div>
+				<% if @haircatalog.hairdresser_id == current_hairdresser.id %>
+				<div class="catalog-btn">
+					<%= link_to "編集", edit_hair_catalog_path, class: "btn" %>
+					<%= link_to "削除", hair_catalog_path(@haircatalog), method: :delete, data: {confirm: "本当に削除してもよろしいですか？"}, class: "btn" %>
+				</div>
+				<% end %>
+			</div>
+			</div>
+		</div>
+	</div>
+</div>

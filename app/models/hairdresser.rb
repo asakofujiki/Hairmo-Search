@@ -24,4 +24,6 @@ class Hairdresser < ApplicationRecord
 
   has_many :set_hairs, dependent: :destroy
   has_many :set_types, :through => :set_hairs
+
+  has_many :hair_catalogs, dependent: :destroy
 end

@@ -1,0 +1,2 @@
+module HairCatalogsHelper
+end

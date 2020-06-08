@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_07_032428) do
+ActiveRecord::Schema.define(version: 2020_06_08_060153) do
+
+  create_table "catalog_tags", force: :cascade do |t|
+    t.integer "hair_catalog_id"
+    t.integer "tag_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "color_types", force: :cascade do |t|
     t.string "color_name"
@@ -34,6 +41,14 @@ ActiveRecord::Schema.define(version: 2020_06_07_032428) do
   create_table "cuts", force: :cascade do |t|
     t.integer "hairdresser_id"
     t.integer "cut_type_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "hair_catalogs", force: :cascade do |t|
+    t.integer "hairdresser_id"
+    t.string "catalog_image_id"
+    t.text "treatment_contents"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -80,6 +95,12 @@ ActiveRecord::Schema.define(version: 2020_06_07_032428) do
 
   create_table "set_types", force: :cascade do |t|
     t.string "set_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "tags", force: :cascade do |t|
+    t.string "tag_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

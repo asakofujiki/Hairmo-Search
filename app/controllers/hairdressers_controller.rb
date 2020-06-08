@@ -9,6 +9,7 @@ class HairdressersController < ApplicationController
     @color = @hairdresser.colors
     @perm = @hairdresser.perms
     @set = @hairdresser.set_hairs
+    @haircatalogs = HairCatalog.where(hairdresser_id: @hairdresser).order(created_at: "DESC")
   end
 
   def edit
@@ -22,7 +23,6 @@ class HairdressersController < ApplicationController
   def update
     @hairdresser = current_hairdresser
     @hairdresser.update(hairdresser_params)
-
     redirect_to hairdresser_path(@hairdresser)
   end
 

@@ -21,3 +21,8 @@ PermType.create(perm_name: '縮毛矯正')
 
 SetType.create(set_name: '和装')
 SetType.create(set_name: '洋装')
+
+Tag.create(tag_name: 'カット')
+Tag.create(tag_name: 'カラー')
+Tag.create(tag_name: 'パーマ')
+Tag.create(tag_name: 'セット')

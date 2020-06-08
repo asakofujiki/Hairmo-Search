@@ -1,0 +1,27 @@
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-offset-2 col-md-8">
+			<div class="shadow">
+				<%= form_with model:@haircatalog, url:hair_catalog_path(@haircatalog), method: :patch, remote: true do |h| %>
+				<div class="haircatalog-image">
+					<%= attachment_image_tag @haircatalog, :catalog_image, class: "img-prev", :size => '300x300' %>
+                	<%= h.attachment_field :catalog_image, autofocus: true, autocomplete: "catalog_image" %>
+				</div>
+				<div class="tag-box">
+					<%= h.label :タグ %><br />
+					<%= h.collection_check_boxes :tag_ids, @tags, :id, :tag_name  do |tag| %>
+                  	<%= tag.label {tag.check_box + tag.text} %>
+                  	<% end %>
+				</div>
+				<div class="treatment-box">
+					<%= h.label :施術内容 %><br />
+					<%= h.text_area :treatment_contents, class: "text" %>
+				</div>
+				<div class="btn-box">
+					<%= h.submit "変更を保存", class: "btn" %>
+					<% end %>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

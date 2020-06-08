@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  hairdresser_id: 1
+  cotalog_image_id: MyString
+  treatment_contents: MyText
+
+two:
+  hairdresser_id: 1
+  cotalog_image_id: MyString
+  treatment_contents: MyText

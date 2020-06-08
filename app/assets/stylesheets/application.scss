@@ -111,7 +111,7 @@ footer p {
 	line-height: 50px;
 }
 
-// 美容師新規登録ページ //
+// 美容師新規登録・ログインページ //
 .shadow {
 	background-color: rgba(230, 230, 230, 0.2);
 	border-radius: 50px;
@@ -311,4 +311,132 @@ footer p {
 		}
 	}
 
+}
+
+// ヘアカタログ投稿・編集ページ //
+.haircatalog-image {
+	width: 300px;
+	height: 330px;
+	margin: 0 auto;
+}
+
+.tag-box {
+	width: 400px;
+	margin: 0 auto;
+	padding: 10px;
+	.check {
+		margin-left: 20px;
+	}
+}
+
+.treatment-box {
+	width: 400px;
+	margin: 0 auto;
+	padding: 10px;
+	.text {
+		width: 380px;
+		height: 100px;
+	}
+}
+
+.btn-box {
+	margin: 0 auto;
+	padding: 10px;
+	text-align: center;
+	.btn {
+		padding: 10px 30px;
+		background-color: rgba(252, 224, 222, 1);
+		border-radius: 8px;
+		border-style: none;
+		color: #FFFFFF;
+		font-weight: bold;
+		font-size: 20px;
+	}
+}
+
+// ヘアカタログ一覧 //
+.haircatalog {
+	.haircatalog-header {
+		width: 250px;
+		margin: 0 auto;
+		span {
+			background-color: #9E97A3;
+			border-radius: 8px;
+			margin-bottom: 3px;
+			padding: 3px;
+			color: #FFFFFF;
+		}
+	}
+	.haircatalog-image {
+		padding-top: 3px;
+		width: 250px;
+		height: 250px;
+		margin: 0 auto;
+		margin-bottom: 3px;
+	}
+	.haircatalog-footer {
+		width: 250px;
+		margin: 0 auto;
+		text-align: right;
+		span {
+			margin-right: 5px;
+		}
+	}
+}
+
+// ヘアカタログ詳細ページ //
+.catalog {
+	.catalog-header {
+		width: 400px;
+		margin: 0 auto;
+		span {
+			background-color: #9E97A3;
+			border-radius: 8px;
+			margin-bottom: 3px;
+			padding: 3px;
+			color: #FFFFFF;
+		}
+	}
+	.catalog-image {
+		padding-top: 3px;
+		width: 400px;
+		height: 400px;
+		margin: 0 auto;
+		margin-bottom: 3px;
+	}
+	.catalog-footer {
+		width: 400px;
+		margin: 0 auto;
+		text-align: right;
+		span {
+			margin-right: 5px;
+		}
+	}
+	.treatment-contents {
+		width: 400px;
+		margin: 0 auto;
+		padding: 20px 10px;
+		.explan {
+			font-weight: bold;
+		}
+		.explan-text {
+			padding: 5px;
+		}
+	}
+}
+
+.catalog-btn {
+	margin: 0 auto;
+	padding: 10px;
+	text-align: center;
+	.btn {
+		padding: 10px 30px;
+		background-color: rgba(252, 224, 222, 1);
+		border-radius: 8px;
+		border-style: none;
+		color: #FFFFFF;
+		font-weight: bold;
+		font-size: 20px;
+		margin: 0 10px;
+	}
 }
