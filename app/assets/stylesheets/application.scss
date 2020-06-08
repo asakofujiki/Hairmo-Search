@@ -205,31 +205,36 @@ footer p {
 }
 
 // 美容師一覧ページ //
+.search {
+	height: 150px;
+	background-color: pink;
+}
+
 .index-box {
-	width: 620px;
+	width: 600px;
 	display: inline-block;
 	background-color: rgba(252, 224, 222, 0.3);
 	border: 3px solid rgb(252, 224, 222);
 	border-radius: 30px;
-	padding: 20px;
-	margin: 0 30px 30px 30px;
+	padding: 10px 20px;
+	margin: 15px 0 15px 50px;
 	float: left;
 	list-style-type: none;
 	.image-box {
-		width: 100px;
-		height: 100px;
+		width: 150px;
+		height: 150px;
+		margin: 50px 20px 0 0;
 		border-radius: 50%;
 		float: left;
-		position: relative;
-		top: 50%;
 	}
 	.profile-box {
 		display: inline-block;
+		font-size: 16px;
 		.profile-list {
 		margin-left: 30px;
 		list-style-type: none;
 			.profile-item {
-				padding-right: 10px;
+				padding-right: 25px;
 			}
 		}
 		.collect {
@@ -237,13 +242,20 @@ footer p {
 			margin-top: 5px;
 			margin-left: 30px;
 			list-style-type: none;
+			font-size: 14px;
 			.type {
 				margin-left: 5px;
+				width: 45px;
+				text-align: center;
+				border-radius: 8px;
+				margin-left: 5px;
+				background-color: #EB9996;
+				color: #FFFFFF;
 			}
 			li {
 				float: left;
 				list-style-type: none;
-				margin-left: 10px;
+				margin-left: 15px;
 			}
 		}
 	}
