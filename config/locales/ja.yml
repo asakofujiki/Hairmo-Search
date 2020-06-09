@@ -1,5 +1,36 @@
 ja:
   enums:
+    hairdresser:
+      hairdresser_gender:
+        woman: 女性
+        man: 男性
+      area:
+        shibuya: 渋谷
+        omotesandou: 表参道
+        aoyama: 青山
+        harajyuku: 原宿
+        ginza: 銀座
+        other: その他
+    cut:
+      cut_type_id:
+        short: ショート
+        bob: ボブ
+        medium: ミディアム
+        long: ロング
+    color:
+      color_type_id:
+        fashion: おしゃれ染め
+        black: 黒染め
+        bleach: ブリーチ
+        gray: グレーカラー
+    perm:
+      perm_type_id:
+        curl: カール
+        straight: 縮毛矯正
+    set_hair:
+      set_type_id:
+        japanese: 和装
+        western: 洋装
     model:
       hairmodel_gender:
         woman: 女性

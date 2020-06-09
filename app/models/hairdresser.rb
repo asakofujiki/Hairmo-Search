@@ -5,11 +5,11 @@ class Hairdresser < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   validates :hairdresser_name, presence: true
-  enum hairdresser_gender: {女性: 0, 男性: 1}
+  enum hairdresser_gender: {woman: 0, man: 1}
   validates :postal_code, format: {with: /\A[0-9]{7}\z/}
   validates :salon_name, presence: true
   validates :salon_address, presence: true
-  enum area: {渋谷: 0, 表参道: 1, 青山: 2, 原宿: 3, 銀座: 4, その他: 5}
+  enum area: {shibuya: 0, omotesandou: 1, aoyama: 2, harajyuku: 3, ginza: 4, other: 5}
   validates :hairdresser_comment, length: {maximum: 200}
   attachment :hairdresser_image
 

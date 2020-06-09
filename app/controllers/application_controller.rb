@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
 		if model_signed_in?
 			hairdressers_path
 		else hairdresser_signed_in?
-			root_path
+			models_path
 		end
 	end
 
@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
 		if model_signed_in?
 			hairdressers_path
 		else hairdresser_signed_in?
-			root_path
+			models_path
 		end
 	end
 

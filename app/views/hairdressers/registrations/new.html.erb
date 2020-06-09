@@ -24,7 +24,7 @@
 
             <div class="sign-up-field">
               <%= f.label :性別 %><br />
-              <%= f.select :hairdresser_gender,[["女性","女性"],["男性","男性"]], autofocus: true, autocomplete: "hairdresser_gender", class: "sign-up-select" %>
+              <%= f.select :hairdresser_gender, Hairdresser.hairdresser_genders.keys.map {|k| [I18n.t("enums.hairdresser.hairdresser_gender.#{k}"), k]}, autofocus: true, autocomplete: "hairdresser_gender", class: "sign-up-select" %>
             </div>
 
             <div class="sign-up-field">
@@ -44,7 +44,7 @@
 
             <div class="sign-up-field">
               <%= f.label :サロンエリア %><br />
-              <%= f.select :area,[["渋谷","渋谷"],["表参道","表参道"],["青山","青山"],["原宿","原宿"],["銀座","銀座"],["その他","その他"]], autofocus: true, autocomplete: "area", class: "sign-up-select" %>
+              <%= f.select :area, Hairdresser.areas.keys.map {|k| [I18n.t("enums.hairdresser.area.#{k}"), k]}, autofocus: true, autocomplete: "area", class: "sign-up-select" %>
             </div>
 
             <div class="sign-up-field">

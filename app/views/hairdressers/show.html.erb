@@ -22,7 +22,7 @@
 						</tr>
 						<tr>
 							<td class="pro-item">性別</td>
-							<td><%= @hairdresser.hairdresser_gender %></td>
+							<td><%= @hairdresser.hairdresser_gender_i18n %></td>
 						</tr>
 						<tr>
 							<td class="pro-item">サロン</td>
@@ -49,7 +49,7 @@
 						<% else %>
 						<p class="type">Cut</p>
 						<% @cut.each do |cut| %>
-							<li><%= cut.cut_type_id %></li>
+							<li><%= cut.cut_type_id_i18n %></li>
 						<% end %>
 						<% end %>
 						</ul>
@@ -60,7 +60,7 @@
 						<% else %>
 						<p class="type">Color</p>
 						<% @color.each do |color| %>
-							<li><%= color.color_type_id %></li>
+							<li><%= color.color_type_id_i18n %></li>
 						<% end %>
 						<% end %>
 						</ul>
@@ -71,7 +71,7 @@
 						<% else %>
 						<p class="type">Perm</p>
 						<% @perm.each do |perm| %>
-							<li><%= perm.perm_type_id %></li>
+							<li><%= perm.perm_type_id_i18n %></li>
 						<% end %>
 						<% end %>
 						</ul>
@@ -82,7 +82,7 @@
 						<% else %>
 						<p class="type">Set</p>
 						<% @set.each do |set| %>
-							<li><%= set.set_type_id %></li>
+							<li><%= set.set_type_id_i18n %></li>
 						<% end %>
 						<% end %>
 						</ul>

@@ -18,7 +18,7 @@
           </tr>
           <tr>
             <td class="profile-item">性別</td>
-            <td><%= hairdresser.hairdresser_gender %></td>
+            <td><%= hairdresser.hairdresser_gender_i18n %></td>
           </tr>
           <tr>
             <td class="profile-item">サロン</td>
@@ -26,7 +26,7 @@
           </tr>
           <tr>
             <td class="profile-item">エリア</td>
-            <td><%= hairdresser.area %></td>
+            <td><%= hairdresser.area_i18n %></td>
           </tr>
         </table>
         <div class="collect">
@@ -38,7 +38,7 @@
           <% else %>
           <p class="type">Cut</p>
           <% hairdresser.cuts.each do |cut| %>
-            <li><%= cut.cut_type_id %></li>
+            <li><%= cut.cut_type_id_i18n %></li>
           <% end %>
           <% end %>
           </ul>
@@ -49,7 +49,7 @@
           <% else %>
           <p class="type">Color</p>
           <% hairdresser.colors.each do |color| %>
-            <li><%= color.color_type_id %></li>
+            <li><%= color.color_type_id_i18n %></li>
           <% end %>
           <% end %>
           </ul>
@@ -60,7 +60,7 @@
           <% else %>
           <p class="type">perm</p>
           <% hairdresser.perms.each do |perm| %>
-            <li><%= perm.perm_type_id %></li>
+            <li><%= perm.perm_type_id_i18n %></li>
           <% end %>
           <% end %>
           </ul>
@@ -71,7 +71,7 @@
           <% else %>
           <p class="type">Set</p>
           <% hairdresser.set_hairs.each do |set| %>
-            <li><%= set.set_type_id %></li>
+            <li><%= set.set_type_id_i18n %></li>
           <% end %>
           <% end %>
           </ul>
