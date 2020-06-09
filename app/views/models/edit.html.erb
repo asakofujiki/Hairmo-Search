@@ -1,0 +1,67 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-offset-2 col-md-8">
+      <div class="shadow">
+        <div class="sign-up-title">
+          <h3>プロフィール編集</h3>
+        </div>
+        <div class="sign-up-box">
+
+          <%= form_for(@model) do |f| %>
+
+            <div class="sign-up-image" onclick="$('#model_model_image').click()">
+              <div class="image-field">
+                <%= attachment_image_tag @model, :hairmodel_image, class: "img-prev", :size => '150x150', fallback:"no images.png" %>
+                <%= f.attachment_field :hairmodel_image, autofocus: true, autocomplete: "hairmodel_image" %>
+              </div>
+            </div>
+
+            <div class="sign-up-field">
+              <%= f.label :名前 %><br />
+              <%= f.text_field :hairmodel_name, autofocus: true, autocomplete: "hairmodel_name", class: "field" %>
+            </div>
+
+            <div class="sign-up-field">
+              <%= f.label :性別 %><br />
+              <%= f.select :hairmodel_gender, Model.hairmodel_genders.keys.map {|k| [I18n.t("enums.model.hairmodel_gender.#{k}"), k]}, autofocus: true, autocomplete: "hairmodel_gender", class: "sign-up-select" %>
+            </div>
+
+            <div class="sign-up-field">
+              <%= f.label :年代 %><br />
+              <%= f.select :age, Model.ages.keys.map {|k| [I18n.t("enums.model.age.#{k}"), k]}, autofocus: true, autocomplete: "age", class: "sign-up-select" %>
+            </div>
+
+            <div class="sign-up-field">
+              <%= f.label :髪の長さ %><br />
+              <%= f.select :hair_length, Model.hair_lengths.keys.map {|k| [I18n.t("enums.model.hair_length.#{k}"), k]}, autofocus: true, autocomplete: "hair_length", class: "sign-up-select" %>
+            </div>
+
+            <div class="sign-up-field">
+              <%= f.label :黒染め履歴 %><br />
+              <%= f.select :black_history, Model.black_histories.keys.map {|k| [I18n.t("enums.model.black_history.#{k}"), k]}, autofocus: true, autocomplete: "black_history", class: "sign-up-select" %>
+            </div>
+
+            <div class="sign-up-field">
+              <%= f.label :ブリーチ履歴 %><br />
+              <%= f.select :bleach_history, Model.bleach_histories.keys.map {|k| [I18n.t("enums.model.bleach_history.#{k}"), k]}, autofocus: true, autocomplete: "bleach_history", class: "sign-up-select" %>
+            </div>
+
+            <div class="sign-up-field">
+              <%= f.label :縮毛矯正 %><br />
+              <%= f.select :straight_history, Model.straight_histories.keys.map {|k| [I18n.t("enums.model.straight_history.#{k}"), k]}, autofocus: true, autocomplete: "straight_history", class: "sign-up-select" %>
+            </div>
+            <div class="sign-up-field">
+              <%= f.label :ひとこと %><br />
+              <%= f.text_area :hairmodel_comment, placeholder: "200字以内でお願いします", autofocus: true, autocomplete: "hairmodel_comment", class: "comment" %>
+            </div>
+          <div class="sign-up-btn">
+            <div class="actions">
+              <%= f.submit "変更を保存", class: "action-btn"%>
+            </div>
+          </div>
+          <% end %>
+         </div>
+      </div>
+    </div>
+  </div>
+</div>

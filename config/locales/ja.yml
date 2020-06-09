@@ -1,0 +1,32 @@
+ja:
+  enums:
+    model:
+      hairmodel_gender:
+        woman: 女性
+        man: 男性
+      age:
+        teenage: 10代
+        twenties: 20代
+        thirties: 30代
+        forties: 40代
+        over_fifty: 50代以上
+      hair_length:
+        short: ショート
+        bob: ボブ
+        medium: ミディアム
+        long: ロング
+      black_history:
+        nothing: なし
+        three_minths: 3ヶ月以内にあり
+        six_months: 半年以内にあり
+        one_year: 1年以上前にあり
+      bleach_history:
+        nothing: なし
+        three_minths: 3ヶ月以内にあり
+        six_months: 半年以内にあり
+        one_year: 1年以上前にあり
+      straight_history:
+        nothing: なし
+        three_minths: 3ヶ月以内にあり
+        six_months: 半年以内にあり
+        one_year: 1年以上前にあり

@@ -1,0 +1,60 @@
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-offset-3 col-md-3">
+			<div class="img-box">
+					<div class="img"><%= attachment_image_tag(@model, :hairmodel_image, fallback: 'no images.png', size: '200x200', class: "img") %></div>
+					<% if @model == current_model %>
+					<%= link_to edit_model_path(@model), data: {"turbolinks" => false} do %>
+					<div class="pro-btn">
+						<p>プロフィール編集</p>
+					</div>
+					<% else %>
+					<% end %>
+					<% end %>
+			</div>
+		</div>
+		<div class="col-md-5">
+			<div class="pro-box">
+				<table class="pro-list">
+						<tr class="list">
+							<td class="pro-item">名前</td>
+							<td><%= @model.hairmodel_name %></td>
+						</tr>
+						<tr>
+							<td class="pro-item">性別</td>
+							<td><%= @model.hairmodel_gender_i18n %></td>
+						</tr>
+						<tr>
+							<td class="pro-item">年代</td>
+							<td><%= @model.age_i18n %></td>
+						</tr>
+						<tr>
+							<td class="pro-item">髪の長さ</td>
+							<td><%= @model.hair_length_i18n %></td>
+						</tr>
+						<tr>
+							<td class="pro-item">黒染め履歴</td>
+							<td><%= @model.black_history_i18n %></td>
+						</tr>
+						<tr>
+							<td class="pro-item">ブリーチ履歴</td>
+							<td><%= @model.bleach_history_i18n %></td>
+						</tr>
+						<tr>
+							<td class="pro-item">縮毛矯正履歴</td>
+							<td><%= @model.straight_history_i18n %></td>
+						</tr>
+					</table>
+					<div class="comment-box">
+						<p><strong>ひとこと</strong></p>
+						<p class="comment"><%= @model.hairmodel_comment %></p>
+					</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-offset-2 col-md-8">
+			<div class="mymanu"></div>
+		</div>
+	</div>
+</div>

@@ -207,7 +207,8 @@ footer p {
 // 美容師一覧ページ //
 .search {
 	height: 150px;
-	background-color: pink;
+	margin-bottom: 20px;
+	background-color: rgb(252, 224, 222);
 }
 
 .index-box {
@@ -457,3 +458,62 @@ footer p {
 		margin: 0 10px;
 	}
 }
+
+// ヘアモ一覧ページ //
+.model_search {
+	height: 150px;
+	margin-bottom: 20px;
+	background-color: rgb(211, 204, 222);
+}
+
+.model_index-box {
+	width: 500px;
+	display: inline-block;
+	background-color: rgba(211, 204, 222, 0.3);
+	border: 3px solid rgb(211, 204, 222);
+	border-radius: 30px;
+	padding: 10px 20px;
+	margin: 15px 0 15px 90px;
+	float: left;
+	list-style-type: none;
+	.image-box {
+		width: 150px;
+		height: 150px;
+		margin: 5px 20px 0 0;
+		border-radius: 50%;
+		float: left;
+	}
+	.profile-box {
+		display: inline-block;
+		font-size: 16px;
+		.profile-list {
+		margin-left: 30px;
+		list-style-type: none;
+			.profile-item {
+				padding-right: 25px;
+			}
+		}
+		.collect {
+			display: inline-block;
+			margin-top: 5px;
+			margin-left: 30px;
+			list-style-type: none;
+			font-size: 14px;
+			.type {
+				margin-left: 5px;
+				width: 45px;
+				text-align: center;
+				border-radius: 8px;
+				margin-left: 5px;
+				background-color: #EB9996;
+				color: #FFFFFF;
+			}
+			li {
+				float: left;
+				list-style-type: none;
+				margin-left: 15px;
+			}
+		}
+	}
+}
+

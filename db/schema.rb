@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_08_060153) do
+ActiveRecord::Schema.define(version: 2020_06_09_114034) do
 
   create_table "catalog_tags", force: :cascade do |t|
     t.integer "hair_catalog_id"
@@ -71,6 +71,27 @@ ActiveRecord::Schema.define(version: 2020_06_08_060153) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_hairdressers_on_email", unique: true
     t.index ["reset_password_token"], name: "index_hairdressers_on_reset_password_token", unique: true
+  end
+
+  create_table "models", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.string "hairmodel_name"
+    t.string "hairmodel_image_id"
+    t.integer "hairmodel_gender"
+    t.integer "age"
+    t.integer "hair_length"
+    t.integer "black_history"
+    t.integer "bleach_history"
+    t.integer "straight_history"
+    t.text "hairmodel_comment"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_models_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_models_on_reset_password_token", unique: true
   end
 
   create_table "perm_types", force: :cascade do |t|
