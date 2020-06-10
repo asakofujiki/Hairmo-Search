@@ -111,7 +111,11 @@
 				</div>
 				<div class="haircatalog-footer">
 					<span><%= haircatalog.created_at.strftime('%Y/%m/%d') %></span>
-					<span>♡1</span>
+					<% if model_signed_in? %>
+					<span id="favorite_<%= haircatalog.id %>">
+						<%= render partial: 'favorites/favorite', locals: {haircatalog: haircatalog} %>
+					</span>
+					<% end %>
 				</div>
 			</div>
 		</div>

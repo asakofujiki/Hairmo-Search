@@ -5,6 +5,7 @@ class ModelsController < ApplicationController
 
   def show
   	@model = Model.find(params[:id])
+    # @haircatalogs = @model.favorites.hair_catalog
   end
 
   def edit

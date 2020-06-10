@@ -6,4 +6,9 @@ class HairCatalog < ApplicationRecord
 	has_many :catalog_tags, dependent: :destroy
 	has_many :tags, :through => :catalog_tags
 	belongs_to :hairdresser
+
+	has_many :favorites, dependent: :destroy
+	def favorited_by?(model)
+		favorites.where(model_id: model.id).exists?
+	end
 end

@@ -1,0 +1,15 @@
+<% if haircatalog.favorited_by?(current_model) %>
+	<span>
+		<%= link_to hair_catalog_favorites_path(haircatalog), method: :delete, remote: true do %>
+		<i class="glyphicon glyphicon-heart-empty" aria-hidden="true" style="color: red;"></i>
+		<% end %>
+		<%= haircatalog.favorites.count %>
+	</span>
+<% else %>
+	<span>
+		<%= link_to hair_catalog_favorites_path(haircatalog), method: :post, remote: true do %>
+		<i class="glyphicon glyphicon-heart-empty" aria-hidden="true"></i>
+		<% end %>
+		<%= haircatalog.favorites.count %>
+	</span>
+<% end %>
