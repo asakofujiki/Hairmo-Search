@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_09_114034) do
+ActiveRecord::Schema.define(version: 2020_06_10_035058) do
 
   create_table "catalog_tags", force: :cascade do |t|
     t.integer "hair_catalog_id"
@@ -41,6 +41,13 @@ ActiveRecord::Schema.define(version: 2020_06_09_114034) do
   create_table "cuts", force: :cascade do |t|
     t.integer "hairdresser_id"
     t.integer "cut_type_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "favorites", force: :cascade do |t|
+    t.integer "model_id"
+    t.integer "hair_catalog_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

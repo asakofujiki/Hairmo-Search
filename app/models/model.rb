@@ -13,4 +13,6 @@ class Model < ApplicationRecord
   enum bleach_history: {nothing: 0, three_minths: 1, six_months: 2, one_year: 3}, _suffix: true
   enum straight_history: {nothing: 0, three_minths: 1, six_months: 2, one_year: 3}, _suffix: true
   validates :hairmodel_comment, length: {maximum: 200}
+
+  has_many :favorites, dependent: :destroy
 end

@@ -13,17 +13,38 @@
 				</div>
 				<div class="catalog-footer">
 					<span><%= @haircatalog.created_at.strftime('%Y/%m/%d') %></span>
-					<span>♡1</span>
+					<span id="favorite_<%= @haircatalog.id %>">
+						<%= render partial: 'favorites/favorite', locals: {haircatalog: @haircatalog} %>
+					</span>
+					<!-- 
+					<% if @haircatalog.favorited_by?(current_model) %>
+					<span>
+						<%= link_to hair_catalog_favorites_path(@haircatalog), method: :delete, remote: true do %>
+						<i class="glyphicon glyphicon-heart-empty" aria-hidden="true" style="color: red;"></i>
+						<% end %>
+						<%= @haircatalog.favorites.count %>
+					</span>
+					<% else %>
+					<span>
+						<%= link_to hair_catalog_favorites_path(@haircatalog), method: :post, remote: true do %>
+						<i class="glyphicon glyphicon-heart-empty" aria-hidden="true"></i>
+						<% end %>
+						<%= @haircatalog.favorites.count %>
+					</span>
+					<% end %>
+					 -->
 				</div>
 				<div class="treatment-contents">
 					<div class="explan">＜施術内容＞</div>
 					<div class="explan-text"><%= @haircatalog.treatment_contents %></div>
 				</div>
-				<% if @haircatalog.hairdresser_id == current_hairdresser.id %>
-				<div class="catalog-btn">
-					<%= link_to "編集", edit_hair_catalog_path, class: "btn" %>
-					<%= link_to "削除", hair_catalog_path(@haircatalog), method: :delete, data: {confirm: "本当に削除してもよろしいですか？"}, class: "btn" %>
-				</div>
+				<% if hairdresser_signed_in? %>
+					<% if @haircatalog.hairdresser_id == current_hairdresser.id %>
+					<div class="catalog-btn">
+						<%= link_to "編集", edit_hair_catalog_path, class: "btn" %>
+						<%= link_to "削除", hair_catalog_path(@haircatalog), method: :delete, data: {confirm: "本当に削除してもよろしいですか？"}, class: "btn" %>
+					</div>
+					<% end %>
 				<% end %>
 			</div>
 			</div>
