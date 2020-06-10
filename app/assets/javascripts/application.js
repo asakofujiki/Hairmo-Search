@@ -10,14 +10,15 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require jquery
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
-//= require jquery
 //= require bootstrap-sprockets
 //= require_tree .
 
 $(document).on('turbolinks:load', function() {
+
   function readURL(input) {
     if (input.files && input.files[0]) {
       var reader = new FileReader();
@@ -30,10 +31,8 @@ $(document).on('turbolinks:load', function() {
   $("#hairdresser_hairdresser_image").change(function(){
     readURL(this);
   });
-});
 
 
-$(document).on('turbolinks:load', function() {
   function readURL(input) {
     if (input.files && input.files[0]) {
       var reader = new FileReader();
@@ -46,10 +45,8 @@ $(document).on('turbolinks:load', function() {
   $("#hair_catalog_catalog_image").change(function(){
     readURL(this);
   });
-});
 
 
-$(document).on('turbolinks:load', function() {
   function readURL(input) {
     if (input.files && input.files[0]) {
       var reader = new FileReader();
@@ -62,4 +59,21 @@ $(document).on('turbolinks:load', function() {
   $("#model_hairmodel_image").change(function(){
     readURL(this);
   });
+
+
+  $('#tab-contents .tab[id != "tab1"]').hide();
+
+  $('#tab-menu a').on('click', function() {
+    $("#tab-contents .tab").hide();
+    $("#tab-menu .active").removeClass("active");
+    $(this).addClass("active");
+    $($(this).attr("href")).show();
+    return false;
+  });
+
+
 });
+
+
+
+

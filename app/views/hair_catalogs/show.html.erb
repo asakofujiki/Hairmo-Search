@@ -13,26 +13,11 @@
 				</div>
 				<div class="catalog-footer">
 					<span><%= @haircatalog.created_at.strftime('%Y/%m/%d') %></span>
+					<% if model_signed_in? %>
 					<span id="favorite_<%= @haircatalog.id %>">
 						<%= render partial: 'favorites/favorite', locals: {haircatalog: @haircatalog} %>
 					</span>
-					<!-- 
-					<% if @haircatalog.favorited_by?(current_model) %>
-					<span>
-						<%= link_to hair_catalog_favorites_path(@haircatalog), method: :delete, remote: true do %>
-						<i class="glyphicon glyphicon-heart-empty" aria-hidden="true" style="color: red;"></i>
-						<% end %>
-						<%= @haircatalog.favorites.count %>
-					</span>
-					<% else %>
-					<span>
-						<%= link_to hair_catalog_favorites_path(@haircatalog), method: :post, remote: true do %>
-						<i class="glyphicon glyphicon-heart-empty" aria-hidden="true"></i>
-						<% end %>
-						<%= @haircatalog.favorites.count %>
-					</span>
 					<% end %>
-					 -->
 				</div>
 				<div class="treatment-contents">
 					<div class="explan">＜施術内容＞</div>

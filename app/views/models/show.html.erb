@@ -52,9 +52,36 @@
 			</div>
 		</div>
 	</div>
+	<% if @model = current_model %>
 	<div class="row">
-		<div class="col-md-offset-2 col-md-8">
-			<div class="mymanu"></div>
+		<div class="col-md-12">
+			<div class="tab-box">
+				<ul id="tab-menu" class="clearfix">
+			        <li><a href="#tab1" class="active">フォロー</a></li>
+			        <li><a href="#tab2" class="">フォロワー</a></li>
+			        <li><a href="#tab3" class="">いいね</a></li>
+			        <li><a href="#tab4" class="">メッセージ</a></li>
+			    </ul>
+
+				<div id="tab-contents" class="clearfix">
+				    <div id="tab1" class="tab">
+				      <p>自分がフォローしている美容師</p>
+				    </div>
+
+				    <div id="tab2" class="tab">
+				      <p>自分をフォローしている美容師</p>
+				    </div>
+
+				    <div id="tab3" class="tab">
+				      <%= render partial: 'models/favorite', locals: {haircatalogs: @haircatalogs} %>
+				    </div>
+
+				    <div id="tab4" class="tab">
+				      <p>美容師とのDM</p>
+				    </div>
+				</div>
+			</div>
 		</div>
 	</div>
+	<% end %>
 </div>
