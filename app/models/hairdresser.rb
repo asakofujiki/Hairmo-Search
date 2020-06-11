@@ -26,4 +26,11 @@ class Hairdresser < ApplicationRecord
   has_many :set_types, :through => :set_hairs
 
   has_many :hair_catalogs, dependent: :destroy
+
+  has_many :hairdresser_follows
+  has_many :model_follows
+
+  def followed_by?(model)
+    hairdresser_follows.find_by(model_id: model.id).present?
+  end
 end

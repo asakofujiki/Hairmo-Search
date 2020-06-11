@@ -4,12 +4,27 @@
 			<div class="img-box">
 					<div class="img"><%= attachment_image_tag(@hairdresser, :hairdresser_image, fallback: 'no images.png', size: '200x200', class: "img") %></div>
 					<% if @hairdresser == current_hairdresser %>
-					<%= link_to edit_hairdresser_path(@hairdresser), data: {"turbolinks" => false} do %>
-					<div class="pro-btn">
-						<p>プロフィール編集</p>
-					</div>
+						<%= link_to edit_hairdresser_path(@hairdresser), data: {"turbolinks" => false} do %>
+							<div class="pro-btn">
+								<p>プロフィール編集</p>
+							</div>
+						<% end %>
 					<% else %>
-					<% end %>
+						<% if model_signed_in? %>
+							<% if current_model.followed_by?(@hairdresser) %>
+								<%= link_to hairdresser_relationships_path(@hairdresser), method: :delete do %>
+									<div class="pro-btn">
+										<p>Unfollow</p>
+									</div>
+								<% end %>
+							<% else %>
+								<%= link_to hairdresser_relationships_path(@hairdresser), method: :post do %>
+									<div class="pro-btn">
+										<p>Follow</p>
+									</div>
+								<% end %>
+							<% end %>
+						<% end %>
 					<% end %>
 			</div>
 		</div>
@@ -89,36 +104,62 @@
 			</div>
 		</div>
 	</div>
-	<div class="row">
-		<div class="col-md-offset-2 col-md-8">
-			<div class="mymanu"></div>
-		</div>
-	</div>
+	<% if @hairdresser = current_hairdresser %>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="tab-box">
+					<ul id="tab-menu" class="clearfix">
+				        <li><a href="#tab1" class="active">ヘアカタ</a></li>
+				        <li><a href="#tab2" class="">フォロー</a></li>
+				        <li><a href="#tab3" class="">フォロワー</a></li>
+				        <li><a href="#tab4" class="">メッセージ</a></li>
+				    </ul>
+					<div id="tab-contents" class="clearfix">
+					    <div id="tab1" class="tab">
+					      <%= render partial: 'hairdressers/haircatalogs' %>
+					    </div>
 
-	<div class="row">
-		<% @haircatalogs.each do |haircatalog| %>
-		<div class="col-md-3">
-			<div class="haircatalog">
-				<div class="haircatalog-header">
-					<% haircatalog.catalog_tags.each do |tag| %>
-					<span><%= tag.tag_id %></span>
-					<% end %>
-				</div>
-				<div class="haircatalog-image">
-					<%= link_to hair_catalog_path(haircatalog.id) do %>
-					<%= attachment_image_tag(haircatalog, :catalog_image, size: '250x250') %>
-					<% end %>
-				</div>
-				<div class="haircatalog-footer">
-					<span><%= haircatalog.created_at.strftime('%Y/%m/%d') %></span>
-					<% if model_signed_in? %>
-					<span id="favorite_<%= haircatalog.id %>">
-						<%= render partial: 'favorites/favorite', locals: {haircatalog: haircatalog} %>
-					</span>
-					<% end %>
+					    <div id="tab2" class="tab">
+					      <%= render partial: 'hairdressers/follows' %>
+					    </div>
+
+					    <div id="tab3" class="tab">
+					      <%= render partial: 'hairdressers/followers' %>
+					    </div>
+
+					    <div id="tab4" class="tab">
+					      <%= render partial: 'hairdressers/messages' %>
+					    </div>
+					</div>
 				</div>
 			</div>
 		</div>
-		<% end %>
-	</div>
+	<% else %>
+		<div class="row">
+			<% @haircatalogs.each do |haircatalog| %>
+				<div class="col-md-3">
+					<div class="haircatalog">
+						<div class="haircatalog-header">
+							<% haircatalog.catalog_tags.each do |tag| %>
+							<span><%= tag.tag_id %></span>
+							<% end %>
+						</div>
+						<div class="haircatalog-image">
+							<%= link_to hair_catalog_path(haircatalog.id) do %>
+							<%= attachment_image_tag(haircatalog, :catalog_image, size: '250x250') %>
+							<% end %>
+						</div>
+						<div class="haircatalog-footer">
+							<span><%= haircatalog.created_at.strftime('%Y/%m/%d') %></span>
+							<% if model_signed_in? %>
+							<span id="favorite_<%= haircatalog.id %>">
+								<%= render partial: 'favorites/favorite', locals: {haircatalog: haircatalog} %>
+							</span>
+							<% end %>
+						</div>
+					</div>
+				</div>
+			<% end %>
+		</div>
+	<% end %>
 </div>

@@ -4,9 +4,6 @@ class HairdressersController < ApplicationController
   end
 
   def show
-    logger.debug 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'
-    logger.debug current_model.inspect
-    logger.debug 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb'
     @hairdresser = Hairdresser.find(params[:id])
     @cut = @hairdresser.cuts
     @color = @hairdresser.colors
