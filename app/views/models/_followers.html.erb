@@ -1,0 +1,76 @@
+<% @model.hairdresser_follows.each do |follower| %>
+  <%= link_to hairdresser_path(follower.hairdresser.id) do %>
+    <div class="col-md-6">
+      <div class="index-box clearfix">
+        <span><%= attachment_image_tag(follower.hairdresser, :hairdresser_image, fallback: 'no images.png', size: '150x150', class: "image-box") %></span>
+        <div class="profile-box">
+          <table class="profile-list">
+            <tr>
+              <td class="profile-item">名前</td>
+              <td><%= follower.hairdresser.hairdresser_name %></td>
+            </tr>
+            <tr>
+              <td class="profile-item">性別</td>
+              <td><%= follower.hairdresser.hairdresser_gender_i18n %></td>
+            </tr>
+            <tr>
+              <td class="profile-item">サロン</td>
+              <td><%= follower.hairdresser.salon_name %></td>
+            </tr>
+            <tr>
+              <td class="profile-item">エリア</td>
+              <td><%= follower.hairdresser.area_i18n %></td>
+            </tr>
+          </table>
+          <div class="collect">
+            <p><strong>＜募集モデル＞</strong></p>
+            <ul class="clearfix">
+              <% if follower.hairdresser.cuts.count == 0 %>
+                <p class="type">Cut</p>
+                <li>なし</li>
+              <% else %>
+                <p class="type">Cut</p>
+                  <% follower.hairdresser.cuts.each do |cut| %>
+                    <li><%= cut.cut_type_id_i18n %></li>
+                  <% end %>
+              <% end %>
+            </ul>
+            <ul class="clearfix">
+              <% if follower.hairdresser.colors.count == 0 %>
+                <p class="type">Color</p>
+                <li>なし</li>
+              <% else %>
+                <p class="type">Color</p>
+                  <% follower.hairdresser.colors.each do |color| %>
+                    <li><%= color.color_type_id_i18n %></li>
+                  <% end %>
+              <% end %>
+            </ul>
+            <ul class="clearfix">
+              <% if follower.hairdresser.perms.count == 0 %>
+                <p class="type">Perm</p>
+                <li>なし</li>
+              <% else %>
+                <p class="type">perm</p>
+                  <% follower.hairdresser.perms.each do |perm| %>
+                    <li><%= perm.perm_type_id_i18n %></li>
+                  <% end %>
+              <% end %>
+            </ul>
+            <ul class="clearfix">
+              <% if follower.hairdresser.set_hairs.count == 0 %>
+                <p class="type">Set</p>
+                <li>なし</li>
+              <% else %>
+                  <p class="type">Set</p>
+                  <% follower.hairdresser.set_hairs.each do |set| %>
+                    <li><%= set.set_type_id_i18n %></li>
+                  <% end %>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+<% end %>

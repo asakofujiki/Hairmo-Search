@@ -521,7 +521,7 @@ footer p {
 	}
 }
 
-// ヘアモマイページ //
+// マイページ //
 .tab-box {
 	margin-top: 50px;
 }
@@ -562,8 +562,35 @@ footer p {
   color: #FFFFFF;
 }
 
-
-#tab-contents p{
-  color:#000;
-  line-height: 2.5;
+#tab-menu1 {
+	margin: 0 200px 50px 200px;
+	li {
+	  float: left;
+	  list-style-type: none;
+	  width: 20%;
+	  font-size: 16px;
+	  font-weight: bold;
+	}
+	a {
+	  color: gray;
+	  text-decoration: none;
+	  display: block;
+	  padding: 20px;
+	  text-align: center;
+	  background: #FFFFFF;
+	  border-bottom: none;
+	  border: 1px solid rgba(158, 151, 163, 0.3);
+	  border-radius: 8px;
+	}
+	a:hover {
+  	  border: 1px solid rgba(158, 151, 163, 0.8);
+  	  border-radius: 8px;
+    }
+    .active {
+	  background: rgb(158, 151, 163);
+	  border: 1px solid rgb(158, 151, 163);
+	  border-radius: 8px;
+	  color: #FFFFFF;
+	}
 }
+

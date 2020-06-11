@@ -4,12 +4,27 @@
 			<div class="img-box">
 					<div class="img"><%= attachment_image_tag(@model, :hairmodel_image, fallback: 'no images.png', size: '200x200', class: "img") %></div>
 					<% if @model == current_model %>
-					<%= link_to edit_model_path(@model), data: {"turbolinks" => false} do %>
-					<div class="pro-btn">
-						<p>プロフィール編集</p>
-					</div>
+						<%= link_to edit_model_path(@model), data: {"turbolinks" => false} do %>
+							<div class="pro-btn">
+								<p>プロフィール編集</p>
+							</div>
+						<% end %>
 					<% else %>
-					<% end %>
+						<% if hairdresser_signed_in? %>
+							<% if current_hairdresser.followed_by?(@model) %>
+								<%= link_to model_relationships_path(@model), method: :delete do %>
+									<div class="pro-btn">
+										<p>Unfollow</p>
+									</div>
+								<% end %>
+							<% else %>
+								<%= link_to model_relationships_path(@model), method: :post do %>
+									<div class="pro-btn">
+										<p>Follow</p>
+									</div>
+								<% end %>
+							<% end %>
+						<% end %>
 					<% end %>
 			</div>
 		</div>
@@ -62,22 +77,21 @@
 			        <li><a href="#tab3" class="">いいね</a></li>
 			        <li><a href="#tab4" class="">メッセージ</a></li>
 			    </ul>
-
 				<div id="tab-contents" class="clearfix">
 				    <div id="tab1" class="tab">
-				      <p>自分がフォローしている美容師</p>
+				      <%= render partial: 'models/follows' %>
 				    </div>
 
 				    <div id="tab2" class="tab">
-				      <p>自分をフォローしている美容師</p>
+				      <%= render partial: 'models/followers' %>
 				    </div>
 
 				    <div id="tab3" class="tab">
-				      <%= render partial: 'models/favorite', locals: {haircatalogs: @haircatalogs} %>
+				      <%= render partial: 'models/favorites' %>
 				    </div>
 
 				    <div id="tab4" class="tab">
-				      <p>美容師とのDM</p>
+				      <%= render partial: 'models/messages' %>
 				    </div>
 				</div>
 			</div>

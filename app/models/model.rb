@@ -15,4 +15,11 @@ class Model < ApplicationRecord
   validates :hairmodel_comment, length: {maximum: 200}
 
   has_many :favorites, dependent: :destroy
+
+  has_many :model_follows
+  has_many :hairdresser_follows
+
+  def followed_by?(hairdresser)
+    model_follows.find_by(hairdresser_id: hairdresser.id).present?
+  end
 end
