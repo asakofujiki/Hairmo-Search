@@ -26,6 +26,21 @@
 							<% end %>
 						<% end %>
 					<% end %>
+					<% if model_signed_in? %>
+						<% if @hairdresser.exist_room?(current_model.id) %>
+							<%= link_to room_path(@hairdresser.room_with(current_model.id)) do %>
+								<div class="pro-btn">
+									<p>Message</p>
+								</div>
+							<% end %>
+						<% else %>
+							<%= link_to rooms_path(model_id: @hairdresser.id), method: :post do %>
+								<div class="pro-btn">
+									<p>Message</p>
+								</div>
+							<% end %>
+						<% end %>
+					<% end %>
 			</div>
 		</div>
 		<div class="col-md-5">

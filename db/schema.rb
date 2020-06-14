@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_11_033558) do
+ActiveRecord::Schema.define(version: 2020_06_14_061940) do
 
   create_table "catalog_tags", force: :cascade do |t|
     t.integer "hair_catalog_id"
@@ -67,6 +67,14 @@ ActiveRecord::Schema.define(version: 2020_06_11_033558) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "hairdresser_messages", force: :cascade do |t|
+    t.integer "room_id"
+    t.integer "hairdresser_id"
+    t.text "message"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "hairdressers", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -90,6 +98,14 @@ ActiveRecord::Schema.define(version: 2020_06_11_033558) do
   create_table "model_follows", force: :cascade do |t|
     t.integer "model_id"
     t.integer "hairdresser_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "model_messages", force: :cascade do |t|
+    t.integer "room_id"
+    t.integer "model_id"
+    t.text "message"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -124,6 +140,13 @@ ActiveRecord::Schema.define(version: 2020_06_11_033558) do
   create_table "perms", force: :cascade do |t|
     t.integer "hairdresser_id"
     t.integer "perm_type_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "rooms", force: :cascade do |t|
+    t.integer "hairdresser_id"
+    t.integer "model_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

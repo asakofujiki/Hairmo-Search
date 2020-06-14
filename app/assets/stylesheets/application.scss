@@ -594,3 +594,37 @@ footer p {
 	}
 }
 
+// ルーム詳細ページ //
+.message-box {
+	margin: 20px 0 40px 0;
+}
+
+.message-box {
+	background-color: rgba(211, 204, 222, 1);
+	border-style: 1px solid rgba(211, 204, 222, 1);
+	border-radius: 10px;
+	color: gray;
+	padding: 20px;
+}
+
+.float-right {
+	background-color: rgba(252, 224, 222, 1);
+	border-style: 1px solid rgba(252, 224, 222, 1);
+	border-radius: 10px;
+	color: gray;
+	padding: 20px;
+	margin: 0 0 0 auto;
+	text-align: right;
+}
+.message-form {
+	.text-area {
+		width: 500px;
+		height: 100px;
+	}
+	.message-btn {
+		padding: 5px;
+		background-color: #EB9996;
+		color: #FFFFFF;
+		border-radius: 10px;
+	}
+}
