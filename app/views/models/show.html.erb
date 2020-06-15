@@ -77,7 +77,7 @@
 					</table>
 					<div class="comment-box">
 						<p><strong>ひとこと</strong></p>
-						<p class="comment"><%= @model.hairmodel_comment %></p>
+						<%= simple_format(@model.hairmodel_comment, class: "comment") %>
 					</div>
 			</div>
 		</div>

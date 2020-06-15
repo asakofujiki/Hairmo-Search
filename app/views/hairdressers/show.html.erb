@@ -34,7 +34,7 @@
 								</div>
 							<% end %>
 						<% else %>
-							<%= link_to rooms_path(model_id: @hairdresser.id), method: :post do %>
+							<%= link_to rooms_path(hairdresser_id: @hairdresser.id), method: :post do %>
 								<div class="pro-btn">
 									<p>Message</p>
 								</div>
@@ -65,7 +65,7 @@
 					</table>
 					<div class="comment-box">
 						<p><strong>ひとこと</strong></p>
-						<p class="comment"><%= @hairdresser.hairdresser_comment %></p>
+						<%= simple_format(@hairdresser.hairdresser_comment, class: "comment") %>
 					</div>
 			</div>
 		</div>
