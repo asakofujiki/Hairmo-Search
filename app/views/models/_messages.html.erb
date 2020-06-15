@@ -1,1 +1,12 @@
-<p>美容師とのDM</p
+<div class="col-md-offset-4 col-md-4">
+	<div class="room-index">
+		<% @model.rooms.each do |room| %>
+			<%= link_to room_path(room.id) do %>
+				<ul class="room-box clearfix">
+					<li class="room-image"><%= attachment_image_tag(room.hairdresser, :hairdresser_image, fallback: 'no images.png', size: '80x80', class: "image-box") %></li>
+					<li class="room-name"><%= room.hairdresser.hairdresser_name %></li>
+				</ul>
+			<% end %>
+		<% end %>
+	</div>
+</div>

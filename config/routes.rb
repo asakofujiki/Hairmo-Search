@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
 
+  get 'messages/create'
+  get 'messages/destroy'
+  get 'rooms/index'
+  get 'rooms/show'
+  get 'rooms/create'
   root 'home#top'
   get 'about' => 'home#about'
 
@@ -23,6 +28,10 @@ Rails.application.routes.draw do
     resource :relationships, only: [:create, :destroy]
     get :follows, on: :member
     get :followers, on: :member
+  end
+
+  resources :rooms, only: [:create, :show] do
+    resource :messages, only: [:create]
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -18,8 +18,17 @@ class Model < ApplicationRecord
 
   has_many :model_follows
   has_many :hairdresser_follows
-
   def followed_by?(hairdresser)
     model_follows.find_by(hairdresser_id: hairdresser.id).present?
+  end
+
+  has_many :rooms, dependent: :destroy
+  has_many :model_messages, dependent: :destroy
+  def exist_room?(hairdresser_id)
+    rooms.find_by(hairdresser_id: hairdresser_id, model_id: id).present?
+  end
+
+  def room_with(hairdresser_id)
+    rooms.find_by(hairdresser_id: hairdresser_id, model_id: id)
   end
 end

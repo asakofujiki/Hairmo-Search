@@ -45,7 +45,7 @@ a:visited {
 }
 
 header {
-	border-bottom: 10px solid #EB9996;
+	border-bottom: 10px solid rgba(235, 153, 150, 0.8);
 	background-color: #FFFFFF;
 }
 
@@ -106,13 +106,22 @@ main {
 }
 
 footer {
+	margin-top: 50px;
 	height: 50px;
-	background-color: #EB9996;
+	background-color: rgba(235, 153, 150, 0.5);
 	text-align: center;
 }
 
 footer p {
 	line-height: 50px;
+}
+
+.back {
+	position: fixed;
+	top: 80px;
+	span {
+		color: gray;
+	}
 }
 
 // 美容師新規登録・ログインページ //
@@ -283,7 +292,7 @@ footer p {
 			height: 50px;
 			background-color: rgb(252, 224, 222);
 			border-radius: 20px;
-			margin-top: 30px;
+			margin-top: 15px;
 			p {
 				color: #FFFFFF;
 				font-weight: bold;
@@ -378,6 +387,7 @@ footer p {
 
 // ヘアカタログ一覧 //
 .haircatalog {
+	margin-top: 50px;
 	.haircatalog-header {
 		width: 250px;
 		margin: 0 auto;
@@ -591,6 +601,109 @@ footer p {
 	  border: 1px solid rgb(158, 151, 163);
 	  border-radius: 8px;
 	  color: #FFFFFF;
+	}
+}
+
+// ルーム一覧 //
+.room-box {
+	height: 100px;
+	margin-bottom: 20px;
+	list-style: none;
+	.room-image {
+		line-height: 100px;
+		padding: 0 50px 0 30px;
+		float: left;
+		.image-box {
+			width: 80px;
+			height: 80px;
+			border-radius: 50%;
+		}
+	}
+	.room-name {
+		line-height: 100px;
+		font-size: 16px;
+		padding-right: 50px;
+		float: left;
+	}
+}
+
+.room-box:hover {
+	background-color: rgba(230, 230, 230, 0.5);
+}
+
+// ルーム詳細ページ //
+.DM {
+	height: 500px;
+	margin-bottom: 150px;
+}
+.message-box {
+	margin: 20px 0;
+	.image {
+		float: left;
+		margin-right: 15px;
+		.image-box {
+			width: 50px;
+			height: 50px;
+			border-radius: 50%;
+		}
+	}
+	.message {
+		width: 400px;
+		float: left;
+		margin-top: 10px;
+		.text {
+			display: inline-block;
+			background-color: rgba(211, 204, 222, 1);
+			border-style: 1px solid rgba(211, 204, 222, 1);
+			border-radius: 10px;
+			color: gray;
+			padding: 20px;
+			}
+		}
+		.time {
+			margin-left: 10px;
+			color: gray;
+			font-size: 10px;
+		}
+}
+
+.message-box {
+	margin: 20px 0;
+	.message-right {
+		width: 400px;
+		margin-left: auto;
+		text-align: right;
+		.text {
+			display: inline-block;
+			background-color: rgba(252, 224, 222, 1);
+			border-style: 1px solid rgba(252, 224, 222, 1);
+			border-radius: 10px;
+			color: gray;
+			padding: 20px;
+			text-align: left;
+		}
+	}
+		.time {
+			margin-right: 10px;
+			color: gray;
+			font-size: 10px;
+		}
+}
+
+.message-form {
+	position: fixed;
+	bottom: 50px;
+	z-index: 1;
+	.text-area {
+		width: 400px;
+		height: 100px;
+		border-radius: 8px;
+	}
+	.message-btn {
+		padding: 5px;
+		background-color: #EB9996;
+		color: #FFFFFF;
+		border-radius: 10px;
 	}
 }
 

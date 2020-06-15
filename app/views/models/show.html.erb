@@ -26,6 +26,21 @@
 							<% end %>
 						<% end %>
 					<% end %>
+					<% if hairdresser_signed_in? %>
+						<% if @model.exist_room?(current_hairdresser.id) %>
+							<%= link_to room_path(@model.room_with(current_hairdresser.id)) do %>
+								<div class="pro-btn">
+									<p>Message</p>
+								</div>
+							<% end %>
+						<% else %>
+							<%= link_to rooms_path(model_id: @model.id), method: :post do %>
+								<div class="pro-btn">
+									<p>Message</p>
+								</div>
+							<% end %>
+						<% end %>
+					<% end %>
 			</div>
 		</div>
 		<div class="col-md-5">
@@ -62,7 +77,7 @@
 					</table>
 					<div class="comment-box">
 						<p><strong>ひとこと</strong></p>
-						<p class="comment"><%= @model.hairmodel_comment %></p>
+						<%= simple_format(@model.hairmodel_comment, class: "comment") %>
 					</div>
 			</div>
 		</div>
