@@ -1,14 +1,37 @@
 <div class="container-fluid">
   <div class="row">
-    <div class="col-md-offset-1 col-md-10">
-      <div class="model_search"></div>
+    <div class="col-md-offset-2 col-md-8">
+      <div class="model-search">
+        <%= form_with model: @model, url: models_path, method: :get, local: true do |f| %>
+          <p>ヘアモ検索</p>
+          <div class="select">
+            <%= f.label :性別, class: "content" %>
+            <%= f.select :hairmodel_gender, Model.hairmodel_genders.keys.map {|k| [I18n.t("enums.model.hairmodel_gender.#{k}"), k]}, { include_blank: '選択なし'}, class: "choice" %>
+            <%= f.label :年代, class: "content" %>
+            <%= f.select :age, Model.ages.keys.map {|k| [I18n.t("enums.model.age.#{k}"), k]}, { include_blank: '選択なし'}, class: "choice" %>
+            <%= f.label :髪の長さ, class: "content" %>
+            <%= f.select :hair_length, Model.hair_lengths.keys.map {|k| [I18n.t("enums.model.hair_length.#{k}"), k]}, { include_blank: '選択なし'}, class: "choice" %>
+          </div>
+          <div class="select">
+            <%= f.label :黒染め履歴, class: "content" %>
+            <%= f.select :black_history, Model.black_histories.keys.map {|k| [I18n.t("enums.model.black_history.#{k}"), k]}, { include_blank: '選択なし'}, class: "choice"%>
+            <%= f.label :ブリーチ履歴, class: "content" %>
+            <%= f.select :bleach_history, Model.bleach_histories.keys.map {|k| [I18n.t("enums.model.bleach_history.#{k}"), k]}, { include_blank: '選択なし'}, class: "choice" %>
+            <%= f.label :縮毛矯正履歴, class: "content" %>
+            <%= f.select :straight_history, Model.straight_histories.keys.map {|k| [I18n.t("enums.model.straight_history.#{k}"), k]}, { include_blank: '選択なし'}, class: "choice" %>
+          </div>
+          <div class="search-btn">
+            <%= f.submit "検索", class: "btn" %>
+          </div>
+        <% end %>
+      </div>
     </div>
   </div>
   <div class="row">
     <% @models.each do |model| %>
       <%= link_to model_path(model.id) do %>
         <div class="col-md-6">
-          <div class="model_index-box clearfix">
+          <div class="model-index-box clearfix">
             <span><%= attachment_image_tag(model, :hairmodel_image, fallback: 'no images.png', size: '150x150', class: "image-box") %></span>
             <div class="profile-box">
               <table class="profile-list">

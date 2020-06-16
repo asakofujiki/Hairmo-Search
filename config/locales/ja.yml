@@ -47,17 +47,17 @@ ja:
         medium: ミディアム
         long: ロング
       black_history:
-        nothing: なし
+        nothing: 経験なし
         three_minths: 3ヶ月以内にあり
         six_months: 半年以内にあり
         one_year: 1年以上前にあり
       bleach_history:
-        nothing: なし
+        nothing: 経験なし
         three_minths: 3ヶ月以内にあり
         six_months: 半年以内にあり
         one_year: 1年以上前にあり
       straight_history:
-        nothing: なし
+        nothing: 経験なし
         three_minths: 3ヶ月以内にあり
         six_months: 半年以内にあり
         one_year: 1年以上前にあり

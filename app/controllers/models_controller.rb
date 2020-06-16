@@ -1,6 +1,12 @@
 class ModelsController < ApplicationController
   def index
   	@models = Model.all
+    @models = @models.where(hairmodel_gender: params[:hairmodel_gender]) if params[:hairmodel_gender].present?
+    @models = @models.where(age: params[:age]) if params[:age].present?
+    @models = @models.where(hair_length: params[:hair_length]) if params[:hair_length].present?
+    @models = @models.where(black_history: params[:black_history]) if params[:black_history].present?
+    @models = @models.where(bleach_history: params[:bleach_history]) if params[:bleach_history].present?
+    @models = @models.where(straight_history: params[:straight_history]) if params[:straight_history].present?
   end
 
   def show
