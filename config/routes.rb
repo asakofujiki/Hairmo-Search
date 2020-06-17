@@ -1,10 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'messages/create'
-  get 'messages/destroy'
-  get 'rooms/index'
-  get 'rooms/show'
-  get 'rooms/create'
   root 'home#top'
   get 'about' => 'home#about'
 

@@ -1,3 +1,3 @@
 class SetType < ApplicationRecord
-	has_many :sets, dependent: :destroy
+	has_many :set_hairs, dependent: :destroy
 end
