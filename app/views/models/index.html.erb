@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-md-offset-2 col-md-8">
       <div class="model-search">
-        <%= form_with model: @model, url: models_path, method: :get, local: true do |f| %>
+        <%= form_with url: models_path, method: :get, local: true do |f| %>
           <p>ヘアモ検索</p>
           <div class="select">
             <%= f.label :性別, class: "content" %>
