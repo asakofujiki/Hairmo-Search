@@ -55,11 +55,11 @@
 							<td><%= @hairdresser.hairdresser_gender_i18n %></td>
 						</tr>
 						<tr>
-							<td class="pro-item">サロン</td>
+							<td class="pro-item">美容室</td>
 							<td><%= @hairdresser.salon_name %></td>
 						</tr>
 						<tr>
-							<td class="pro-item"></td>
+							<td class="pro-item">住所</td>
 							<td><%= @hairdresser.salon_address %></td>
 						</tr>
 					</table>
@@ -73,45 +73,45 @@
 			<div class="colle-box">
 				<p><strong>＜募集モデル＞</strong></p>
 						<ul class="type-box clearfix">
-						<% if @cut.count == 0 %>
+						<% if @hairdresser.cuts.count == 0 %>
 						<p class="type">Cut</p>
-						<li>なし</li>
+						<li>現在募集していません</li>
 						<% else %>
 						<p class="type">Cut</p>
-						<% @cut.each do |cut| %>
+						<% @hairdresser.cuts.each do |cut| %>
 							<li><%= cut.cut_type_id_i18n %></li>
 						<% end %>
 						<% end %>
 						</ul>
 						<ul class="type-box clearfix">
-						<% if @color.count == 0 %>
+						<% if @hairdresser.colors.count == 0 %>
 						<p class="type">Color</p>
-						<li>なし</li>
+						<li>現在募集していません</li>
 						<% else %>
 						<p class="type">Color</p>
-						<% @color.each do |color| %>
+						<% @hairdresser.colors.each do |color| %>
 							<li><%= color.color_type_id_i18n %></li>
 						<% end %>
 						<% end %>
 						</ul>
 						<ul class="type-box clearfix">
-						<% if @perm.count == 0 %>
+						<% if @hairdresser.perms.count == 0 %>
 						<p class="type">Perm</p>
-						<li>なし</li>
+						<li>現在募集していません</li>
 						<% else %>
 						<p class="type">Perm</p>
-						<% @perm.each do |perm| %>
+						<% @hairdresser.perms.each do |perm| %>
 							<li><%= perm.perm_type_id_i18n %></li>
 						<% end %>
 						<% end %>
 						</ul>
 						<ul class="type-box clearfix">
-						<% if @set.count == 0 %>
+						<% if @hairdresser.set_hairs.count == 0 %>
 						<p class="type">Set</p>
-						<li>なし</li>
+						<li>現在募集していません</li>
 						<% else %>
 						<p class="type">Set</p>
-						<% @set.each do |set| %>
+						<% @hairdresser.set_hairs.each do |set| %>
 							<li><%= set.set_type_id_i18n %></li>
 						<% end %>
 						<% end %>

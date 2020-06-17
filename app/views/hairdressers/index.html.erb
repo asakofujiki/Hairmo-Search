@@ -1,7 +1,44 @@
 <div class="container-fluid">
   <div class="row">
-    <div class="col-md-offset-1 col-md-10">
-      <div class="search"></div>
+    <div class="col-md-offset-3 col-md-6">
+      <div class="search">
+        <%= form_with url: hairdressers_path, method: :get, local: true do |f| %>
+          <p>美容師検索</p>
+          <div class="select">
+            <%= f.label :性別, class: "content" %>
+            <%= f.select :hairdresser_gender, options_for_select(Hairdresser.hairdresser_genders.keys.map {|k| [I18n.t("enums.hairdresser.hairdresser_gender.#{k}"), k]}, params[:area]), { include_blank: '選択なし'}, class: "choice" %>
+            <%= f.label :サロンエリア, class: "content" %>
+            <%= f.select :area, options_for_select(Hairdresser.areas.keys.map {|k| [I18n.t("enums.hairdresser.area.#{k}"), k]}, params[:area]), { include_blank: '選択なし'}, class: "choice" %>
+          </div>
+          <div class="select">
+            <%= f.label :カット, class: "content" %>
+            <%= f.collection_check_boxes :cut_type_ids, @cut_types, :id, :cut_name, checked: params[:cut_type_ids], include_hidden: false  do |cut| %>
+              <span class="check"><%= cut.label {cut.check_box + cut.text} %></span>
+            <% end %>
+          </div>
+          <div class="select">
+            <%= f.label :カラー, class: "content" %>
+            <%= f.collection_check_boxes :color_type_ids, @color_types, :id, :color_name, checked: params[:color_type_ids], include_hidden: false  do |color| %>
+              <span class="check"><%= color.label {color.check_box + color.text} %></span>
+            <% end %>
+          </div>
+          <div class="select">
+            <%= f.label :パーマ, class: "content" %>
+            <%= f.collection_check_boxes :perm_type_ids, @perm_types, :id, :perm_name, checked: params[:perm_type_ids], include_hidden: false  do |perm| %>
+              <span class="check"><%= perm.label {perm.check_box + perm.text} %></span>
+            <% end %>
+          </div>
+          <div class="select">
+            <%= f.label :セット, class: "content" %>
+            <%= f.collection_check_boxes :set_type_ids, @set_types, :id, :set_name, checked: params[:set_type_ids], include_hidden: false  do |set| %>
+              <span class="check"><%= set.label {set.check_box + set.text} %></span>
+            <% end %>
+          </div>
+          <div class="search-btn">
+            <%= f.submit "検索", class: "btn" %>
+          </div>
+        <% end %>
+      </div>
     </div>
   </div>
   <div class="row">
@@ -34,7 +71,7 @@
           <ul class="clearfix">
           <% if hairdresser.cuts.count == 0 %>
           <p class="type">Cut</p>
-          <li>なし</li>
+          <li>現在募集していません</li>
           <% else %>
           <p class="type">Cut</p>
           <% hairdresser.cuts.each do |cut| %>
@@ -45,7 +82,7 @@
           <ul class="clearfix">
           <% if hairdresser.colors.count == 0 %>
           <p class="type">Color</p>
-          <li>なし</li>
+          <li>現在募集していません</li>
           <% else %>
           <p class="type">Color</p>
           <% hairdresser.colors.each do |color| %>
@@ -56,7 +93,7 @@
           <ul class="clearfix">
           <% if hairdresser.perms.count == 0 %>
           <p class="type">Perm</p>
-          <li>なし</li>
+          <li>現在募集していません</li>
           <% else %>
           <p class="type">perm</p>
           <% hairdresser.perms.each do |perm| %>
@@ -67,7 +104,7 @@
           <ul class="clearfix">
           <% if hairdresser.set_hairs.count == 0 %>
           <p class="type">Set</p>
-          <li>なし</li>
+          <li>現在募集していません</li>
           <% else %>
           <p class="type">Set</p>
           <% hairdresser.set_hairs.each do |set| %>

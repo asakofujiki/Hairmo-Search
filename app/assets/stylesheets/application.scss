@@ -221,7 +221,39 @@ footer p {
 .search {
 	padding: 20px;
 	margin-bottom: 20px;
-	background-color: rgba(252, 224, 222, 0.5);
+	background-color: rgba(252, 224, 222, 0.1);
+	border-radius: 8px;
+	box-shadow: inset 0 0 15px 8px rgba(252, 224, 222, 0.8);
+	p {
+		font-size: 18px;
+		color: #EB9996;
+		font-weight: bold;
+		margin-bottom: 15px;
+	}
+	.select {
+		margin-left: 50px;
+		margin-bottom: 5px;
+		.content {
+		width: 100px;
+		text-align: left;
+		}
+		.choice {
+			width: 100px;
+			margin-right: 20px;
+		}
+		.check {
+			margin-right: 20px;
+		}
+	}
+	.search-btn {
+		text-align: right;
+		.btn {
+			background-color: #EB9996;
+			color: #FFFFFF;
+			font-weight: bold;
+			padding: 5px;
+		}
+	}
 }
 
 .index-box {
@@ -273,6 +305,10 @@ footer p {
 			}
 		}
 	}
+}
+
+.index-box:hover {
+	box-shadow: 0 0 15px 8px rgba(252, 224, 222, 0.8);
 }
 
 // 美容師詳細ページ //
@@ -482,7 +518,7 @@ footer p {
 	box-shadow: inset 0 0 15px 8px rgba(211, 204, 222, 0.8);
 	p {
 		font-size: 18px;
-		color: rgb(211, 204, 222);
+		color: rgb(200, 180, 210);
 		font-weight: bold;
 		margin-bottom: 15px;
 	}
@@ -501,7 +537,7 @@ footer p {
 	.search-btn {
 		text-align: right;
 		.btn {
-			background-color: rgb(211, 204, 222);
+			background-color: rgb(200, 180, 210);
 			color: #FFFFFF;
 			font-weight: bold;
 			padding: 5px;
@@ -558,6 +594,10 @@ footer p {
 			}
 		}
 	}
+}
+
+.model-index-box:hover {
+	box-shadow: 0 0 15px 8px rgba(211, 204, 222, 0.8);
 }
 
 // マイページ //
