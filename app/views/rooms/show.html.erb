@@ -8,50 +8,20 @@
 	</div>
 	<div class="row DM">
 		<div class="col-md-offset-3 col-md-6">
-			<% @room.all_messages(@room).each do |message| %>
-				<% if message.class.name == 'HairdresserMessage' %>
-					<div class="message-box clearfix">
-						<% if message.hairdresser == current_hairdresser %>
-							<div class="message-right">
-								<p class="text"><%= safe_join(message.message.split("\n"), tag(:br)) %></p>
-								<p class="time"><%= message.created_at.strftime('%Y/%m/%d %H:%M') %></p>
-							</div>
-						<% else %>
-							<span class="image"><%= attachment_image_tag(@room.hairdresser, :hairdresser_image, fallback: 'no images.png', size: '50x50', class: "image-box") %></span>
-							<div class="message">
-								<p class="text"><%= safe_join(message.message.split("\n"), tag(:br)) %></p>
-								<p class="time"><%= message.created_at.strftime('%Y/%m/%d %H:%M') %></p>
-							</div>
-						<% end %>
-					</div>
-				<% elsif message.class.name == 'ModelMessage' %>
-					<div class="message-box clearfix">
-						<% if message.model == current_model %>
-							<div class="message-right">
-								<p class="text"><%= safe_join(message.message.split("\n"), tag(:br)) %></p>
-								<p class="time"><%= message.created_at.strftime('%Y/%m/%d %H:%M') %></p>
-							</div>
-						<% else %>
-							<span class="image"><%= attachment_image_tag(@room.model, :hairmodel_image, fallback: 'no images.png', size: '50x50', class: "image-box") %></span>
-							<div class="message">
-								<p class="text"><%= safe_join(message.message.split("\n"), tag(:br)) %></p>
-								<p class="time"><%= message.created_at.strftime('%Y/%m/%d %H:%M') %></p>
-							</div>
-						<% end %>
-					</div>
-				<% end %>
-			<% end %>
+			<span id="message<%= @room.id %>">
+				<%= render partial: 'rooms/message', locals: {room: @room} %>
+			</span>
 		</div>
 	</div>
 	<div class="row">
 		<div class="col-md-offset-4 col-md-4 message-form">
 			<% if hairdresser_signed_in? %>
-				<%= form_with model: @message, url: room_messages_path(@room), local: true do |f| %>
+				<%= form_with model: @message, url: room_messages_path(@room), remote: true do |f| %>
 					<%= f.text_area :message, class: "text-area" %>
 					<%= f.submit "送信", class: "message-btn" %>
 				<% end %>
 			<% elsif model_signed_in? %>
-				<%= form_with model: @message, url: room_messages_path(@room), local: true do |f| %>
+				<%= form_with model: @message, url: room_messages_path(@room), remote: true do |f| %>
 					<%= f.text_area :message, class: "text-area" %>
 					<%= f.submit "送信", class: "message-btn" %>
 				<% end %>
