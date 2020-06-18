@@ -11,19 +11,9 @@
 						<% end %>
 					<% else %>
 						<% if model_signed_in? %>
-							<% if current_model.followed_by?(@hairdresser) %>
-								<%= link_to hairdresser_relationships_path(@hairdresser), method: :delete do %>
-									<div class="pro-btn">
-										<p>Unfollow</p>
-									</div>
-								<% end %>
-							<% else %>
-								<%= link_to hairdresser_relationships_path(@hairdresser), method: :post do %>
-									<div class="pro-btn">
-										<p>Follow</p>
-									</div>
-								<% end %>
-							<% end %>
+							<span id="hairmodel_follow">
+								<%= render partial: 'relationships/hairmodel_follow', locals: {hairdresser: @hairdresser} %>
+							</span>
 						<% end %>
 					<% end %>
 					<% if model_signed_in? %>
@@ -46,76 +36,76 @@
 		<div class="col-md-5">
 			<div class="pro-box">
 				<table class="pro-list">
-						<tr class="list">
-							<td class="pro-item">名前</td>
-							<td><%= @hairdresser.hairdresser_name %></td>
-						</tr>
-						<tr>
-							<td class="pro-item">性別</td>
-							<td><%= @hairdresser.hairdresser_gender_i18n %></td>
-						</tr>
-						<tr>
-							<td class="pro-item">美容室</td>
-							<td><%= @hairdresser.salon_name %></td>
-						</tr>
-						<tr>
-							<td class="pro-item">住所</td>
-							<td><%= @hairdresser.salon_address %></td>
-						</tr>
-					</table>
-					<div class="comment-box">
-						<p><strong>ひとこと</strong></p>
-						<%= simple_format(@hairdresser.hairdresser_comment, class: "comment") %>
-					</div>
+					<tr class="list">
+						<td class="pro-item">名前</td>
+						<td><%= @hairdresser.hairdresser_name %></td>
+					</tr>
+					<tr>
+						<td class="pro-item">性別</td>
+						<td><%= @hairdresser.hairdresser_gender_i18n %></td>
+					</tr>
+					<tr>
+						<td class="pro-item">美容室</td>
+						<td><%= @hairdresser.salon_name %></td>
+					</tr>
+					<tr>
+						<td class="pro-item">住所</td>
+						<td><%= @hairdresser.salon_address %></td>
+					</tr>
+				</table>
+				<div class="comment-box">
+					<p><strong>ひとこと</strong></p>
+					<%= simple_format(@hairdresser.hairdresser_comment, class: "comment") %>
+				</div>
 			</div>
 		</div>
 		<div class="col-md-4">
 			<div class="colle-box">
 				<p><strong>＜募集モデル＞</strong></p>
-						<ul class="type-box clearfix">
-						<% if @hairdresser.cuts.count == 0 %>
+				<ul class="type-box clearfix">
+					<% if @hairdresser.cuts.count == 0 %>
 						<p class="type">Cut</p>
 						<li>現在募集していません</li>
-						<% else %>
+					<% else %>
 						<p class="type">Cut</p>
 						<% @hairdresser.cuts.each do |cut| %>
 							<li><%= cut.cut_type_id_i18n %></li>
 						<% end %>
-						<% end %>
-						</ul>
-						<ul class="type-box clearfix">
-						<% if @hairdresser.colors.count == 0 %>
+					<% end %>
+				</ul>
+				<ul class="type-box clearfix">
+					<% if @hairdresser.colors.count == 0 %>
 						<p class="type">Color</p>
 						<li>現在募集していません</li>
-						<% else %>
+					<% else %>
 						<p class="type">Color</p>
 						<% @hairdresser.colors.each do |color| %>
 							<li><%= color.color_type_id_i18n %></li>
 						<% end %>
-						<% end %>
-						</ul>
-						<ul class="type-box clearfix">
-						<% if @hairdresser.perms.count == 0 %>
+					<% end %>
+				</ul>
+				<ul class="type-box clearfix">
+					<% if @hairdresser.perms.count == 0 %>
 						<p class="type">Perm</p>
 						<li>現在募集していません</li>
-						<% else %>
+					<% else %>
 						<p class="type">Perm</p>
 						<% @hairdresser.perms.each do |perm| %>
 							<li><%= perm.perm_type_id_i18n %></li>
 						<% end %>
-						<% end %>
-						</ul>
-						<ul class="type-box clearfix">
-						<% if @hairdresser.set_hairs.count == 0 %>
+					<% end %>
+				</ul>
+				<ul class="type-box clearfix">
+					<% if @hairdresser.set_hairs.count == 0 %>
 						<p class="type">Set</p>
 						<li>現在募集していません</li>
-						<% else %>
+					<% else %>
 						<p class="type">Set</p>
 						<% @hairdresser.set_hairs.each do |set| %>
 							<li><%= set.set_type_id_i18n %></li>
 						<% end %>
-						<% end %>
-						</ul>
+					<% end %>
+				</ul>
 			</div>
 		</div>
 	</div>
@@ -132,6 +122,11 @@
 					<div id="tab-contents" class="clearfix">
 					    <div id="tab1" class="tab">
 					      <%= render partial: 'hairdressers/haircatalogs' %>
+					      <span class="haircatalog-new">
+					      	<%= link_to new_hair_catalog_path do %>
+					      	 <span class="glyphicon glyphicon-plus btn" aria-hidden="true"></span>
+					      	<% end %>
+					      </span>
 					    </div>
 
 					    <div id="tab2" class="tab">
@@ -156,20 +151,23 @@
 					<div class="haircatalog">
 						<div class="haircatalog-header">
 							<% haircatalog.catalog_tags.each do |tag| %>
-							<span><%= tag.tag_id %></span>
+								<span><%= tag.tag_id %></span>
 							<% end %>
 						</div>
 						<div class="haircatalog-image">
 							<%= link_to hair_catalog_path(haircatalog.id) do %>
-							<%= attachment_image_tag(haircatalog, :catalog_image, size: '250x250') %>
+								<%= attachment_image_tag(haircatalog, :catalog_image, size: '250x250') %>
 							<% end %>
 						</div>
 						<div class="haircatalog-footer">
 							<span><%= haircatalog.created_at.strftime('%Y/%m/%d') %></span>
 							<% if model_signed_in? %>
-							<span id="favorite_<%= haircatalog.id %>">
-								<%= render partial: 'favorites/favorite', locals: {haircatalog: haircatalog} %>
-							</span>
+								<span id="favorite_<%= haircatalog.id %>">
+									<%= render partial: 'favorites/favorite', locals: {haircatalog: haircatalog} %>
+								</span>
+							<% else %>
+								<i class="glyphicon glyphicon-heart-empty" aria-hidden="true"></i>
+								<span><%= haircatalog.favorites.count %></span>
 							<% end %>
 						</div>
 					</div>

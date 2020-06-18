@@ -1,3 +1,4 @@
+<script src="https://ajaxzip3.github.io/ajaxzip3.js" charset="UTF-8"></script>
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-offset-2 col-md-8">
@@ -24,7 +25,7 @@
 
             <div class="sign-up-field">
               <%= f.label :性別 %><br />
-              <%= f.select :hairdresser_gender, Hairdresser.hairdresser_genders.keys.map {|k| [I18n.t("enums.hairdresser.hairdresser_gender.#{k}"), k]}, autofocus: true, autocomplete: "hairdresser_gender", class: "sign-up-select" %>
+              <%= f.select :hairdresser_gender, Hairdresser.hairdresser_genders.keys.map {|k| [I18n.t("enums.hairdresser.hairdresser_gender.#{k}"), k]}, include_blank: '', autofocus: true, autocomplete: "hairdresser_gender", class: "sign-up-select" %>
             </div>
 
             <div class="sign-up-field">
@@ -34,7 +35,7 @@
 
             <div class="sign-up-field">
               <%= f.label :サロン郵便番号（ハイフンなし） %><br />
-              <%= f.text_field :postal_code, autofocus: true, autocomplete: "postal_code" %>
+              <%= f.text_field :postal_code, autofocus: true, autocomplete: "postal_code", class: "sign-up-field" %>
             </div>
 
             <div class="sign-up-field">
@@ -44,7 +45,7 @@
 
             <div class="sign-up-field">
               <%= f.label :サロンエリア %><br />
-              <%= f.select :area, Hairdresser.areas.keys.map {|k| [I18n.t("enums.hairdresser.area.#{k}"), k]}, autofocus: true, autocomplete: "area", class: "sign-up-select" %>
+              <%= f.select :area, Hairdresser.areas.keys.map {|k| [I18n.t("enums.hairdresser.area.#{k}"), k]}, include_blank: '', autofocus: true, autocomplete: "area", class: "sign-up-select" %>
             </div>
 
             <div class="sign-up-field">

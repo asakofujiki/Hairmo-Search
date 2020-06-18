@@ -1,0 +1,13 @@
+<% if current_model.followed_by?(hairdresser) %>
+	<%= link_to hairdresser_relationships_path(hairdresser), method: :delete, remote: true do %>
+		<div class="pro-btn">
+			<p>Unfollow</p>
+		</div>
+	<% end %>
+<% else %>
+	<%= link_to hairdresser_relationships_path(hairdresser), method: :post, remote: true do %>
+		<div class="pro-btn">
+			<p>Follow</p>
+		</div>
+	<% end %>
+<% end %>

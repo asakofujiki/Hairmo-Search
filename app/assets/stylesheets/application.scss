@@ -423,7 +423,7 @@ footer p {
 
 // ヘアカタログ一覧 //
 .haircatalog {
-	margin-top: 50px;
+	margin-top: 30px;
 	.haircatalog-header {
 		width: 250px;
 		margin: 0 auto;
@@ -606,7 +606,7 @@ footer p {
 }
 
 #tab-menu {
-	margin: 0 200px 50px 200px;
+	margin: 0 200px 20px 200px;
 }
 
 #tab-menu li {
@@ -670,6 +670,23 @@ footer p {
 	  border: 1px solid rgb(158, 151, 163);
 	  border-radius: 8px;
 	  color: #FFFFFF;
+	}
+}
+
+.haircatalog-new {
+	position: fixed;
+	bottom: 80px;
+	right: 40px;
+	z-index: 1;
+	background-color: rgba(158, 151, 163, 0.6);
+	border-radius: 50%;
+	text-align: center;
+	width: 60px;
+	height: 60px;
+	.btn {
+		color: #FFFFFF;
+		line-height: 40px;
+		font-size: 20px;
 	}
 }
 
