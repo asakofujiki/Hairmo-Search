@@ -2,115 +2,105 @@
 	<div class="row">
 		<div class="col-md-offset-3 col-md-3">
 			<div class="img-box">
-					<div class="img"><%= attachment_image_tag(@model, :hairmodel_image, fallback: 'no images.png', size: '200x200', class: "img") %></div>
-					<% if @model == current_model %>
-						<%= link_to edit_model_path(@model), data: {"turbolinks" => false} do %>
+				<div class="img"><%= attachment_image_tag(@model, :hairmodel_image, fallback: 'no images.png', size: '200x200', class: "img") %></div>
+				<% if @model == current_model %>
+					<%= link_to edit_model_path(@model), data: {"turbolinks" => false} do %>
+						<div class="pro-btn">
+							<p>プロフィール編集</p>
+						</div>
+					<% end %>
+				<% else %>
+					<% if hairdresser_signed_in? %>
+						<span id="hairdresser_follow">
+							<%= render partial: 'relationships/hairdresser_follow', locals: {model: @model} %>
+						</span>
+					<% end %>
+				<% end %>
+				<% if hairdresser_signed_in? %>
+					<% if @model.exist_room?(current_hairdresser.id) %>
+						<%= link_to room_path(@model.room_with(current_hairdresser.id)) do %>
 							<div class="pro-btn">
-								<p>プロフィール編集</p>
+								<p>Message</p>
 							</div>
 						<% end %>
 					<% else %>
-						<% if hairdresser_signed_in? %>
-							<% if current_hairdresser.followed_by?(@model) %>
-								<%= link_to model_relationships_path(@model), method: :delete do %>
-									<div class="pro-btn">
-										<p>Unfollow</p>
-									</div>
-								<% end %>
-							<% else %>
-								<%= link_to model_relationships_path(@model), method: :post do %>
-									<div class="pro-btn">
-										<p>Follow</p>
-									</div>
-								<% end %>
-							<% end %>
+						<%= link_to rooms_path(model_id: @model.id), method: :post do %>
+							<div class="pro-btn">
+								<p>Message</p>
+							</div>
 						<% end %>
 					<% end %>
-					<% if hairdresser_signed_in? %>
-						<% if @model.exist_room?(current_hairdresser.id) %>
-							<%= link_to room_path(@model.room_with(current_hairdresser.id)) do %>
-								<div class="pro-btn">
-									<p>Message</p>
-								</div>
-							<% end %>
-						<% else %>
-							<%= link_to rooms_path(model_id: @model.id), method: :post do %>
-								<div class="pro-btn">
-									<p>Message</p>
-								</div>
-							<% end %>
-						<% end %>
-					<% end %>
+				<% end %>
 			</div>
 		</div>
 		<div class="col-md-5">
 			<div class="pro-box">
 				<table class="pro-list">
-						<tr class="list">
-							<td class="pro-item">名前</td>
-							<td><%= @model.hairmodel_name %></td>
-						</tr>
-						<tr>
-							<td class="pro-item">性別</td>
-							<td><%= @model.hairmodel_gender_i18n %></td>
-						</tr>
-						<tr>
-							<td class="pro-item">年代</td>
-							<td><%= @model.age_i18n %></td>
-						</tr>
-						<tr>
-							<td class="pro-item">髪の長さ</td>
-							<td><%= @model.hair_length_i18n %></td>
-						</tr>
-						<tr>
-							<td class="pro-item">黒染め履歴</td>
-							<td><%= @model.black_history_i18n %></td>
-						</tr>
-						<tr>
-							<td class="pro-item">ブリーチ履歴</td>
-							<td><%= @model.bleach_history_i18n %></td>
-						</tr>
-						<tr>
-							<td class="pro-item">縮毛矯正履歴</td>
-							<td><%= @model.straight_history_i18n %></td>
-						</tr>
-					</table>
-					<div class="comment-box">
-						<p><strong>ひとこと</strong></p>
-						<%= simple_format(@model.hairmodel_comment, class: "comment") %>
-					</div>
-			</div>
-		</div>
-	</div>
-	<% if @model = current_model %>
-	<div class="row">
-		<div class="col-md-12">
-			<div class="tab-box">
-				<ul id="tab-menu" class="clearfix">
-			        <li><a href="#tab1" class="active">フォロー</a></li>
-			        <li><a href="#tab2" class="">フォロワー</a></li>
-			        <li><a href="#tab3" class="">いいね</a></li>
-			        <li><a href="#tab4" class="">メッセージ</a></li>
-			    </ul>
-				<div id="tab-contents" class="clearfix">
-				    <div id="tab1" class="tab">
-				      <%= render partial: 'models/follows' %>
-				    </div>
-
-				    <div id="tab2" class="tab">
-				      <%= render partial: 'models/followers' %>
-				    </div>
-
-				    <div id="tab3" class="tab">
-				      <%= render partial: 'models/favorites' %>
-				    </div>
-
-				    <div id="tab4" class="tab">
-				      <%= render partial: 'models/messages' %>
-				    </div>
+					<tr class="list">
+						<td class="pro-item">名前</td>
+						<td><%= @model.hairmodel_name %></td>
+					</tr>
+					<tr>
+						<td class="pro-item">性別</td>
+						<td><%= @model.hairmodel_gender_i18n %></td>
+					</tr>
+					<tr>
+						<td class="pro-item">年代</td>
+						<td><%= @model.age_i18n %></td>
+					</tr>
+					<tr>
+						<td class="pro-item">髪の長さ</td>
+						<td><%= @model.hair_length_i18n %></td>
+					</tr>
+					<tr>
+						<td class="pro-item">黒染め履歴</td>
+						<td><%= @model.black_history_i18n %></td>
+					</tr>
+					<tr>
+						<td class="pro-item">ブリーチ履歴</td>
+						<td><%= @model.bleach_history_i18n %></td>
+					</tr>
+					<tr>
+						<td class="pro-item">縮毛矯正履歴</td>
+						<td><%= @model.straight_history_i18n %></td>
+					</tr>
+				</table>
+				<div class="comment-box">
+					<p><strong>ひとこと</strong></p>
+					<%= simple_format(@model.hairmodel_comment, class: "comment") %>
 				</div>
 			</div>
 		</div>
 	</div>
+	<% if @model = current_model %>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="tab-box">
+					<ul id="tab-menu" class="clearfix">
+				        <li><a href="#tab1" class="active">フォロー</a></li>
+				        <li><a href="#tab2" class="">フォロワー</a></li>
+				        <li><a href="#tab3" class="">いいね</a></li>
+				        <li><a href="#tab4" class="">メッセージ</a></li>
+				    </ul>
+					<div id="tab-contents" class="clearfix">
+					    <div id="tab1" class="tab">
+					      <%= render partial: 'models/follows' %>
+					    </div>
+
+					    <div id="tab2" class="tab">
+					      <%= render partial: 'models/followers' %>
+					    </div>
+
+					    <div id="tab3" class="tab">
+					      <%= render partial: 'models/favorites' %>
+					    </div>
+
+					    <div id="tab4" class="tab">
+					      <%= render partial: 'models/messages' %>
+					    </div>
+					</div>
+				</div>
+			</div>
+		</div>
 	<% end %>
 </div>

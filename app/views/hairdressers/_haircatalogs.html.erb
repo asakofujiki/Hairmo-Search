@@ -1,1 +1,27 @@
-<p> いいねされた自分のヘアカタ</p>
+<% @hairdresser.hair_catalogs.order(created_at: "DESC").each do |haircatalog| %>
+	<div class="col-md-3">
+		<div class="haircatalog">
+			<div class="haircatalog-header">
+				<% haircatalog.catalog_tags.each do |tag| %>
+				<span><%= tag.tag_id %></span>
+				<% end %>
+			</div>
+			<div class="haircatalog-image">
+				<%= link_to hair_catalog_path(haircatalog.id) do %>
+				<%= attachment_image_tag(haircatalog, :catalog_image, size: '250x250') %>
+				<% end %>
+			</div>
+			<div class="haircatalog-footer">
+				<span><%= haircatalog.created_at.strftime('%Y/%m/%d') %></span>
+				<% if model_signed_in? %>
+					<span id="favorite_<%= haircatalog.id %>">
+						<%= render partial: 'favorites/favorite', locals: {haircatalog: haircatalog} %>
+					</span>
+				<% else %>
+					<i class="glyphicon glyphicon-heart-empty" aria-hidden="true" style="color: red;"></i>
+					<span><%= haircatalog.favorites.count %></span>
+				<% end %>
+			</div>
+		</div>
+	</div>
+<% end %>
