@@ -24,18 +24,17 @@
 
             <div class="sign-up-field">
               <%= f.label :性別 %><br />
-              <%= f.label :性別 %><br />
               <%= f.select :hairdresser_gender, Hairdresser.hairdresser_genders.keys.map {|k| [I18n.t("enums.hairdresser.hairdresser_gender.#{k}"), k]}, autofocus: true, autocomplete: "hairdresser_gender", class: "sign-up-select" %>
             </div>
 
             <div class="sign-up-field">
               <%= f.label :サロン名 %><br />
-              <%= f.text_field :salon_name, autofocus: true, autocomplete: "salon_name", class: "sign-up-field" %>
+              <%= f.text_field :salon_name, autofocus: true, autocomplete: "salon_name", class: "field" %>
             </div>
 
             <div class="sign-up-field">
               <%= f.label :サロン郵便番号（ハイフンなし） %><br />
-              <%= f.text_field :postal_code, autofocus: true, autocomplete: "postal_code" %>
+              <%= f.text_field :postal_code, autofocus: true, autocomplete: "postal_code", class: "postcode" %>
             </div>
 
             <div class="sign-up-field">

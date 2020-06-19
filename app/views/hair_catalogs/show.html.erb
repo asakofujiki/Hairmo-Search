@@ -1,5 +1,18 @@
 <div class="container-fluid">
 	<div class="row">
+		<div class="back col-md-offset-1">
+			<% if model_signed_in? %>
+				<%= link_to :back do %>
+					<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"><strong>Back</strong></span>
+				<% end %>
+			<% else %>
+				<%= link_to hairdresser_path(@haircatalog.hairdresser.id) do %>
+					<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"><strong>Back</strong></span>
+				<% end %>
+			<% end %>
+		</div>
+	</div>
+	<div class="row">
 		<div class="col-md-offset-2 col-md-8">
 			<div class="shadow">
 				<div class="catalog">
@@ -14,14 +27,17 @@
 				<div class="catalog-footer">
 					<span><%= @haircatalog.created_at.strftime('%Y/%m/%d') %></span>
 					<% if model_signed_in? %>
-					<span id="favorite_<%= @haircatalog.id %>">
-						<%= render partial: 'favorites/favorite', locals: {haircatalog: @haircatalog} %>
-					</span>
+						<span id="favorite_<%= @haircatalog.id %>">
+							<%= render partial: 'favorites/favorite', locals: {haircatalog: @haircatalog} %>
+						</span>
+					<% else %>
+					<i class="glyphicon glyphicon-heart-empty" aria-hidden="true" style="color: red;"></i>
+					<span><%= @haircatalog.favorites.count %></span>
 					<% end %>
 				</div>
 				<div class="treatment-contents">
 					<div class="explan">＜施術内容＞</div>
-					<div class="explan-text"><%= @haircatalog.treatment_contents %></div>
+					<div class="explan-text"><%= simple_format(@haircatalog.treatment_contents) %></div>
 				</div>
 				<% if hairdresser_signed_in? %>
 					<% if @haircatalog.hairdresser_id == current_hairdresser.id %>

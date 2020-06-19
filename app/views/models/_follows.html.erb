@@ -1,7 +1,7 @@
 <% @model.model_follows.each do |follow| %>
   <%= link_to hairdresser_path(follow.hairdresser.id) do %>
-    <div class="col-md-6">
-      <div class="index-box clearfix">
+    <div class="index col-md-6">
+      <div class="index-box">
         <span><%= attachment_image_tag(follow.hairdresser, :hairdresser_image, fallback: 'no images.png', size: '150x150', class: "image-box") %></span>
         <div class="profile-box">
           <table class="profile-list">

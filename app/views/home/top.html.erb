@@ -1,22 +1,24 @@
 <div class="container-fluid">
 	<div class="row">
-		<div class="top-box col-md-offset-2 col-md-10 clearfix">
-		<div class="box1">
-			<%= link_to models_path do %>
-			<div class="hairmo-box">
-				<p class="word"><strong>ヘアモデル</strong></p>
-				<p class="link">をお探しの方はこちら</p>
+		<div class="link-box col-md-6">
+			<div class="top">
+				<%= link_to models_path do %>
+				<div class="box">
+					<p class="word"><strong>ヘアモデル</strong></p>
+					<p class="link">をお探しの方はこちら</p>
+				</div>
+				<% end %>
 			</div>
-			<% end %>
 		</div>
-		<div class="box2">
-			<%= link_to hairdressers_path do %>
-			<div class="hairdresser-box">
-				<p class="word"><strong>美容師</strong></p>
-				<p class="link">をお探しの方はこちら</p>
+		<div class="link-box col-md-6">
+			<div class="top">
+				<%= link_to hairdressers_path do %>
+				<div class="box">
+					<p class="word"><strong>美容師</strong></p>
+					<p class="link">をお探しの方はこちら</p>
+				</div>
+				<% end %>
 			</div>
-			<% end %>
-		</div>
 		</div>
 	</div>
 </div>
