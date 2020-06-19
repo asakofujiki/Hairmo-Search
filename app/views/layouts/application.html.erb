@@ -10,29 +10,35 @@
   </head>
 
   <body>
-    <header class="nav navbar-fixed-top">
-      <div class="container-fluid">
-        <nav class="nav navbar-nav navbar-left">
-          <h2 class="home"><%= link_to "Hairmo Search.", root_path %></h2>
-        </nav>
-        <ul class="nav navbar-nav navbar-right">
+    <header class="navbar-fixed-top">
+        <nav class="clearfix">
           <% if hairdresser_signed_in? %>
-          <li class="nav-menu"><%= current_hairdresser.hairdresser_name %></li>
-          <li class="nav-menu"><%= link_to "マイページ", hairdresser_path(current_hairdresser.id) %></li>
-          <li class="nav-menu"><%= link_to "ヘアモ一覧", models_path %></li>
-          <li class="nav-menu"><%= link_to "ログアウト", destroy_hairdresser_session_path, method: :delete %></li>
+            <p class="home"><%= link_to "Hairmo Search", models_path %></p>
           <% elsif model_signed_in? %>
-          <li class="nav-menu"><%= current_model.hairmodel_name %></li>
-          <li class="nav-menu"><%= link_to "マイページ", model_path(current_model.id) %></li>
-          <li class="nav-menu"><%= link_to "美容師一覧", hairdressers_path %></li>
-          <li class="nav-menu"><%= link_to "ログアウト", destroy_model_session_path, method: :delete %></li>
+            <p class="home"><%= link_to "Hairmo Search", hairdressers_path %></p>
           <% else %>
-          <li class="nav-menu"><%= link_to "About", about_path %></li>
-          <li class="nav-menu"><%= link_to "美容師ログイン", new_hairdresser_session_path, data: {"turbolinks" => false} %></li>
-          <li class="nav-menu"><%= link_to "ヘアモログイン", new_model_session_path, data: {"turbolinks" => false} %></li>
+            <p class="home"><%= link_to "Hairmo Search", root_path %></p>
           <% end %>
-        </ul>
-      </div>
+          <ul>
+            <% if hairdresser_signed_in? %>
+              <li class="img"><%= attachment_image_tag(current_hairdresser, :hairdresser_image, fallback: 'no images.png', size: '40x40', class: "img") %></li>
+              <li class="name"><%= current_hairdresser.hairdresser_name %></li>
+              <li class="nav-menu"><%= link_to "マイページ", hairdresser_path(current_hairdresser.id) %></li>
+              <li class="nav-menu"><%= link_to "ヘアモ一覧", models_path %></li>
+              <li class="nav-menu"><%= link_to "ログアウト", destroy_hairdresser_session_path, method: :delete %></li>
+            <% elsif model_signed_in? %>
+              <li class="img"><%= attachment_image_tag(current_model, :hairmodel_image, fallback: 'no images.png', size: '40x40', class: "img") %></li>
+              <li class="name"><%= current_model.hairmodel_name %></li>
+              <li class="nav-menu"><%= link_to "マイページ", model_path(current_model.id) %></li>
+              <li class="nav-menu"><%= link_to "美容師一覧", hairdressers_path %></li>
+              <li class="nav-menu"><%= link_to "ログアウト", destroy_model_session_path, method: :delete %></li>
+            <% else %>
+              <li class="nav-menu"><%= link_to "About", about_path %></li>
+              <li class="nav-menu"><%= link_to "美容師ログイン", new_hairdresser_session_path, data: {"turbolinks" => false} %></li>
+              <li class="nav-menu"><%= link_to "ヘアモログイン", new_model_session_path, data: {"turbolinks" => false} %></li>
+            <% end %>
+          </ul>
+        </nav>
     </header>
     <main>
     <%= yield %>

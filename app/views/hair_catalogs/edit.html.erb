@@ -1,16 +1,23 @@
 <div class="container-fluid">
 	<div class="row">
+		<div class="back col-md-offset-1">
+			<%= link_to hair_catalog_path(@haircatalog) do %>
+				<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"><strong>Back</strong></span>
+			<% end %>
+		</div>
+	</div>
+	<div class="row">
 		<div class="col-md-offset-2 col-md-8">
 			<div class="shadow">
 				<%= form_with model:@haircatalog, url:hair_catalog_path(@haircatalog), method: :patch, remote: true do |h| %>
 				<div class="haircatalog-image">
 					<%= attachment_image_tag @haircatalog, :catalog_image, class: "img-prev", :size => '300x300' %>
-                	<%= h.attachment_field :catalog_image, autofocus: true, autocomplete: "catalog_image" %>
+                	<%= h.attachment_field :catalog_image, autofocus: true, autocomplete: "catalog_image", class: "img-choice" %>
 				</div>
 				<div class="tag-box">
 					<%= h.label :タグ %><br />
 					<%= h.collection_check_boxes :tag_ids, @tags, :id, :tag_name  do |tag| %>
-                  	<%= tag.label {tag.check_box + tag.text} %>
+                  	<span class="check"><%= tag.label {tag.check_box + tag.text} %></span>
                   	<% end %>
 				</div>
 				<div class="treatment-box">

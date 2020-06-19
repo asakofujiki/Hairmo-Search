@@ -22,14 +22,14 @@
 	box-sizing: border-box;
 }
 
-p {
-	margin: 0
-}
-
 .clearfix::after {
 	content: "";
 	display: block;
 	clear: both;
+}
+
+p {
+	margin: 0
 }
 
 a:hover {
@@ -44,83 +44,108 @@ a:visited {
 	color: #000000;
 }
 
+ul {
+	list-style: none;
+}
+
 header {
-	border-bottom: 10px solid rgba(235, 153, 150, 0.8);
 	background-color: #FFFFFF;
+	padding: 10px 20px;
+	border-bottom: 3px solid rgba(227, 208, 195, 1);
+	position: relative;
+	.home {
+		font-size: 32px;
+		font-weight: bold;
+		float: left;
+		a {
+			color: rgba(85, 49, 28, 0.8);
+		}
+		a:hover {
+			color: #C2AA99;
+		}
+	}
+	ul {
+		float: left;
+		position: absolute;
+		top: 22px;
+		right: 22px;
+		.img {
+			float: left;
+			width: 40px;
+			height: 40px;
+			border-radius: 50%;
+			transform: translateY(-10%);
+			margin-right: 3px;
+		}
+		.name {
+			float: left;
+			font-weight: bold;
+		}
+		.nav-menu {
+			float: left;
+			margin-left: 30px;
+			color: #220000;
+			a {
+				color: #220000;
+			}
+			a:hover {
+				color: #C2AA99;
+			}
+		}
+	}
 }
-
-header ul {
-	padding: 10px 30px 0 0;
-}
-
-.nav-menu {
-	margin-left: 30px;
-}
-
 
 main {
 	margin: 100px 0 50px 0;
 }
 
-.top-box {
-	margin-top: 80px;
-	margin-bottom: 130px;
-}
-
-.box1 {
+.link-box {
+	margin: 50px 0;
+	text-align: center;
+	.top {
 	padding: 40px;
-	margin-right: 125px;
-	background-color: rgba(252, 224, 222, 0.5);
+	background-color: rgba(227, 208, 195, 0.5);
 	border-radius: 20px;
-	float: left;
-}
+	display: inline-block;
+		.box {
+			padding: 50px 30px;
+			background-color: rgba(255, 253, 245, 1);
+			border-radius: 20px;
+			color: #220000;
+			.word {
+				text-align: left;
+				font-size: 30px;
+				margin-bottom: 20px;
+			}
 
-.box2 {
-	padding: 40px;
-	margin-left: 125px;
-	background-color: rgba(252, 224, 222, 0.5);
-	border-radius: 20px;
-	float: left;
-}
-
-.hairmo-box {
-	padding: 50px 30px;
-	background-color: rgba(255, 253, 245, 1);
-	border-radius: 20px;
-}
-
-.hairdresser-box {
-	padding: 50px 30px;
-	background-color: rgba(255, 253, 245, 1);
-	border-radius: 20px;
-}
-
-.word {
-	font-size: 30px;
-	margin-bottom: 20px;
-}
-
-.link {
-	font-size: 20px;
-	margin-left: 20px;
+			.link {
+				font-size: 20px;
+				margin-left: 20px;
+			}
+		}
+		.box:hover {
+			background-color: #C2AA99;
+		}
+	}
 }
 
 footer {
 	margin-top: 100px;
 	height: 50px;
-	background-color: rgba(235, 153, 150, 0.5);
+	background-color: rgba(227, 208, 195, 1);
 	text-align: center;
 }
 
 footer p {
 	line-height: 50px;
+	color: #220000;
 }
 
 .back {
 	position: fixed;
 	top: 80px;
 	span {
-		color: gray;
+		color: rgba(158, 151, 163, 1);
 	}
 }
 
@@ -128,8 +153,9 @@ footer p {
 .shadow {
 	background-color: rgba(230, 230, 230, 0.2);
 	border-radius: 50px;
-	box-shadow: 2px 2px 6px #a9a9a9;
+	box-shadow: 5px 5px 15px 5px rgba(169, 169, 169, 0.3);
 	padding: 30px;
+	color: #220000;
 }
 
 .sign-up-title {
@@ -137,7 +163,7 @@ footer p {
 	text-align: center;
 	h3 {
 		display: inline-block;
-		color: #EBC3C1;
+		color: rgba(227, 208, 195, 1);
 		font-weight: bold;
 	}
 }
@@ -154,6 +180,10 @@ footer p {
 		display: inline-block;
 		.img-prev {
 			border-radius: 50%;
+			margin-bottom: 10px;
+		}
+		.img-choice {
+			margin: 0 auto;
 		}
 	}
 }
@@ -162,24 +192,27 @@ footer p {
 	margin-bottom: 15px;
 	.field {
 		width: 500px;
+		padding: 0 5px;
+	}
+	.sign-up-select {
+		width: 300px;
+	}
+	.postcode {
+		padding: 0 5px;
+		width: 100px;
 	}
 	.comment {
 		width: 500px;
 		height: 100px;
+		padding: 5px;
 	}
 }
 
-.sign-up-select {
-	width: 300px;
-}
 
 .menu {
-	ul {
-		list-style-type: none
-	}
-	li {
-		float: left;
-		margin:  0  30px 0 20px;
+	padding: 10px;
+	.check {
+		margin-left: 20px;
 	}
 }
 
@@ -190,7 +223,7 @@ footer p {
 		display: inline-block;
 		.action-btn {
 			padding: 10px;
-			background-color: rgba(252, 224, 222, 1);
+			background-color: rgba(227, 208, 195, 1);
 			border-radius: 8px;
 			border-style: none;
 			color: #FFFFFF;
@@ -204,7 +237,7 @@ footer p {
 	margin-top: 30px;
 	text-align: center;
 	.sign-btn {
-		color: #EB9996;
+		color: #C2AA99;
 		font-weight: bold;
 	}
 }
@@ -212,7 +245,7 @@ footer p {
 .signup {
 	text-align: center;
 	.sign-btn {
-		color: #EB9996;
+		color: #C2AA99;
 		font-weight: bold;
 	}
 }
@@ -224,6 +257,7 @@ footer p {
 	background-color: rgba(252, 224, 222, 0.1);
 	border-radius: 8px;
 	box-shadow: inset 0 0 15px 8px rgba(252, 224, 222, 0.8);
+	color: #220000;
 	p {
 		font-size: 18px;
 		color: #EB9996;
@@ -256,56 +290,57 @@ footer p {
 	}
 }
 
-.index-box {
+.index {
+	text-align: center;
+	.index-box {
 	width: 600px;
 	display: inline-block;
 	background-color: rgba(252, 224, 222, 0.3);
 	border: 3px solid rgb(252, 224, 222);
 	border-radius: 30px;
 	padding: 10px 20px;
-	margin: 15px 0 15px 50px;
-	float: left;
-	list-style-type: none;
-	.image-box {
-		width: 150px;
-		height: 150px;
-		margin: 50px 20px 0 0;
-		border-radius: 50%;
-		float: left;
-	}
-	.profile-box {
-		display: inline-block;
-		font-size: 16px;
-		.profile-list {
-		margin-left: 30px;
-		list-style-type: none;
-			.profile-item {
-				padding-right: 25px;
-			}
+	margin: 15px 0;
+	color: #220000;
+	text-align: left;
+		.image-box {
+			width: 150px;
+			height: 150px;
+			margin: 50px 20px 0 0;
+			border-radius: 50%;
+			float: left;
 		}
-		.collect {
+		.profile-box {
 			display: inline-block;
-			margin-top: 5px;
+			font-size: 16px;
+			.profile-list {
 			margin-left: 30px;
-			list-style-type: none;
-			font-size: 14px;
-			.type {
-				margin-left: 5px;
-				width: 45px;
-				text-align: center;
-				border-radius: 8px;
-				margin-left: 5px;
-				background-color: #EB9996;
-				color: #FFFFFF;
+				.profile-item {
+					padding-right: 25px;
+				}
 			}
-			li {
-				float: left;
-				list-style-type: none;
-				margin-left: 15px;
+			.collect {
+				display: inline-block;
+				margin-top: 5px;
+				margin-left: 30px;
+				font-size: 14px;
+				.type {
+					margin-left: 5px;
+					width: 45px;
+					text-align: center;
+					border-radius: 8px;
+					margin-left: 5px;
+					background-color: #EB9996;
+					color: #FFFFFF;
+				}
+				li {
+					float: left;
+					margin-left: 15px;
+				}
 			}
 		}
 	}
 }
+
 
 .index-box:hover {
 	box-shadow: 0 0 15px 8px rgba(252, 224, 222, 0.8);
@@ -326,7 +361,7 @@ footer p {
 			display: inline-block;
 			width: 180px;
 			height: 50px;
-			background-color: rgb(252, 224, 222);
+			background-color: rgba(227, 208, 195, 1);
 			border-radius: 20px;
 			margin-top: 15px;
 			p {
@@ -341,6 +376,7 @@ footer p {
 .pro-box {
 	font-size: 18px;
 	margin-top: 30px;
+	color: #220000;
 	.pro-list {
 			margin-bottom: 15px;
 			.pro-item {
@@ -357,16 +393,16 @@ footer p {
 }
 
 .colle-box {
+	color: #220000;
 	font-size: 14px;
 	margin-top: 30px;
 	.type-box {
-		list-style-type: none;
 		.type {
 			width: 45px;
 			text-align: center;
 			border-radius: 8px;
 			margin-left: 5px;
-			background-color: #EB9996;
+			background-color: #C2AA99;
 			color: #FFFFFF;
 		}
 		li {
@@ -385,12 +421,20 @@ footer p {
 	width: 300px;
 	height: 330px;
 	margin: 0 auto;
+	color: #220000;
+	.img-prev {
+		margin-bottom: 10px;
+	}
+	.img-choice {
+		margin: 0 auto;
+	}
 }
 
 .tag-box {
 	width: 400px;
 	margin: 0 auto;
 	padding: 10px;
+	color: #220000;
 	.check {
 		margin-left: 20px;
 	}
@@ -400,9 +444,11 @@ footer p {
 	width: 400px;
 	margin: 0 auto;
 	padding: 10px;
+	color: #220000;
 	.text {
 		width: 380px;
 		height: 100px;
+		padding: 5px;
 	}
 }
 
@@ -412,7 +458,7 @@ footer p {
 	text-align: center;
 	.btn {
 		padding: 10px 30px;
-		background-color: rgba(252, 224, 222, 1);
+		background-color: rgba(227, 208, 195, 1);
 		border-radius: 8px;
 		border-style: none;
 		color: #FFFFFF;
@@ -424,6 +470,7 @@ footer p {
 // ヘアカタログ一覧 //
 .haircatalog {
 	margin-top: 30px;
+	color: #220000;
 	.haircatalog-header {
 		width: 250px;
 		margin: 0 auto;
@@ -454,6 +501,7 @@ footer p {
 
 // ヘアカタログ詳細ページ //
 .catalog {
+	color: #220000;
 	.catalog-header {
 		width: 400px;
 		margin: 0 auto;
@@ -499,7 +547,7 @@ footer p {
 	text-align: center;
 	.btn {
 		padding: 10px 30px;
-		background-color: rgba(252, 224, 222, 1);
+		background-color: rgba(227, 208, 195, 1);
 		border-radius: 8px;
 		border-style: none;
 		color: #FFFFFF;
@@ -516,6 +564,7 @@ footer p {
 	background-color: rgba(211, 204, 222, 0.1);
 	border-radius: 8px;
 	box-shadow: inset 0 0 15px 8px rgba(211, 204, 222, 0.8);
+	color: #220000;
 	p {
 		font-size: 18px;
 		color: rgb(200, 180, 210);
@@ -545,64 +594,69 @@ footer p {
 	}
 }
 
-.model-index-box {
+.model-index {
+	text-align: center;
+	.model-index-box {
 	width: 500px;
 	display: inline-block;
 	background-color: rgba(211, 204, 222, 0.3);
 	border: 3px solid rgb(211, 204, 222);
 	border-radius: 30px;
 	padding: 10px 20px;
-	margin: 15px 0 15px 90px;
-	float: left;
-	list-style-type: none;
-	.image-box {
-		width: 150px;
-		height: 150px;
-		margin: 5px 20px 0 0;
-		border-radius: 50%;
-		float: left;
-	}
-	.profile-box {
-		display: inline-block;
-		font-size: 16px;
-		.profile-list {
-		margin-left: 30px;
-		list-style-type: none;
-			.profile-item {
-				padding-right: 25px;
-			}
+	margin: 15px 0;
+	color: #220000;
+		.image-box {
+			width: 150px;
+			height: 150px;
+			margin: 5px 20px 0 0;
+			border-radius: 50%;
+			float: left;
 		}
-		.collect {
+		.profile-box {
 			display: inline-block;
-			margin-top: 5px;
+			font-size: 16px;
+			text-align: left;
+			.profile-list {
 			margin-left: 30px;
-			list-style-type: none;
-			font-size: 14px;
-			.type {
-				margin-left: 5px;
-				width: 45px;
-				text-align: center;
-				border-radius: 8px;
-				margin-left: 5px;
-				background-color: #EB9996;
-				color: #FFFFFF;
+				.profile-item {
+					padding-right: 25px;
+				}
 			}
-			li {
-				float: left;
-				list-style-type: none;
-				margin-left: 15px;
+			.collect {
+				display: inline-block;
+				margin-top: 5px;
+				margin-left: 30px;
+				font-size: 14px;
+				.type {
+					margin-left: 5px;
+					width: 45px;
+					text-align: center;
+					border-radius: 8px;
+					margin-left: 5px;
+					background-color: #EB9996;
+					color: #FFFFFF;
+				}
+				li {
+					float: left;
+					margin-left: 15px;
+				}
 			}
 		}
 	}
 }
+
 
 .model-index-box:hover {
 	box-shadow: 0 0 15px 8px rgba(211, 204, 222, 0.8);
 }
 
 // マイページ //
+.profile {
+	margin-bottom: 30px;
+}
+
 .tab-box {
-	margin-top: 50px;
+	margin-top: 20px;
 }
 
 #tab-menu {
@@ -611,7 +665,6 @@ footer p {
 
 #tab-menu li {
   float: left;
-  list-style-type: none;
   width: 25%;
   font-size: 16px;
   font-weight: bold;
@@ -645,7 +698,6 @@ footer p {
 	margin: 0 200px 50px 200px;
 	li {
 	  float: left;
-	  list-style-type: none;
 	  width: 20%;
 	  font-size: 16px;
 	  font-weight: bold;
@@ -695,6 +747,7 @@ footer p {
 	height: 100px;
 	margin-bottom: 20px;
 	list-style: none;
+	color: #220000;
 	.room-image {
 		line-height: 100px;
 		padding: 0 50px 0 30px;
@@ -714,7 +767,7 @@ footer p {
 }
 
 .room-box:hover {
-	background-color: rgba(230, 230, 230, 0.5);
+	background-color: rgba(158, 151, 163, 0.2);
 }
 
 // ルーム詳細ページ //
@@ -722,8 +775,10 @@ footer p {
 	height: 500px;
 	margin-bottom: 150px;
 }
+
 .message-box {
 	margin: 20px 0;
+	color: #220000;
 	.image {
 		float: left;
 		margin-right: 15px;
@@ -739,39 +794,34 @@ footer p {
 		margin-top: 10px;
 		.text {
 			display: inline-block;
-			background-color: rgba(211, 204, 222, 1);
-			border-style: 1px solid rgba(211, 204, 222, 1);
+			background-color: rgb(230, 230, 230);
 			border-radius: 10px;
-			color: gray;
 			padding: 20px;
 			}
 		}
 		.time {
 			margin-left: 10px;
-			color: gray;
 			font-size: 10px;
 		}
 }
 
 .message-box {
 	margin: 20px 0;
+	color: #220000;
 	.message-right {
 		width: 400px;
 		margin-left: auto;
 		text-align: right;
 		.text {
 			display: inline-block;
-			background-color: rgba(252, 224, 222, 1);
-			border-style: 1px solid rgba(252, 224, 222, 1);
+			background-color: rgba(227, 208, 195, 0.8);
 			border-radius: 10px;
-			color: gray;
 			padding: 20px;
 			text-align: left;
 		}
 	}
 		.time {
 			margin-right: 10px;
-			color: gray;
 			font-size: 10px;
 		}
 }
@@ -784,10 +834,11 @@ footer p {
 		width: 400px;
 		height: 100px;
 		border-radius: 8px;
+		padding: 5px;
 	}
 	.message-btn {
 		padding: 5px;
-		background-color: #EB9996;
+		background-color: #C2AA99;
 		color: #FFFFFF;
 		border-radius: 10px;
 	}

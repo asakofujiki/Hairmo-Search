@@ -14,7 +14,7 @@
             <div class="sign-up-image" onclick="$('#hairdresser_hairdresser_image').click()">
               <div class="image-field">
                 <%= image_tag "no images.png", class: "img-prev", :size => '150x150' %>
-                <%= f.attachment_field :hairdresser_image, autofocus: true, autocomplete: "hairdresser_image" %>
+                <%= f.attachment_field :hairdresser_image, autofocus: true, autocomplete: "hairdresser_image", class: "img-choice" %>
               </div>
             </div>
 
@@ -30,12 +30,12 @@
 
             <div class="sign-up-field">
               <%= f.label :サロン名 %><br />
-              <%= f.text_field :salon_name, autofocus: true, autocomplete: "salon_name", class: "sign-up-field" %>
+              <%= f.text_field :salon_name, autofocus: true, autocomplete: "salon_name", class: "field" %>
             </div>
 
             <div class="sign-up-field">
               <%= f.label :サロン郵便番号（ハイフンなし） %><br />
-              <%= f.text_field :postal_code, autofocus: true, autocomplete: "postal_code", class: "sign-up-field" %>
+              <%= f.text_field :postal_code, autofocus: true, autocomplete: "postal_code", class: "postcode" %>
             </div>
 
             <div class="sign-up-field">
@@ -51,36 +51,28 @@
             <div class="sign-up-field">
               <div><strong>募集モデル</strong></div>
               <div class="menu">
-                <srrong>カット</srrong>
-                <ul class="clearfix">
-                  <%= f.collection_check_boxes :cut_type_ids, @cut_types, :id, :cut_name  do |cut| %>
-                  <%= cut.label { cut.check_box + cut.text} %>
-                  <% end %>
-                </ul>
+                <%= f.label :カット %><br />
+                <%= f.collection_check_boxes :cut_type_ids, @cut_types, :id, :cut_name  do |cut| %>
+                  <span class="check"><%= cut.label { cut.check_box + cut.text} %></span>
+                <% end %>
               </div>
               <div class="menu">
-                <srrong>カラー</srrong>
-                <ul class="clearfix">
-                  <%= f.collection_check_boxes :color_type_ids, @color_types, :id, :color_name  do |color| %>
-                  <%= color.label { color.check_box + color.text} %>
-                  <% end %>
-                </ul>
+                <%= f.label :カラー %><br />
+                <%= f.collection_check_boxes :color_type_ids, @color_types, :id, :color_name  do |color| %>
+                  <span class="check"><%= color.label { color.check_box + color.text} %></span>
+                <% end %>
               </div>
               <div class="menu">
-                <srrong>パーマ</srrong>
-                <ul class="clearfix">
-                  <%= f.collection_check_boxes :perm_type_ids, @perm_types, :id, :perm_name  do |perm| %>
-                  <%= perm.label { perm.check_box + perm.text} %>
-                  <% end %>
-                </ul>
+                <%= f.label :パーマ %><br />
+                <%= f.collection_check_boxes :perm_type_ids, @perm_types, :id, :perm_name  do |perm| %>
+                  <span class="check"><%= perm.label { perm.check_box + perm.text} %></span>
+                <% end %>
               </div>
               <div class="menu">
-                <srrong>セット</srrong>
-                <ul class="clearfix">
-                  <%= f.collection_check_boxes :set_type_ids, @set_types, :id, :set_name  do |set| %>
-                  <%= set.label { set.check_box + set.text} %>
-                  <% end %>
-                </ul>
+                <%= f.label :セット %><br />
+                <%= f.collection_check_boxes :set_type_ids, @set_types, :id, :set_name  do |set| %>
+                  <span class="check"><%= set.label { set.check_box + set.text} %></span>
+                <% end %>
               </div>
             </div>
 
