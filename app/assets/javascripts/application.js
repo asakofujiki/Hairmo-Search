@@ -62,13 +62,26 @@ $(document).on('turbolinks:load', function() {
 
 
   $('#tab-contents .tab[id != "tab1"]').hide();
-
   $('#tab-menu a').on('click', function() {
     $("#tab-contents .tab").hide();
     $("#tab-menu .active").removeClass("active");
     $(this).addClass("active");
     $($(this).attr("href")).show();
     return false;
+  });
+
+
+  $('.s-menu').hide();
+  $('.signin-trigger').on('click', function(event) {
+    $('.s-menu').fadeToggle();
+    event.preventDefault();
+  });
+
+
+  $('.l-menu').hide();
+  $('.login-trigger').on('click', function(event) {
+    $('.l-menu').fadeToggle();
+    event.preventDefault();
   });
 
 

@@ -34,8 +34,24 @@
               <li class="nav-menu"><%= link_to "ログアウト", destroy_model_session_path, method: :delete %></li>
             <% else %>
               <li class="nav-menu"><%= link_to "About", about_path %></li>
-              <li class="nav-menu"><%= link_to "美容師ログイン", new_hairdresser_session_path, data: {"turbolinks" => false} %></li>
-              <li class="nav-menu"><%= link_to "ヘアモログイン", new_model_session_path, data: {"turbolinks" => false} %></li>
+              <li class="nav-menu">
+                  <a class="signin-trigger" href="#">
+                    <span>新規登録</span>
+                  </a>
+              </li>
+              <li class="s-menu">
+                  <%= link_to "美容師", new_hairdresser_registration_path, data: {"turbolinks" => false} %>
+                  <%= link_to "ヘアモ", new_model_registration_path, data: {"turbolinks" => false} %>
+              </li>
+              <li class="nav-menu">
+                  <a class="login-trigger" href="#">
+                    <span>ログイン</span>
+                  </a>
+              </li>
+              <li class="l-menu">
+                  <%= link_to "美容師", new_hairdresser_session_path, data: {"turbolinks" => false} %>
+                  <%= link_to "ヘアモ", new_model_session_path, data: {"turbolinks" => false} %>
+              </li>
             <% end %>
           </ul>
         </nav>
