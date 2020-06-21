@@ -31,4 +31,8 @@ class Model < ApplicationRecord
   def room_with(hairdresser_id)
     rooms.find_by(hairdresser_id: hairdresser_id, model_id: id)
   end
+
+  has_many :model_notifications, dependent: :destroy
+  has_many :hairdresser_notifications, dependent: :destroy
+
 end

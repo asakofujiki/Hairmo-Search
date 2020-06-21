@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_14_061940) do
+ActiveRecord::Schema.define(version: 2020_06_20_065726) do
 
   create_table "catalog_tags", force: :cascade do |t|
     t.integer "hair_catalog_id"
@@ -75,6 +75,16 @@ ActiveRecord::Schema.define(version: 2020_06_14_061940) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "hairdresser_notifications", force: :cascade do |t|
+    t.integer "model_id", null: false
+    t.integer "hairdresser_id", null: false
+    t.integer "hair_catalog_id"
+    t.string "action", default: "", null: false
+    t.boolean "checked", default: false, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "hairdressers", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -106,6 +116,15 @@ ActiveRecord::Schema.define(version: 2020_06_14_061940) do
     t.integer "room_id"
     t.integer "model_id"
     t.text "message"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "model_notifications", force: :cascade do |t|
+    t.integer "hairdresser_id", null: false
+    t.integer "model_id", null: false
+    t.string "action", default: "", null: false
+    t.boolean "checked", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

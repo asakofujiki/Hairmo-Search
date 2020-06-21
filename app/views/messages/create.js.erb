@@ -1,0 +1,3 @@
+$('#message<%= @room.id %>').html("<%= j(render partial: 'rooms/message', locals: {room: @room}) %>");
+$('#model_message_message').val('');
+$('#hairdresser_message_message').val('');

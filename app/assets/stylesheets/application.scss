@@ -74,12 +74,14 @@ header {
 			width: 40px;
 			height: 40px;
 			border-radius: 50%;
-			transform: translateY(-10%);
+			transform: translateY(-12%);
 			margin-right: 3px;
 		}
 		.name {
 			float: left;
-			font-weight: bold;
+		}
+		.name:hover {
+			color: #C2AA99;
 		}
 		.nav-menu {
 			float: left;
@@ -93,10 +95,30 @@ header {
 			}
 		}
 
+		.fa-bell {
+			margin-right: 5px;
+		}
+
+		.fa-sign-out-alt {
+			margin-right: 5px;
+		}
+
+		.fa-question-circle {
+			margin-right: 5px;
+		}
+
+		.fa-user-plus {
+			margin-right: 5px;
+		}
+
+		.fa-sign-in-alt {
+			margin-right: 5px;
+		}
+
 		.s-menu {
 		  position: fixed;
 		  top: 50px;
-		  right: 85px;
+		  right: 120px;
 		  background: rgba(227, 208, 195, 1);
 		  border-radius: 5px;
 		  width: 100px;
@@ -115,7 +137,7 @@ header {
 		.l-menu {
 		  position: fixed;
 		  top: 50px;
-		  right: 0px;
+		  right: 8px;
 		  background: rgba(227, 208, 195, 1);
 		  border-radius: 5px;
 		  width: 100px;
@@ -886,3 +908,37 @@ footer p {
 	}
 }
 
+// 通知一覧ページ //
+.notice {
+	text-align: center;
+	color: rgba(85, 49, 28, 0.9);
+	margin-bottom: 30px;
+	p {
+		font-weight: bold;
+		font-size: 24px;
+	}
+}
+.notice-box {
+	color: rgba(85, 49, 28, 0.9);
+	background-color: rgba(227, 208, 195, 0.3);
+	border-left: 20px solid rgba(85, 49, 28, 0.8);
+	border-right: 10px solid rgba(85, 49, 28, 0.8);
+	padding: 10px 20px;
+	margin-bottom: 15px;
+	p {
+		display: inline-block;
+		line-height: 50px;
+	}
+	.name {
+		font-weight: bold;
+	}
+	.content {
+		font-weight: bold;
+		a:hover {
+			color: #C2AA99;
+		}
+	}
+	.content:hover {
+		color: #C2AA99;
+	}
+}
