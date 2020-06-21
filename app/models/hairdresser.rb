@@ -27,8 +27,8 @@ class Hairdresser < ApplicationRecord
 
   has_many :hair_catalogs, dependent: :destroy
 
-  has_many :hairdresser_follows
-  has_many :model_follows
+  has_many :hairdresser_follows, dependent: :destroy
+  has_many :model_follows, dependent: :destroy
   def followed_by?(model)
     hairdresser_follows.find_by(model_id: model.id).present?
   end
@@ -42,4 +42,8 @@ class Hairdresser < ApplicationRecord
   def room_with(model_id)
     rooms.find_by(hairdresser_id: id, model_id: model_id)
   end
+
+  has_many :hairdresser_notifications, dependent: :destroy
+  has_many :model_notifications, dependent: :destroy
+
 end

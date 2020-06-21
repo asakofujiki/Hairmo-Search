@@ -1,3 +1,5 @@
-$('#hairmodel_follow').html("<%= j(render partial: 'relationships/hairmodel_follow', locals: {hairdresser: @hairdresser}) %>");
-
-$('#hairdresser_follow').html("<%= j(render partial: 'relationships/hairdresser_follow', locals: {hairdresser: @hairdresser}) %>");
+<% if @type == "model" %>
+	$('#hairmodel_follow').html("<%= j(render partial: 'relationships/hairmodel_follow', locals: {hairdresser: @hairdresser}) %>");
+<% else %>
+	$('#hairdresser_follow').html("<%= j(render partial: 'relationships/hairdresser_follow', locals: {model: @model}) %>");
+<% end %>
