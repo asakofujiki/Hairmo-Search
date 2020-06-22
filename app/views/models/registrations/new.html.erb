@@ -53,6 +53,11 @@
             </div>
 
             <div class="sign-up-field">
+              <%= f.label :ひとこと（後ほど登録可能） %><br />
+              <%= f.text_area :hairmodel_comment, placeholder: "200字以内でお願いします", autofocus: true, autocomplete: "hairmodel_comment", class: "comment" %>
+            </div>
+
+            <div class="sign-up-field">
               <%= f.label :メールアドレス %><br />
               <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "field" %>
             </div>

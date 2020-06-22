@@ -49,7 +49,7 @@
             </div>
 
             <div class="sign-up-field">
-              <div><strong>募集モデル</strong></div>
+              <div><strong>募集モデル（後ほど登録可能）</strong></div>
               <div class="menu">
                 <%= f.label :カット %><br />
                 <%= f.collection_check_boxes :cut_type_ids, @cut_types, :id, :cut_name  do |cut| %>
@@ -74,6 +74,11 @@
                   <span class="check"><%= set.label { set.check_box + set.text} %></span>
                 <% end %>
               </div>
+            </div>
+
+            <div class="sign-up-field">
+              <%= f.label :ひとこと（後ほど登録可能） %><br />
+              <%= f.text_area :hairdresser_comment, placeholder: "200字以内でお願いします", autofocus: true, autocomplete: "hairdresser_comment", class: "comment" %>
             </div>
 
             <div class="sign-up-field">

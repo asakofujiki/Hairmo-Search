@@ -25,9 +25,30 @@ class ApplicationController < ActionController::Base
 	def configure_permitted_paramerters
 		#binding.pry
 		if params['hairdresser']
-		  devise_parameter_sanitizer.permit(:sign_up, keys:[:hairdresser_name, :hairdresser_image, :hairdresser_gender, :salon_name, :postal_code, :salon_address, :area, :email, cut_type_ids: [], color_type_ids: [], perm_type_ids: [], set_type_ids: []])
+		  devise_parameter_sanitizer.permit(:sign_up, keys:[:hairdresser_name,
+		  													:hairdresser_image,
+		  													:hairdresser_gender,
+		  													:salon_name,
+		  													:postal_code,
+		  													:salon_address,
+		  													:area,
+		  													:hairdresser_comment,
+		  													cut_type_ids: [],
+		  													color_type_ids: [],
+		  													perm_type_ids: [],
+		  													set_type_ids: []]
+		  									)
 		else
-		  devise_parameter_sanitizer.permit(:sign_up, keys:[:hairmodel_name, :hairmodel_image, :hairmodel_gender, :age, :hair_length, :black_history, :bleach_history, :straight_history])
+		  devise_parameter_sanitizer.permit(:sign_up, keys:[:hairmodel_name,
+		  													:hairmodel_image,
+		  													:hairmodel_gender,
+		  													:age,
+		  													:hair_length,
+		  													:black_history,
+		  													:bleach_history,
+		  													:straight_history,
+		  													:hairmodel_comment]
+		  									)
 		end
 	end
 end
