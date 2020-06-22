@@ -18,12 +18,16 @@
 			<% if hairdresser_signed_in? %>
 				<%= form_with model: @message, url: room_messages_path(@room), remote: true do |f| %>
 					<%= f.text_area :message, class: "text-area" %>
-					<%= f.submit "送信", class: "message-btn" %>
+					<%= f.button :type => "submit" do %>
+						<i class="message-btn fas fa-paper-plane fa-lg"></i>
+					<% end %>
 				<% end %>
 			<% elsif model_signed_in? %>
 				<%= form_with model: @message, url: room_messages_path(@room), remote: true do |f| %>
 					<%= f.text_area :message, class: "text-area" %>
-					<%= f.submit "送信", class: "message-btn" %>
+					<%= f.button :type => "submit" do %>
+						<i class="message-btn fas fa-paper-plane fa-lg"></i>
+					<% end %>
 				<% end %>
 			<% end %>
 		</div>
