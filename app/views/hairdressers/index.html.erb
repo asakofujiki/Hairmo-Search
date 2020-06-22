@@ -6,7 +6,7 @@
           <p>美容師検索</p>
           <div class="select">
             <%= f.label :性別, class: "content" %>
-            <%= f.select :hairdresser_gender, options_for_select(Hairdresser.hairdresser_genders.keys.map {|k| [I18n.t("enums.hairdresser.hairdresser_gender.#{k}"), k]}, params[:hairdresser_gender]), { include_blank: '選択なし'}, class: "choice" %>
+            <%= f.select :hairdresser_gender, options_for_select(Hairdresser.hairdresser_genders.keys.map {|k| [I18n.t("enums.hairdresser.hairdresser_gender.#{k}"), k]}, params[:area]), { include_blank: '選択なし'}, class: "choice" %>
             <%= f.label :サロンエリア, class: "content" %>
             <%= f.select :area, options_for_select(Hairdresser.areas.keys.map {|k| [I18n.t("enums.hairdresser.area.#{k}"), k]}, params[:area]), { include_blank: '選択なし'}, class: "choice" %>
           </div>
@@ -35,7 +35,7 @@
             <% end %>
           </div>
           <div class="search-btn">
-            <%= f.submit "clear", type: :button, class: "reset-btn", id: "reset-btn" %>
+            <%= f.submit "clear", type: :reset, class: "btn" %>
             <%= f.submit "検索", class: "btn" %>
           </div>
         <% end %>
