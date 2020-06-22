@@ -942,3 +942,81 @@ footer p {
 		color: #C2AA99;
 	}
 }
+
+// Aboutページ //
+.visual {
+	background-image: image-url("mainvisual.jpeg");
+	background-size: cover;
+	text-align: center;
+	padding: 50px 70px;
+	margin-bottom: 50px;
+	.wrapper {
+		padding: 30px 30px 30px 50px;
+		background-color: rgba(255, 253, 245, 0.8);
+		.word {
+			display: inline-block;
+			text-align: left;
+			p {
+				display: block;
+				font-size: 16px;
+				font-weight: bold;
+				color: #220000;
+			}
+		}
+	}
+}
+
+.about {
+	text-align: center;
+	color: #220000;
+	margin-bottom: 100px;
+	h2 {
+		font-weight: bold;
+		margin-bottom: 50px;
+	}
+	h3 {
+		font-weight: bold;
+		margin-bottom: 30px;
+	}
+	h4 {
+		margin-bottom: 20px;
+	}
+	.box {
+		// background-color: gray;
+		width: 85%;
+		height: 180px;
+		display: inline-block;
+		margin: 20px;
+		box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2);
+	}
+	.start-trigger {
+		margin-top: 50px;
+		padding: 20px 40px;
+		background-color: #C2AA99;
+		border-radius: 8px;
+		color: #FFFFFF;
+		font-weight: bold;
+		display: inline-block;
+	}
+	.start-menu {
+		position: fixed;
+		bottom:180px;
+		right: 50%;
+		transform: translateX(50%);
+		background: rgba(227, 208, 195, 1);
+		border-radius: 5px;
+		width: 100px;
+		text-align: center;
+		a {
+		color: #FFFFFF;
+		font-weight: bold;
+		margin: 10px;
+		display: block;
+		}
+		a:hover {
+		color: #220000;
+		}
+	}
+}
+
+

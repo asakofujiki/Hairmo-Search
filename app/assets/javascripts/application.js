@@ -85,6 +85,23 @@ $(document).on('turbolinks:load', function() {
   });
 
 
+  $('.start-menu').hide();
+  $('.start-trigger').on('click', function(event) {
+    $('.start-menu').fadeToggle();
+    event.preventDefault();
+  });
+
+  // $('.start-menu').on('mouseout', function(event) {
+  //   $('.start-trigger').off('click');
+  // });
+
+  // $('.start-trigger').off('click');
+
+  // $('.about').on('click', function(event) {
+  //   $('.start-menu').hide();
+  // });
+
+
 });
 
 

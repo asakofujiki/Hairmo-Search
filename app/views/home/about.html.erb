@@ -1,2 +1,57 @@
-<h1>Home#about</h1>
-<p>Find me in app/views/home/about.html.erb</p>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-offset-3 col-md-6">
+			<div class="visual">
+				<div class="wrapper">
+					<div class="word">
+						<p>Hairdresser is a great job</p>
+						<p>Face-to-face with people 1: 1</p>
+						<p>Enhance their mood</p>
+						<p>It brings shine to the eyes</p>
+						<p>ー Vidal Sassoon</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-offset-2 col-md-8">
+			<div class="about">
+				<h2>Hairmo Search とは...</h2>
+				<h3>美容師アシスタントとヘアモデルをつなぐマッチングサイトです</h3>
+				<h4>◆ 美容師は街でモデルハントをすることなく自分の希望に合ったヘアモデルを探すことが出来るので、休日や営業後の時間を有意義に過ごすことが出来ます</h4>
+				<h4>◆ ヘアモデルは美容師から声を掛けられるのを待つことなく、無料で施術してくれるお気に入りの美容師を探すことが出来ます</h4>
+			</div>
+			<div class="about">
+				<h4>ユーザー登録することで、マイページ内でフォロー・フォロワーやヘアカタなどを一覧表示出来ます</h4>
+				<div class="box"></div>
+			</div>
+			<div class="about">
+				<h4>美容師・ヘアモデル一覧から条件を絞って検索が出来ます</h4>
+				<div class="box"></div>
+				<div class="box"></div>
+			</div>
+			<div class="about">
+				<h4>美容師はヘアカタログを登録することが出来ます</h4>
+				<div class="box"></div>
+			</div>
+			<div class="about">
+				<h4>ヘアモデルはヘアカタログに「いいね」することが出来ます</h4>
+				<div class="box"></div>
+			</div>
+			<div class="about">
+				<h4>美容師やヘアモデルと直接連絡を取りたいときはDMを送ることが出来ます</h4>
+				<div class="box"></div>
+			</div>
+			<div class="about">
+				<div class="start">
+					<a class="start-trigger" href="#">はじめる</a>
+				</div>
+				<div class="start-menu">
+                	<%= link_to "美容師", new_hairdresser_registration_path, data: {"turbolinks" => false} %>
+                	<%= link_to "ヘアモ", new_model_registration_path, data: {"turbolinks" => false} %>
+            	</div>
+			</div>
+		</div>
+	</div>
+</div>
