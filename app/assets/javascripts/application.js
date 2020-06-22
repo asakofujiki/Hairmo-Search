@@ -84,6 +84,11 @@ $(document).on('turbolinks:load', function() {
     event.preventDefault();
   });
 
+  $('#reset-btn').click(function() {
+    $('option').prop('selected', false);
+    $('input:checkbox').prop('checked', false);
+  });
+
 
   $('.start-menu').hide();
   $('.start-trigger').on('click', function(event) {
