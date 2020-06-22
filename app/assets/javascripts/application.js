@@ -76,6 +76,11 @@ $(document).on('turbolinks:load', function() {
     $('.s-menu').fadeToggle();
     event.preventDefault();
   });
+  $(document).click(function(event) {
+    if(!$(event.target).closest('.signin-trigger').length) {
+      $('.s-menu').hide();
+    }
+  });
 
 
   $('.l-menu').hide();
@@ -83,10 +88,10 @@ $(document).on('turbolinks:load', function() {
     $('.l-menu').fadeToggle();
     event.preventDefault();
   });
-
-  $('#reset-btn').click(function() {
-    $('option').prop('selected', false);
-    $('input:checkbox').prop('checked', false);
+  $(document).click(function(event) {
+    if(!$(event.target).closest('.login-trigger').length) {
+      $('.l-menu').hide();
+    }
   });
 
 
@@ -95,16 +100,17 @@ $(document).on('turbolinks:load', function() {
     $('.start-menu').fadeToggle();
     event.preventDefault();
   });
+  $(document).click(function(event) {
+    if(!$(event.target).closest('.start-trigger').length) {
+      $('.start-menu').hide();
+    }
+  });
 
-  // $('.start-menu').on('mouseout', function(event) {
-  //   $('.start-trigger').off('click');
-  // });
 
-  // $('.start-trigger').off('click');
-
-  // $('.about').on('click', function(event) {
-  //   $('.start-menu').hide();
-  // });
+  $('#reset-btn').click(function() {
+    $('option').prop('selected', false);
+    $('input:checkbox').prop('checked', false);
+  });
 
 
 });
