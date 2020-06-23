@@ -44,7 +44,7 @@
 
             <div class="sign-up-field">
               <%= f.label :サロンエリア %><br />
-              <%= f.select :hairdresser_gender, Hairdresser.areas.keys.map {|k| [I18n.t("enums.hairdresser.area.#{k}"), k]}, autofocus: true, autocomplete: "area", class: "sign-up-select" %>
+              <%= f.select :area, Hairdresser.areas.keys.map {|k| [I18n.t("enums.hairdresser.area.#{k}"), k]}, autofocus: true, autocomplete: "area", class: "sign-up-select" %>
             </div>
 
             <div class="sign-up-field">
