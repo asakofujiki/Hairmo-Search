@@ -1009,12 +1009,23 @@ footer p {
 		margin-bottom: 20px;
 	}
 	.box {
-		// background-color: gray;
 		width: 85%;
 		height: 180px;
 		display: inline-block;
 		margin: 20px;
 		box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2);
+	}
+	.box2 {
+		background-image: image-url("hairdresser-searchform.png");
+		background-size: cover;
+		width: 85%;
+		height: 250px;
+	}
+	.box3 {
+		background-image: image-url("model-searchform.png");
+		background-size: cover;
+		width: 85%;
+		height: 170px;
 	}
 	.start-trigger {
 		margin-top: 50px;
