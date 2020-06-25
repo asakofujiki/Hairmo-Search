@@ -1015,17 +1015,29 @@ footer p {
 		margin: 20px;
 		box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2);
 	}
-	.box2 {
+	.box1 {
 		background-image: image-url("hairdresser-searchform.png");
 		background-size: cover;
 		width: 85%;
 		height: 250px;
 	}
-	.box3 {
+	.box2 {
 		background-image: image-url("model-searchform.png");
 		background-size: cover;
 		width: 85%;
 		height: 170px;
+	}
+	.box4 {
+		background-image: image-url("new-haircatalog.png");
+		background-size: cover;
+		width: 85%;
+		height: 300px;
+	}
+	.box6 {
+		background-image: image-url("DM.png");
+		background-size: cover;
+		width: 85%;
+		height: 230px;
 	}
 	.start-trigger {
 		margin-top: 50px;
