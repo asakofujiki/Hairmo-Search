@@ -1035,10 +1035,10 @@ footer p {
 		color: #FFFFFF;
 		font-weight: bold;
 		display: inline-block;
+		position: relative;
 	}
 	.start-menu {
-		position: fixed;
-		bottom:180px;
+		position: absolute;
 		right: 50%;
 		transform: translateX(50%);
 		background: rgba(227, 208, 195, 1);
