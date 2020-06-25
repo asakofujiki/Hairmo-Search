@@ -15,6 +15,7 @@
 //= require activestorage
 //= require turbolinks
 //= require bootstrap-sprockets
+//= jquery.jscroll.min.js
 //= require_tree .
 
 $(document).on('turbolinks:load', function() {
@@ -113,8 +114,11 @@ $(document).on('turbolinks:load', function() {
   });
 
 
+  $('.jscroll').jscroll({
+    contentSelector: '.jscroll',
+    nextSelector: 'li.next:last a',
+    autoTrigger: false,
+  });
+
+
 });
-
-
-
-

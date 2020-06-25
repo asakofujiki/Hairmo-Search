@@ -57,6 +57,19 @@ button{
 	appearance: none;
 }
 
+.pagination>li>a {
+  border: none;
+  background-color: rgba(128, 128, 128, 0.5);
+  color: #FFFFFF;
+  font-weight: bold;
+  padding: 20px 60px;
+  border-radius: 3px;
+}
+.pagination>li>a:hover {
+	background-color: rgba(128, 128, 128, 0.5);
+	color: #666666;
+}
+
 header {
 	background-color: #FFFFFF;
 	padding: 10px 20px;

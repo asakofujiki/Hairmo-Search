@@ -1,6 +1,6 @@
 class ModelsController < ApplicationController
   def index
-  	@models = Model.all
+  	@models = Model.all.page(params[:page]).per(6)
     if params[:hairmodel_gender].present?
       @models = @models.where(hairmodel_gender: params[:hairmodel_gender])
     end
