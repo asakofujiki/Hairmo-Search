@@ -74,10 +74,9 @@ gem "refile-mini_magick"
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'jquery-rails'
 gem 'jp_prefecture'
-
 gem 'devise'
-
 gem 'enum_help'
+gem 'kaminari'
 
 gem 'dotenv-rails'
 group :production do

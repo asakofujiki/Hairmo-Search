@@ -1,6 +1,6 @@
 class HairdressersController < ApplicationController
   def index
-  	@hairdressers = Hairdresser.all
+  	@hairdressers = Hairdresser.all.page(params[:page]).per(6)
     @cut_types = CutType.all
     @color_types = ColorType.all
     @perm_types = PermType.all

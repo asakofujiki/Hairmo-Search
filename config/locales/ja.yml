@@ -1,4 +1,7 @@
 ja:
+  views:
+    pagination:
+      next: さらに表示する
   enums:
     hairdresser:
       hairdresser_gender:
