@@ -57,6 +57,19 @@ button{
 	appearance: none;
 }
 
+.pagination>li>a {
+  border: none;
+  background-color: rgba(128, 128, 128, 0.5);
+  color: #FFFFFF;
+  font-weight: bold;
+  padding: 20px 60px;
+  border-radius: 3px;
+}
+.pagination>li>a:hover {
+	background-color: rgba(128, 128, 128, 0.5);
+	color: #666666;
+}
+
 header {
 	background-color: #FFFFFF;
 	padding: 10px 20px;
@@ -1027,11 +1040,23 @@ footer p {
 		width: 85%;
 		height: 170px;
 	}
+	.box3 {
+		background-image: image-url("mypage.png");
+		background-size: cover;
+		width: 85%;
+		height: 250px;
+	}
 	.box4 {
 		background-image: image-url("new-haircatalog.png");
 		background-size: cover;
 		width: 85%;
 		height: 300px;
+	}
+	.box5 {
+		background-image: image-url("favorite.png");
+		background-size: cover;
+		width: 85%;
+		height: 230px;
 	}
 	.box6 {
 		background-image: image-url("DM.png");

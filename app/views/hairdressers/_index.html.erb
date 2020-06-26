@@ -1,5 +1,5 @@
-
-<div class="hairdresser-index jscroll">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jscroll/2.4.1/jquery.jscroll.min.js"></script>
+<div class="jscroll">
   <% hairdressers.each do |hairdresser| %>
     <div class="index col-md-6">
       <%= link_to hairdresser_path(hairdresser.id) do %>
@@ -76,13 +76,7 @@
       <% end %>
     </div>
   <% end %>
-  <div class="col-md-offset-4 col-md-4">
+  <div class="col-md-offset-5 col-md-4">
     <%= paginate hairdressers %>
-  </div>
-</div>
-
-<div class="row">
-  <div class="col-md-offset-4 col-md-4">
-    <button class="loadmore">もっと表示する</button>
   </div>
 </div>

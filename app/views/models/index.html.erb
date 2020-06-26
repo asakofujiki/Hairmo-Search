@@ -29,46 +29,6 @@
     </div>
   </div>
   <div class="row">
-    <% @models.each do |model| %>
-      <%= link_to model_path(model.id) do %>
-        <div class="model-index col-md-6">
-          <div class="model-index-box">
-            <span><%= attachment_image_tag(model, :hairmodel_image, fallback: 'no images.png', size: '150x150', class: "image-box") %></span>
-            <div class="profile-box">
-              <table class="profile-list">
-                <tr>
-                  <td class="profile-item">名前</td>
-                  <td><%= model.hairmodel_name %></td>
-                </tr>
-                <tr>
-                  <td class="profile-item">性別</td>
-                  <td><%= model.hairmodel_gender_i18n %></td>
-                </tr>
-                <tr>
-                  <td class="profile-item">年代</td>
-                  <td><%= model.age_i18n %></td>
-                </tr>
-                <tr>
-                  <td class="profile-item">髪の長さ</td>
-                  <td><%= model.hair_length_i18n %></td>
-                </tr>
-                <tr>
-                  <td class="profile-item">黒染め履歴</td>
-                  <td><%= model.black_history_i18n %></td>
-                </tr>
-                <tr>
-                  <td class="profile-item">ブリーチ履歴</td>
-                  <td><%= model.bleach_history_i18n %></td>
-                </tr>
-                <tr>
-                  <td class="profile-item">縮毛矯正履歴</td>
-                  <td><%= model.straight_history_i18n %></td>
-                </tr>
-              </table>
-            </div>
-          </div>
-        </div>
-      <% end %>
-    <% end %>
+    <%= render partial: 'models/index', locals: {models: @models} %>
   </div>
 </div>
