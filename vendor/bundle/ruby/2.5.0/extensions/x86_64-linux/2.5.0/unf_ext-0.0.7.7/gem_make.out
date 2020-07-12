@@ -1,0 +1,29 @@
+current directory: /home/vagrant/work/Hairmo-Search/vendor/bundle/ruby/2.5.0/gems/unf_ext-0.0.7.7/ext/unf_ext
+/home/vagrant/.rbenv/versions/2.5.7/bin/ruby -r ./siteconf20200711-13451-qaog6a.rb extconf.rb
+checking for -lstdc++... yes
+creating Makefile
+
+current directory: /home/vagrant/work/Hairmo-Search/vendor/bundle/ruby/2.5.0/gems/unf_ext-0.0.7.7/ext/unf_ext
+make "DESTDIR=" clean
+make: Warning: File `Makefile' has modification time 0.31 s in the future
+make: 警告:  時刻のずれを検出. 不完全なビルド結果になるかもしれません.
+
+current directory: /home/vagrant/work/Hairmo-Search/vendor/bundle/ruby/2.5.0/gems/unf_ext-0.0.7.7/ext/unf_ext
+make "DESTDIR="
+make: Warning: File `Makefile' has modification time 0.28 s in the future
+compiling unf.cc
+cc1plus: 警告: コマンドラインオプション ‘-Wimplicit-int’ は C/ObjC 用としては有効ですが、C++ 用としては有効ではありません [デフォルトで有効]
+cc1plus: 警告: コマンドラインオプション ‘-Wdeclaration-after-statement’ は C/ObjC 用としては有効ですが、C++ 用としては有効ではありません [デフォルトで有効]
+cc1plus: 警告: コマンドラインオプション ‘-Wimplicit-function-declaration’ は C/ObjC 用としては有効ですが、C++ 用としては有効ではありません [デフォルトで有効]
+cc1plus: 警告: 認識できないコマンドラインオプション "-Wno-self-assign" です [デフォルトで有効]
+cc1plus: 警告: 認識できないコマンドラインオプション "-Wno-constant-logical-operand" です [デフォルトで有効]
+cc1plus: 警告: 認識できないコマンドラインオプション "-Wno-parentheses-equality" です [デフォルトで有効]
+cc1plus: 警告: 認識できないコマンドラインオプション "-Wno-tautological-compare" です [デフォルトで有効]
+linking shared-object unf_ext.so
+make: 警告:  時刻のずれを検出. 不完全なビルド結果になるかもしれません.
+
+current directory: /home/vagrant/work/Hairmo-Search/vendor/bundle/ruby/2.5.0/gems/unf_ext-0.0.7.7/ext/unf_ext
+make "DESTDIR=" install
+make: Warning: File `unf_ext.so' has modification time 0.11 s in the future
+/usr/bin/install -c -m 0755 unf_ext.so ./.gem.20200711-13451-6uygoz
+make: 警告:  時刻のずれを検出. 不完全なビルド結果になるかもしれません.

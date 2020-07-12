@@ -23,6 +23,7 @@ class ModelsController < ApplicationController
 
   def show
   	@model = Model.find(params[:id])
+    @model_image_url = "https://new-hairmosearch-resize.s3-ap-northeast-1.amazonaws.com/store/" + @image.image_id + "-thumbnail."
   end
 
   def edit
