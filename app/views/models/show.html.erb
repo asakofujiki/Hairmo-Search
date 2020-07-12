@@ -1,6 +1,6 @@
 <div class="container-fluid">
 	<div class="profile row">
-		<div class="col-md-offset-3 col-md-3">
+		<div class="col-md-offset-3 col-md-6 col-sm-offset-2 col-sm-8">
 			<div class="img-box">
 				<div class="img"><%= image_tag(@model_image_url, class: "img")%></div>
 				<% if @model == current_model %>
@@ -32,8 +32,6 @@
 					<% end %>
 				<% end %>
 			</div>
-		</div>
-		<div class="col-md-5">
 			<div class="pro-box">
 				<table class="pro-list">
 					<tr class="list">

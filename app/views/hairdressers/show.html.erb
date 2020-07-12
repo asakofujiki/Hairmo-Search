@@ -1,6 +1,6 @@
 <div class="container-fluid">
 	<div class="profile row">
-		<div class="col-md-offset-1 col-md-2">
+		<div class="col-md-offset-1 col-md-2 col-sm-offset-1 col-sm-3">
 			<div class="img-box">
 					<div class="img"><%= attachment_image_tag(@hairdresser, :hairdresser_image, fallback: 'no images.png', size: '200x200', class: "img") %></div>
 					<% if @hairdresser == current_hairdresser %>
@@ -33,7 +33,7 @@
 					<% end %>
 			</div>
 		</div>
-		<div class="col-md-5">
+		<div class="col-md-9 col-sm-8">
 			<div class="pro-box">
 				<table class="pro-list">
 					<tr class="list">
@@ -58,8 +58,6 @@
 					<%= simple_format(@hairdresser.hairdresser_comment, class: "comment") %>
 				</div>
 			</div>
-		</div>
-		<div class="col-md-4">
 			<div class="colle-box">
 				<p><strong>＜募集モデル＞</strong></p>
 				<ul class="type-box clearfix">
@@ -147,7 +145,7 @@
 	<% else %>
 		<div class="row">
 			<% @haircatalogs.each do |haircatalog| %>
-				<div class="col-md-3">
+				<div class="col-md-3 col-sm-4">
 					<div class="haircatalog">
 						<div class="haircatalog-header">
 							<% haircatalog.catalog_tags.each do |tag| %>

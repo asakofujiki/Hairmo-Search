@@ -1,20 +1,20 @@
 <div class="container-fluid">
 	<div class="row">
-		<div class="back col-md-offset-2">
+		<div class="back col-md-offset-2 col-sm-offset-1">
 			<%= link_to :back do %>
 				<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"><strong>Back</strong></span>
 			<% end %>
 		</div>
 	</div>
 	<div class="row DM">
-		<div class="col-md-offset-3 col-md-6">
+		<div class="col-md-offset-3 col-md-6 col-sm-offset-1 col-sm-10">
 			<span id="message<%= @room.id %>">
 				<%= render partial: 'rooms/message', locals: {room: @room} %>
 			</span>
 		</div>
 	</div>
 	<div class="row">
-		<div class="col-md-offset-4 col-md-4 message-form">
+		<div class="col-md-offset-4 col-md-4 col-sm-offset-3 col-sm-6 message-form">
 			<% if hairdresser_signed_in? %>
 				<%= form_with model: @message, url: room_messages_path(@room), remote: true do |f| %>
 					<%= f.text_area :message, class: "text-area" %>

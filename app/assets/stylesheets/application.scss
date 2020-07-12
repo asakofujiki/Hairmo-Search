@@ -185,32 +185,39 @@ main {
 	margin: 100px 0 50px 0;
 }
 
+.top-visual {
+	background-image: image-url("mainvisual.jpg");
+	background-size: cover;
+	width: 100%;
+	height: 700px;
+}
+
 .link-box {
-	margin: 50px 0;
+	margin: 150px 0;
 	text-align: center;
 	.top {
-	padding: 40px;
-	background-color: rgba(227, 208, 195, 0.5);
-	border-radius: 20px;
+	// padding: 40px;
+	// // background-color: rgba(227, 208, 195, 0.5);
+	// border-radius: 20px;
 	display: inline-block;
 		.box {
-			padding: 50px 30px;
-			background-color: rgba(255, 253, 245, 1);
+			padding: 100px 50px;
+			background-color: rgba(255, 253, 245, 0.5);
 			border-radius: 20px;
 			color: #220000;
 			.word {
 				text-align: left;
-				font-size: 30px;
+				font-size: 36px;
 				margin-bottom: 20px;
 			}
 
 			.link {
-				font-size: 20px;
+				font-size: 24px;
 				margin-left: 20px;
 			}
 		}
 		.box:hover {
-			background-color: #C2AA99;
+			background-color: rgba(255, 253, 245, 0.8);
 		}
 	}
 }
@@ -340,13 +347,13 @@ footer p {
 .search {
 	padding: 20px;
 	margin-bottom: 20px;
-	background-color: rgba(252, 224, 222, 0.1);
+	background-color: rgba(227, 208, 195, 0.2);
 	border-radius: 8px;
-	box-shadow: inset 0 0 15px 8px rgba(252, 224, 222, 0.8);
+	box-shadow: inset 0 0 15px 8px rgba(227, 208, 195, 0.8);
 	color: #220000;
 	p {
 		font-size: 18px;
-		color: #EB9996;
+		color: rgba(85, 49, 28, 0.8);
 		font-weight: bold;
 		margin-bottom: 15px;
 	}
@@ -368,7 +375,7 @@ footer p {
 	.search-btn {
 		text-align: right;
 		.btn {
-			background-color: #EB9996;
+			background-color: rgba(85, 49, 28, 0.5);
 			color: #FFFFFF;
 			font-weight: bold;
 			padding: 5px;
@@ -390,9 +397,9 @@ footer p {
 	.index-box {
 	width: 600px;
 	display: inline-block;
-	background-color: rgba(252, 224, 222, 0.3);
-	border: 3px solid rgb(252, 224, 222);
-	border-radius: 30px;
+	border: 1px solid rgba(227, 208, 195, 1);
+	border-radius: 8px;
+	box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2);
 	padding: 10px 20px;
 	margin: 15px 0;
 	color: #220000;
@@ -424,7 +431,7 @@ footer p {
 					text-align: center;
 					border-radius: 8px;
 					margin-left: 5px;
-					background-color: #EB9996;
+					background-color: #C2AA99;
 					color: #FFFFFF;
 				}
 				li {
@@ -438,14 +445,15 @@ footer p {
 
 
 .index-box:hover {
-	box-shadow: 0 0 15px 8px rgba(252, 224, 222, 0.8);
+	box-shadow: 0 0 15px 8px rgba(227, 208, 195, 1);
 }
 
 // 美容師詳細ページ //
 .img-box {
 	display: inline-block;
 	text-align: center;
-	margin-top: 20px;
+	margin: 20px 50px 0 0;
+	float: left;
 	.img {
 			display: inline-block;
 			width: 200px;
@@ -453,7 +461,6 @@ footer p {
 			border-radius: 50%;
 		}
 		.pro-btn {
-			display: inline-block;
 			width: 180px;
 			height: 50px;
 			background-color: rgba(227, 208, 195, 1);
@@ -469,9 +476,11 @@ footer p {
 }
 
 .pro-box {
+	display: inline-block;
 	font-size: 18px;
-	margin-top: 30px;
+	margin: 20px 50px 0 0;
 	color: #220000;
+	float: left;
 	.pro-list {
 			margin-bottom: 15px;
 			.pro-item {
@@ -488,9 +497,10 @@ footer p {
 }
 
 .colle-box {
+	display: inline-block;
 	color: #220000;
 	font-size: 14px;
-	margin-top: 30px;
+	margin-top: 20px;
 	.type-box {
 		.type {
 			width: 45px;
@@ -656,9 +666,9 @@ footer p {
 .model-search {
 	padding: 20px;
 	margin-bottom: 20px;
-	background-color: rgba(227, 208, 195, 0.3);
+	background-color: rgba(227, 208, 195, 0.2);
 	border-radius: 8px;
-	box-shadow: inset 0 0 15px 8px rgba(227, 208, 195, 1);
+	box-shadow: inset 0 0 15px 8px rgba(227, 208, 195, 0.8);
 	color: #220000;
 	p {
 		font-size: 18px;
@@ -934,6 +944,7 @@ footer p {
 	position: fixed;
 	bottom: 50px;
 	z-index: 1;
+	text-align: center;
 	.text-area {
 		width: 400px;
 		height: 100px;
@@ -992,7 +1003,7 @@ footer p {
 	margin-bottom: 50px;
 	.wrapper {
 		padding: 30px 30px 30px 50px;
-		background-color: rgba(255, 253, 245, 0.8);
+		background-color: rgba(255, 253, 245, 0.7);
 		.word {
 			display: inline-block;
 			text-align: left;
@@ -1029,13 +1040,13 @@ footer p {
 		box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2);
 	}
 	.box1 {
-		background-image: image-url("hairdresser-searchform.png");
+		background-image: image-url("hairdresser-search.png");
 		background-size: cover;
 		width: 85%;
-		height: 250px;
+		height: 310px;
 	}
 	.box2 {
-		background-image: image-url("model-searchform.png");
+		background-image: image-url("model-search.png");
 		background-size: cover;
 		width: 85%;
 		height: 170px;

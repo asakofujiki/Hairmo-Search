@@ -1,13 +1,13 @@
 <div class="container-fluid">
 	<div class="row">
-		<div class="back col-md-offset-1">
+		<div class="back col-md-offset-1 col-sm-offset-1">
 			<%= link_to :back do %>
 				<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"><strong>Back</strong></span>
 			<% end %>
 		</div>
 	</div>
 	<div class="row">
-		<div class="col-md-offset-2 col-md-8">
+		<div class="col-md-offset-2 col-md-8 col-sm-offset-1 col-sm-10">
 			<div class="shadow">
 				<%= form_with model:@haircatalog, url:hair_catalogs_path, remote: true do |h| %>
 				<div class="haircatalog-image">
