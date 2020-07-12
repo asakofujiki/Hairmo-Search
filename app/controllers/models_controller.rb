@@ -27,7 +27,7 @@ class ModelsController < ApplicationController
       @model_image_url = "https://new-hairmosearch-resize.s3-ap-northeast-1.amazonaws.com/store/" + @model.hairmodel_image_id + "-thumbnail."
     else
       @model_image_url = "https://new-hairmosearch-resize.s3-ap-northeast-1.amazonaws.com/store/no_images.png"
-    end  
+    end
   end
 
   def edit
