@@ -1,7 +1,9 @@
 # Hairmo Search
+<img src="https://user-images.githubusercontent.com/61612874/87398382-c370e480-c5f0-11ea-915b-46bfcae8ac10.png">
 
 ## サイト概要
-カリキュラムやテストに協力してくれるモデルさんを探したい美容師アシスタントと無料でカットやカラーをしてもらいたい人をつなぐマッチングサイトです
+カリキュラムやテストに協力してくれるモデルさんを探したい美容師アシスタントと無料でカットやカラーをしてもらいたい人をつなぐマッチングサイトです</br>
+URL:https://hairmo-search.work/
 
 ### サイトテーマ
 美容師とモデルをつなぐ空間（ばしょ）
@@ -19,6 +21,38 @@
 ・美容師アシスタント：カリキュラムやテストに協力してくれるモデルさんを探したいとき</br>
 ・モデルさん：無料でカットやカラーをしてくれる美容師を探したいとき
 
+## 使用技術
+
+### 使用言語
+Ruby 2.5.7</br>
+Rails 5.2.4.2</br>
+Javascript(jQuery)</br>
+
+### 開発環境
+Vagrant + VirtualBox
+
+### インフラ
+AWS(VPC, EC2, RDS, ALB, S3, Lambda, CloudWatch, Route53)</br>
+MySQL2</br>
+Nginx(Web サーバ)</br>
+Capistrano
+
+### AWS構成図
+![AWS構成図](https://user-images.githubusercontent.com/61612874/87400426-c1f4eb80-c5f3-11ea-886c-14adfe16a605.png)
+
+### その他の技術(gem 等)
+pry-byebug</br>
+dotenv-rails</br>
+devise</br>
+kaminari</br>
+bootstrap3</br>
+refile / refile-mini_magick</br>
+enum_help</br>
+I18n</br>
+
+### ER図
+![ER図](https://user-images.githubusercontent.com/61612874/87400481-d3d68e80-c5f3-11ea-8dda-e4f46f54dc30.png)
+
 ### 主な機能
 ・ユーザー登録機能（美容師・ヘアモデル）</br>
 　ログイン、ログアウト</br>
@@ -26,15 +60,13 @@
 ・ヘアカタ投稿機能（美容師）</br>
 　新規投稿</br>
 　編集、削除</br>
-・いいね機能（ヘアモデル）</br>
-・フォロー、フォロワー機能（美容師・ヘアモデル）</br>
-・メッセージ機能（美容師・ヘアモデル）</br>
+・いいね機能（ヘアモデル）　非同期通信</br>
+・フォロー、フォロワー機能（美容師・ヘアモデル）　非同期通信</br>
+・メッセージ機能（美容師・ヘアモデル）　非同期通信</br>
 ・通知機能（美容師・ヘアモデル）</br>
 ・検索機能</br>
 ・無限スクロール機能</br>
 ・住所自動入力機能</br>
-
-## 設計書
 
 ### 機能一覧
 https://docs.google.com/spreadsheets/d/1RTN3xSTjpRuC73SL8lVS-5wQUqAVMzosXD0OlxIHeeg/edit#gid=0
