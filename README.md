@@ -51,7 +51,7 @@ enum_help</br>
 I18n</br>
 
 ### ER図
-![ER図](https://user-images.githubusercontent.com/61612874/87400481-d3d68e80-c5f3-11ea-8dda-e4f46f54dc30.png)
+![ER図](https://user-images.githubusercontent.com/61612874/87405255-2450ea80-c5fa-11ea-85c2-b0fc21b915b5.png)
 
 ### 主な機能
 ・ユーザー登録機能（美容師・ヘアモデル）</br>
