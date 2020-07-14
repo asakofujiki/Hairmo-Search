@@ -32,13 +32,13 @@ Javascript(jQuery)</br>
 Vagrant + VirtualBox
 
 ### インフラ
-AWS(VPC, EC2, RDS, ALB, S3, Lambda, CloudWatch, Route53)</br>
+AWS(VPC, EC2, RDS, ALB, S3, Lambda, CloudWatch, Route53,ACM)</br>
 MySQL2</br>
 Nginx(Web サーバ)</br>
 Capistrano
 
 ### AWS構成図
-![AWS構成図](https://user-images.githubusercontent.com/61612874/87400426-c1f4eb80-c5f3-11ea-886c-14adfe16a605.png)
+![AWS構成図](https://user-images.githubusercontent.com/61612874/87443405-68f77880-c630-11ea-95e0-cb6311f24080.png)
 
 ### その他の技術(gem 等)
 pry-byebug</br>
