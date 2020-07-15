@@ -4,10 +4,13 @@
 			<div class="img-box">
 				<div class="img"><%= image_tag(@model_image_url, class: "img")%></div>
 				<% if @model == current_model %>
-					<%= link_to edit_model_path(@model), data: {"turbolinks" => false} do %>
-						<div class="pro-btn">
-							<p>プロフィール編集</p>
-						</div>
+					<% if @model.email == 'guest@model.jp' %>
+					<% else %>
+						<%= link_to edit_model_path(@model), data: {"turbolinks" => false} do %>
+							<div class="pro-btn">
+								<p>プロフィール編集</p>
+							</div>
+						<% end %>
 					<% end %>
 				<% else %>
 					<% if hairdresser_signed_in? %>

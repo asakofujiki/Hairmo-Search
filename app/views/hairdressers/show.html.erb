@@ -4,10 +4,13 @@
 			<div class="img-box">
 					<div class="img"><%= image_tag(@hairdresser_image_url, class: "img")%></div>
 					<% if @hairdresser == current_hairdresser %>
-						<%= link_to edit_hairdresser_path(@hairdresser), data: {"turbolinks" => false} do %>
-							<div class="pro-btn">
-								<p>プロフィール編集</p>
-							</div>
+						<% if @hairdresser.email == 'guest@hairdresser.jp' %>
+						<% else %>
+							<%= link_to edit_hairdresser_path(@hairdresser), data: {"turbolinks" => false} do %>
+								<div class="pro-btn">
+									<p>プロフィール編集</p>
+								</div>
+							<% end %>
 						<% end %>
 					<% else %>
 						<% if model_signed_in? %>

@@ -1,5 +1,4 @@
 class ModelsController < ApplicationController
-  # before_action :check_model_guest, only: :update
 
   def index
   	@models = Model.all.page(params[:page]).per(6)
@@ -50,13 +49,6 @@ class ModelsController < ApplicationController
     sign_in model
     redirect_to hairdressers_path
   end
-
-  # def check_model_guest
-  #   model = Model.find_by!(email: 'guest@model.jp')
-  #   if model.email == 'guest@model.jp'
-  #     redirect_to model_path(model.id)
-  #   end
-  # end
 
   private
   def model_params
