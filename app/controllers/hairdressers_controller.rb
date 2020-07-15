@@ -1,5 +1,5 @@
 class HairdressersController < ApplicationController
-  before_action :new_hairdresser_guest, only: :update
+  before_action :check_hairdresser_guest, only: :update
 
   def index
   	@hairdressers = Hairdresser.all.page(params[:page]).per(6)
@@ -67,7 +67,7 @@ class HairdressersController < ApplicationController
     redirect_to models_path
   end
 
-  def new_hairdresser_guest
+  def check_hairdresser_guest
     hairdresser = Hairdresser.find_by!(email: 'guest@hairdresser.jp')
     if hairdresser.email == 'guest@hairdresser.jp'
       redirect_to hairdresser_path(hairdresser.id)
