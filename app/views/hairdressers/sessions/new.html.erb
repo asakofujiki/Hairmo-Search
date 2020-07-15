@@ -22,6 +22,7 @@
           <div class="sign-up-btn">
             <div class="actions">
               <%= f.submit "ログイン", class: "action-btn"%>
+              <div><%= link_to 'ゲストログイン', hairdressers_guest_sign_in_path, method: :post, class: "action-btn" %></div>
             </div>
           </div>
         <% end %>

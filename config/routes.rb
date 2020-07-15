@@ -9,6 +9,9 @@ Rails.application.routes.draw do
   	:sessions => 'hairdressers/sessions'
   }
 
+  post post '/models/guest_sign_in', to: 'models#new_model_guest'
+  post post '/hairdressers/guest_sign_in', to: 'hairdressers#new_hairdresser_guest'
+
   resources :hairdressers, only: [:index, :show, :edit, :update] do
     resource :relationships, only: [:create, :destroy]
     get :follows, on: :member

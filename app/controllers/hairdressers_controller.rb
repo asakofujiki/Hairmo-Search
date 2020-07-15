@@ -1,4 +1,6 @@
 class HairdressersController < ApplicationController
+  before_action :new_hairdresser_guest, only: :update
+
   def index
   	@hairdressers = Hairdresser.all.page(params[:page]).per(6)
     @cut_types = CutType.all
@@ -51,6 +53,25 @@ class HairdressersController < ApplicationController
     @hairdresser = current_hairdresser
     @hairdresser.update(hairdresser_params)
     redirect_to hairdresser_path(@hairdresser)
+  end
+
+  def new_hairdresser_guest
+    hairdresser = Hairdresser.find_or_create_by!(email: 'guest@hairdresser.jp') do |hairdresser|
+      hairdresser.password = SecureRandom.urlsafe_base64
+      hairdresser.hairdresser_name = '美容師（ゲスト）'
+      hairdresser.postal_code = '1070052'
+      hairdresser.salon_name = 'ホットリップ'
+      hairdresser.salon_address = '東京都港区赤坂9-6-35'
+    end
+    sign_in hairdresser
+    redirect_to models_path
+  end
+
+  def new_hairdresser_guest
+    hairdresser = Hairdresser.find_by!(email: 'guest@hairdresser.jp')
+    if hairdresser.email == 'guest@hairdresser.jp'
+      redirect_to hairdresser_path(hairdresser.id)
+    end
   end
 
   private

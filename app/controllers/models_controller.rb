@@ -1,4 +1,6 @@
 class ModelsController < ApplicationController
+  before_action :check_model_guest, only: :update
+
   def index
   	@models = Model.all.page(params[:page]).per(6)
     if params[:hairmodel_gender].present?
@@ -38,6 +40,22 @@ class ModelsController < ApplicationController
   	@model = current_model
   	@model.update(model_params)
   	redirect_to model_path(@model)
+  end
+
+  def new_model_guest
+    model = Model.find_or_create_by!(email: 'guest@model.jp') do |model|
+      model.password = SecureRandom.urlsafe_base64
+      model.hairmodel_name = 'ヘアモ（ゲスト）'
+    end
+    sign_in model
+    redirect_to hairdressers_path
+  end
+
+  def check_model_guest
+    model = Model.find_by!(email: 'guest@model.jp')
+    if model.email == 'guest@model.jp'
+      redirect_to model_path(model.id)
+    end
   end
 
   private
