@@ -56,7 +56,7 @@ class HairdressersController < ApplicationController
   end
 
   def new_hairdresser_guest
-    hairdresser = Hairdresser.find_or_create_by!(email: 'guest@hairdresser.jp') do |hairdresser|
+    hairdresser = Hairdresser.find_or_create_by(email: 'guest@hairdresser.jp') do |hairdresser|
       hairdresser.password = SecureRandom.urlsafe_base64
       hairdresser.hairdresser_name = '美容師（ゲスト）'
       hairdresser.postal_code = '1070052'

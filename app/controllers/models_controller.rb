@@ -43,7 +43,7 @@ class ModelsController < ApplicationController
   end
 
   def new_model_guest
-    model = Model.find_or_create_by!(email: 'guest@model.jp') do |model|
+    model = Model.find_or_create_by(email: 'guest@model.jp') do |model|
       model.password = SecureRandom.urlsafe_base64
       model.hairmodel_name = 'ヘアモ（ゲスト）'
     end
