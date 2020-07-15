@@ -2,7 +2,7 @@
 	<div class="profile row">
 		<div class="col-md-offset-3 col-md-8 col-sm-offset-2 col-sm-10">
 			<div class="img-box">
-				<div class="img"><%= image_tag(@model_image_url, class: "img")%></div>
+				<div class="img"><%= attachment_image_tag(@model, :hairmodel_image, fallback: 'no images.png', size: '200x200', class: "img") %></div>
 				<% if @model == current_model %>
 					<%= link_to edit_model_path(@model), data: {"turbolinks" => false} do %>
 						<div class="pro-btn">

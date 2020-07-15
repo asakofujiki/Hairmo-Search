@@ -2,7 +2,7 @@
 	<div class="profile row">
 		<div class="col-md-offset-1 col-md-2 col-sm-offset-1 col-sm-3">
 			<div class="img-box">
-					<div class="img"><%= image_tag(@hairdresser_image_url, class: "img")%></div>
+					<div class="img"><%= attachment_image_tag(@hairdresser, :hairdresser_image, fallback: 'no images.png', size: '200x200', class: "img") %></div>
 					<% if @hairdresser == current_hairdresser %>
 						<%= link_to edit_hairdresser_path(@hairdresser), data: {"turbolinks" => false} do %>
 							<div class="pro-btn">

@@ -33,11 +33,11 @@ class HairdressersController < ApplicationController
 
   def show
     @hairdresser = Hairdresser.find(params[:id])
-    if @hairdresser.hairdresser_image_id
-      @hairdresser_image_url = "https://new-hairmosearch-resize.s3-ap-northeast-1.amazonaws.com/store/" + @hairdresser.hairdresser_image_id + "-thumbnail."
-    else
-      @hairdresser_image_url = "https://new-hairmosearch-resize.s3-ap-northeast-1.amazonaws.com/store/no_images.png"
-    end
+    # if @hairdresser.hairdresser_image_id
+    #   @hairdresser_image_url = "https://new-hairmosearch-resize.s3-ap-northeast-1.amazonaws.com/store/" + @hairdresser.hairdresser_image_id + "-thumbnail."
+    # else
+    #   @hairdresser_image_url = "https://new-hairmosearch-resize.s3-ap-northeast-1.amazonaws.com/store/no_images.png"
+    # end
     @haircatalogs = HairCatalog.where(hairdresser_id: @hairdresser).order(created_at: "DESC")
   end
 
